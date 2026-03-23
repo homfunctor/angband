@@ -19,5 +19,9 @@
     "which-key"
   ];
 in {
-  home.opts.nvim.plugins = lib.genAttrs enabledPlugins (_: {enable = true;});
+  home.opts.nvim = {
+    enable = true;
+
+    plugins = lib.genAttrs enabledPlugins (_: {enable = true;});
+  };
 }

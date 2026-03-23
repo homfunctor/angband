@@ -1,8 +1,10 @@
 {
+  config,
   lib,
   pkgs,
   ...
-}: {
+}:
+lib.mkIf config.home.opts.tier.work.enabled {
   services.swayidle = let
     lockExe = lib.getExe pkgs.swaylock;
   in {

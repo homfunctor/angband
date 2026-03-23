@@ -1,4 +1,10 @@
-{pkgs, ...}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+lib.mkIf config.nixos.opts.tier.personal.enabled {
   environment.systemPackages = with pkgs; [
     virt-manager
     virtio-win

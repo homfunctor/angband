@@ -5,9 +5,11 @@
   ...
 }: let
   inherit (lib) mkIf mkMerge;
-  cfg = osConfig.nixos.opts.stylix;
-in {
-  config = mkIf cfg.enable {
+  cfg =
+    osConfig.nixos.opts.stylix.enable
+    && config.home.opts.tier.niceTTY.enabled;
+in
+  mkIf cfg {
     stylix.targets.nixvim = {
       plugin = "base16-nvim";
       transparentBackground = {
@@ -47,5 +49,4 @@ in {
           '';
         })
       ];
-  };
-}
+  }

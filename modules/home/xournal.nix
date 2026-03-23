@@ -4,7 +4,8 @@
   osConfig,
   pkgs,
   ...
-}: {
+}:
+lib.mkIf config.home.opts.tier.work.enabled {
   home.packages = [pkgs.xournalpp];
 
   programs = lib.mkIf osConfig.nixos.opts.wm.niri.appBinds.enable {

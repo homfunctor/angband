@@ -1,5 +1,12 @@
-{flake, ...}: {
+{
+  flake,
+  inputs,
+  ...
+}: {
   imports = with flake.modules.nixos; [
+    inputs.stylix.nixosModules.stylix
+
+    stylix
     stylix-cursor-nordzy
     stylix-fonts-iosevka
     stylix-icons-flatRemixBlackDark

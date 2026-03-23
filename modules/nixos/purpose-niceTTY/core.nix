@@ -1,10 +1,9 @@
 {
   config,
-  flake,
   lib,
   ...
 }: {
-  imports = [flake.modules.nixos.stylix];
+  nixos.opts.tier.niceTTY.enabled = true;
 
   services.getty = lib.mkDefault {
     autologinOnce = true;

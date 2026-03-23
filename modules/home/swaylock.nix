@@ -5,7 +5,8 @@
   osConfig,
   pkgs,
   ...
-}: {
+}:
+lib.mkIf config.home.opts.tier.work.enabled {
   programs = {
     swaylock = {
       enable = true;

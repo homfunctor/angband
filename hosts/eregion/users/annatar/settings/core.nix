@@ -1,22 +1,29 @@
 {
   flake,
+  inputs,
   osConfig,
   ...
 }: {
-  imports = with flake.modules.home; [
-    opts
+  imports = with flake.modules.home;
+    [
+      purpose-work
 
-    purpose-work
-
-    LaTeX
-    defaultApplications
-    shell-fish-integration
-    vivaldi
-    workStuff
-  ];
-
+      LaTeX
+      defaultApplications
+      gui-noctalia
+      shell-fish-integration
+      vivaldi
+      wm-niri
+      wm-niri-workLaptop
+      workStuff
+    ]
+    ++ (with inputs; [
+      nixvim.homeModules.nixvim
+    ]);
   home.opts = {
     userName = builtins.elemAt osConfig.nixos.opts.userNames 0;
+
+    display.backgrounds = ["${inputs.utumno}/assets/eregion.png"];
 
     shellInt = {
       eza.enable = true;
@@ -26,5 +33,9 @@
       yazi.enable = true;
       zoxide.enable = true;
     };
+
+    quirk.vivaldi.enable = true;
+
+    wm.niri.screencast.enable = true;
   };
 }

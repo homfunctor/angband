@@ -21,7 +21,8 @@ in {
     adminUser = mkStrOpt null "main user";
     userNames = mkListOpt str null "all usernames";
 
-    purpose = let
+    # over-complicated system to make things depend on specific tiers
+    tier = let
       tiers = [
         "minTTY"
         "niceTTY"

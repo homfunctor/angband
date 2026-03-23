@@ -5,9 +5,11 @@
   pkgs,
   ...
 }: let
-  cfg = config.nixos.opts.stylix;
+  cfg =
+    config.nixos.opts.stylix.enable
+    && config.nixos.opts.tier.work.enabled;
 in {
-  nixos.opts.stylix.iconTheme = lib.mkIf cfg.enable {
+  nixos.opts.stylix.iconTheme = lib.mkIf cfg {
     name = "Flat-Remix-Black-Dark";
     package = pkgs.flat-remix-icon-theme;
   };

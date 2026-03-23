@@ -1,5 +1,6 @@
 {
   config,
+  flake,
   inputs,
   lib,
   ...
@@ -8,7 +9,11 @@
     lib.isType "flake" v)
   inputs;
 in {
+  imports = [flake.modules.nixos.opts];
+
   hardware.enableRedistributableFirmware = true;
+
+  nixos.opts.tier.minTTY.enabled = true;
 
   nix = {
     # still need to run 'just purgech' once

@@ -10,4 +10,6 @@
     syncthing
     xournal
   ];
+
+  home.opts.tier.work.enabled = true;
 }

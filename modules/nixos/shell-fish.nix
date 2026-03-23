@@ -1,5 +1,11 @@
 # it's nice
-{pkgs, ...}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+lib.mkIf config.nixos.opts.tier.niceTTY.enabled {
   environment.systemPackages = with pkgs.fishPlugins;
     [
       colored-man-pages
@@ -15,7 +21,6 @@
     enable = true;
 
     shellAliases = {
-      # aliases
       # quick navigation to special directories
       hfhs = "z /etc/profiles/per-user";
       nfhs = "z /run/current-system";
@@ -24,6 +29,7 @@
       # nix
       ninst = "nix-instantiate";
       nloc = "nix-locate --minimal";
+      nsp = "nix-shell -p ";
 
       # ...
       ".." = "z ../";

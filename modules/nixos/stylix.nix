@@ -1,29 +1,30 @@
 {
   config,
   inputs,
+  lib,
   pkgs,
   ...
 }: {
-  imports = [inputs.stylix.nixosModules.stylix];
+  config = lib.mkIf config.nixos.opts.tier.niceTTY.enabled {
+    stylix = {
+      enable = true;
+      autoEnable = true;
 
-  stylix = {
-    enable = true;
-    autoEnable = true;
+      inherit (config.nixos.opts.stylix) opacity;
 
-    inherit (config.nixos.opts.stylix) opacity;
+      # useless and annoying
+      enableReleaseChecks = false;
 
-    # useless and annoying
-    enableReleaseChecks = false;
-
-    fonts = {
-      emoji = {
-        name = "Noto Color Emoji";
-        package = pkgs.noto-fonts-color-emoji;
+      fonts = {
+        emoji = {
+          name = "Noto Color Emoji";
+          package = pkgs.noto-fonts-color-emoji;
+        };
+        sizes = config.nixos.opts.stylix.fontSizes;
       };
-      sizes = config.nixos.opts.stylix.fontSizes;
-    };
 
-    image = "${inputs.utumno}/assets/base.png";
-    polarity = "dark";
+      image = "${inputs.utumno}/assets/base.png";
+      polarity = "dark";
+    };
   };
 }

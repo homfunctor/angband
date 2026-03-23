@@ -1,1 +1,9 @@
-{perSystem, ...}: {home.packages = [perSystem.self.civ5-map-image];}
+{
+  config,
+  lib,
+  perSystem,
+  ...
+}:
+lib.mkIf config.home.opts.tier.personal.enabled {
+  home.packages = [perSystem.self.civ5-map-image];
+}

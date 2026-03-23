@@ -4,9 +4,11 @@
   osConfig,
   ...
 }: let
-  cfg = osConfig.nixos.opts.stylix;
-in {
-  config = lib.mkIf cfg.enable {
+  cfg =
+    osConfig.nixos.opts.stylix.enable
+    && config.home.opts.tier.work.enabled;
+in
+  lib.mkIf cfg {
     stylix.targets.noctalia-shell.enable = lib.mkForce false;
 
     programs.noctalia-shell = {
@@ -34,5 +36,4 @@ in {
         capsuleOpacity = opacity.desktop;
       };
     };
-  };
-}
+  }

@@ -8,38 +8,39 @@
   display = osConfig.nixos.opts.display // config.home.opts.display;
 
   genericBG = "${inputs.utumno}/assets/base.png";
-in {
-  programs.noctalia-shell.settings.wallpaper = {
-    enabled = true;
-    transitionType = "none";
-  };
-
-  home.file.".cache/noctalia/wallpapers.json" = lib.mkForce {
-    text = builtins.toJSON {
-      # separated to handle EXTernal/EXTra monitors
-      wallpapers = with display; let
-        mainMonitors = lib.listToAttrs (
-          lib.zipListsWith (
-            m: b: {
-              name = m;
-              value = b;
-            }
-          )
-          monitors
-          backgrounds
-        );
-
-        extraMonitors = lib.listToAttrs (
-          map (
-            m: {
-              name = m;
-              value = genericBG;
-            }
-          )
-          extMonitors
-        );
-      in
-        mainMonitors // extraMonitors;
+in
+  lib.mkIf config.home.opts.tier.work.enabled {
+    programs.noctalia-shell.settings.wallpaper = {
+      enabled = true;
+      transitionType = "none";
     };
-  };
-}
+
+    home.file.".cache/noctalia/wallpapers.json" = lib.mkForce {
+      text = builtins.toJSON {
+        # separated to handle EXTernal/EXTra monitors
+        wallpapers = with display; let
+          mainMonitors = lib.listToAttrs (
+            lib.zipListsWith (
+              m: b: {
+                name = m;
+                value = b;
+              }
+            )
+            monitors
+            backgrounds
+          );
+
+          extraMonitors = lib.listToAttrs (
+            map (
+              m: {
+                name = m;
+                value = genericBG;
+              }
+            )
+            extMonitors
+          );
+        in
+          mainMonitors // extraMonitors;
+      };
+    };
+  }

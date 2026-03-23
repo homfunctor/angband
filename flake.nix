@@ -1,11 +1,12 @@
 {
+  description = "Angband NixOS Flake";
+
   outputs = inputs:
     inputs.blueprint {
       inherit inputs;
+      nixpkgs.config.allowUnfree = true;
       systems = ["x86_64-linux"];
     };
-
-  description = "Angband NixOS Flake";
 
   inputs = {
     # core

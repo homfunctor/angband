@@ -14,7 +14,7 @@
 in {
   imports = [inputs.noctalia.homeModules.default];
 
-  programs = {
+  programs = lib.mkIf config.home.opts.tier.work.enabled {
     niri.settings.spawn-at-startup = [
       {
         command = [

@@ -1,4 +1,10 @@
-{pkgs, ...}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+lib.mkIf config.nixos.opts.tier.work.enabled {
   hardware.graphics = {
     enable = true;
 

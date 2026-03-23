@@ -7,16 +7,19 @@
     purpose-minTTY
 
     neovim
-    stylix
   ];
 
-  home.packages = with pkgs; [
-    alejandra
-    deadnix
-    erdtree
-    killall
-    rm-improved
-  ];
+  home = {
+    opts.tier.niceTTY.enabled = true;
+
+    packages = with pkgs; [
+      alejandra
+      deadnix
+      erdtree
+      killall
+      rm-improved
+    ];
+  };
 
   programs = {
     bat.enable = true;

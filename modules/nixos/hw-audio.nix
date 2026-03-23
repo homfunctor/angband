@@ -1,4 +1,9 @@
 {
+  config,
+  lib,
+  ...
+}:
+lib.mkIf config.nixos.opts.tier.work.enabled {
   services.pipewire = {
     enable = true;
 

@@ -11,9 +11,11 @@
     [(lib.getExe config.programs.noctalia-shell.package) "ipc" "call"]
     ++ (splitArg cmd);
 
-  cfg = osConfig.nixos.opts.wm.niri.appBinds;
+  cfg =
+    osConfig.nixos.opts.wm.niri.appBinds.enable
+    && config.home.opts.tier.work.enabled;
 in {
-  programs = lib.mkIf cfg.enable {
+  programs = lib.mkIf cfg {
     niri.settings.binds = with config.lib.niri.actions; {
       "Mod+R".action.spawn = noctCmd "launcher toggle";
       "Mod+X".action.spawn = noctCmd "sessionMenu toggle";

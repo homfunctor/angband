@@ -58,6 +58,10 @@ in
 
     mkListOpt = type: mkOpt (listOf type);
 
+    mkPathOpt = mkOpt path;
+
+    mkPkgOpt = mkOpt package;
+
     mkStrOpt = mkOpt str;
 
     # sops utilities

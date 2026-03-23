@@ -8,6 +8,8 @@
     mkAttrOpt
     mkBoolOpt
     mkListOpt
+    mkPathOpt
+    mkPkgOpt
     mkStrOpt
     nameListFromDir
     ;
@@ -17,10 +19,43 @@ in {
     # core.nix
     userName = mkStrOpt null "current user's name";
 
-    apps = mkAttrOpt {} "monolithic default application settings";
+    # monolithic default application settings
+    apps = let
+      appType = [
+        "archive"
+        "audio"
+        "browser"
+        "directory"
+        "image"
+        "officeCalc"
+        "officeImpress"
+        "officeWriter"
+        "pdf"
+        "shell"
+        "terminal"
+        "term-text"
+        "text"
+        "video"
+      ];
+    in
+      genAttrs appType (_: {
+        args = mkStrOpt null "";
+        desktop = mkStrOpt null "";
+        exe = mkPathOpt null "";
+        pkg = mkPkgOpt null "";
+      });
+
     customUserDirs = mkAttrOpt {} "custom settings for user directories (XDG)";
 
-    purpose = let
+    # weird things i insist upon
+    quirk = {
+      strawberry.enable = mkBoolOpt false "make strawberry the default audio application";
+
+      vivaldi.enable = mkBoolOpt false "make vivaldi the default browser";
+    };
+
+    # over-complicated system to make things depend on specific tiers
+    tier = let
       tiers = [
         "minTTY"
         "niceTTY"
@@ -55,6 +90,8 @@ in {
 
     # neovim.nix
     nvim = {
+      enable = mkBoolOpt false "";
+
       # base16? no, base20
       extraColors = mkAttrOpt {
         Boolean.fg = "#5A6B9C";

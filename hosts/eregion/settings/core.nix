@@ -1,14 +1,22 @@
-{flake, ...}: {
-  imports = with flake.modules.nixos; [
-    opts
+{
+  flake,
+  inputs,
+  pkgs,
+  ...
+}: {
+  imports = with flake.modules.nixos;
+    [
+      purpose-work
 
-    purpose-work
-
-    lanzaboote
-    scx
-    shell-fish
-    sops-nix
-  ];
+      lanzaboote
+      lixStable
+      scx
+      shell-fish
+      sops-nix
+    ]
+    ++ (with inputs; [
+      stylix.nixosModules.stylix
+    ]);
 
   nixos.opts = rec {
     adminUser = "annatar";
@@ -19,6 +27,11 @@
     sops = {
       syncthing.enable = false;
       users.enable = true;
+    };
+
+    wm.niri = {
+      appBinds.enable = true;
+      pkg = pkgs.niri-stable;
     };
   };
 }

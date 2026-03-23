@@ -13,7 +13,8 @@
   pkgs,
   ...
 }: let
-  inherit (lib) getExe;
+  inherit (config.home.opts) quirk;
+  inherit (lib) getExe mkIf mkMerge;
 in {
   home.opts.apps = rec {
     archive = {
@@ -22,13 +23,31 @@ in {
       pkg = pkgs.peazip;
     };
 
-    audio = video;
+    audio = mkMerge [
+      (mkIf (!quirk.strawberry.enable) {
+        inherit (video) desktop exe pkg;
+      })
 
-    browser = {
-      desktop = "firefox";
-      exe = getExe browser.pkg;
-      pkg = config.programs.firefox.package;
-    };
+      (mkIf quirk.strawberry.enable rec {
+        desktop = "strawberry";
+        exe = getExe pkg;
+        pkg = pkgs.strawberry;
+      })
+    ];
+
+    browser = mkMerge [
+      (mkIf (!quirk.vivaldi.enable) rec {
+        desktop = "firefox";
+        exe = getExe pkg;
+        pkg = config.programs.firefox.package;
+      })
+
+      (mkIf quirk.vivaldi.enable rec {
+        desktop = "vivaldi-stable";
+        exe = getExe pkg;
+        pkg = pkgs.vivaldi;
+      })
+    ];
 
     directory = {
       args = "";

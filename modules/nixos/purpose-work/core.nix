@@ -1,4 +1,6 @@
 {pkgs, ...}: {
+  nixos.opts.tier.work.enabled = true;
+
   programs.dconf.enable = true;
 
   services = {

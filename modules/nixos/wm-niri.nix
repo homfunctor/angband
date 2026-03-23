@@ -2,8 +2,10 @@
   config,
   flake,
   inputs,
+  lib,
   ...
-}: {
+}:
+lib.mkIf config.nixos.opts.tier.work.enabled {
   imports = with flake.modules.nixos; [
     niriSuite
     swaylock

@@ -31,59 +31,96 @@
   pkgs,
   ...
 }: let
-  inherit (builtins) unsafeDiscardStringContext;
-  inherit (config.lib.stylix) colors;
-  inherit (config.stylix) fonts;
+  cfg =
+    osConfig.nixos.opts.stylix.enable
+    && config.home.opts.tier.work.enabled;
+in
+  lib.mkIf cfg
+  {
+    stylix.targets.qt.enable = true;
 
-  fixedFonts = "${fonts.monospace.name}," + toString fonts.sizes.terminal;
-  generalFonts = "${fonts.sansSerif.name}," + toString fonts.sizes.applications;
-
-  qtctConfig = ''
-    [Appearance]
-    style=kvantum-dark
-    icon_theme=${osConfig.nixos.opts.stylix.iconTheme.name}
-    custom_palette=true
-    [Fonts]
-    fixed="${fixedFonts}"
-    general="${generalFonts}"
-  '';
-
-  # i just don't want github to say my flake is mostly Mustache
-  svg = colors {
-    extension = "svg";
-    template = /. + unsafeDiscardStringContext "${inputs.utumno}/assets/kvantum-svg.mustache";
-  };
-
-  kvconfig = colors {
-    extension = ".kvconfig";
-    template = /. + unsafeDiscardStringContext "${inputs.utumno}/assets/kvconfig.mustache";
-  };
-
-  kvantumPackage = pkgs.runCommandLocal "base16-kvantum" {} ''
-    directory="$out/share/Kvantum/Base16Kvantum"
-    mkdir --parents "$directory"
-    cat ${kvconfig} >>"$directory/Base16Kvantum.kvconfig"
-    cat ${svg} >>"$directory/Base16Kvantum.svg"
-  '';
-in {
-  stylix.targets.qt.enable = true;
-
-  qt = {
-    enable = true;
-    platformTheme.name = lib.mkForce "kvantum";
-  };
-
-  home.packages = [kvantumPackage];
-
-  xdg.configFile = {
-    "Kvantum/Base16Kvantum".source = "${kvantumPackage}/share/Kvantum/Base16Kvantum";
-
-    "Kvantum/kvantum.kvconfig".source = (pkgs.formats.ini {}).generate "kvantum.kvconfig" {
-      General.theme = "Base16Kvantum";
+    qt = {
+      enable = true;
+      platformTheme.name = lib.mkForce "kvantum";
     };
 
-    "qt5ct/qt5ct.conf".text = qtctConfig;
+    home.packages = let
+      inherit (builtins) unsafeDiscardStringContext;
+      inherit (config.lib.stylix) colors;
 
-    "qt6ct/qt6ct.conf".text = qtctConfig;
-  };
-}
+      svg = colors {
+        extension = "svg";
+        template =
+          /.
+          + unsafeDiscardStringContext
+          "${inputs.utumno}/assets/kvantum-svg.mustache";
+      };
+
+      kvconfig = colors {
+        extension = ".kvconfig";
+        template =
+          /.
+          + unsafeDiscardStringContext
+          "${inputs.utumno}/assets/kvconfig.mustache";
+      };
+
+      kvantumPackage = pkgs.runCommandLocal "base16-kvantum" {} ''
+        directory="$out/share/Kvantum/Base16Kvantum"
+        mkdir --parents "$directory"
+        cat ${kvconfig} >>"$directory/Base16Kvantum.kvconfig"
+        cat ${svg} >>"$directory/Base16Kvantum.svg"
+      '';
+    in [kvantumPackage];
+
+    xdg.configFile = let
+      inherit (builtins) unsafeDiscardStringContext;
+      inherit (config.lib.stylix) colors;
+      inherit (config.stylix) fonts;
+
+      fixedFonts =
+        "${fonts.monospace.name},"
+        + toString fonts.sizes.terminal;
+      generalFonts =
+        "${fonts.sansSerif.name},"
+        + toString fonts.sizes.applications;
+
+      qtctConfig = ''
+        [Appearance]
+        style=kvantum-dark
+        icon_theme=${osConfig.nixos.opts.stylix.iconTheme.name}
+        custom_palette=true
+        [Fonts]
+        fixed="${fixedFonts}"
+        general="${generalFonts}"
+      '';
+
+      svg = colors {
+        extension = "svg";
+        template = /. + unsafeDiscardStringContext "${inputs.utumno}/assets/kvantum-svg.mustache";
+      };
+
+      kvconfig = colors {
+        extension = ".kvconfig";
+        template = /. + unsafeDiscardStringContext "${inputs.utumno}/assets/kvconfig.mustache";
+      };
+
+      kvantumPackage = pkgs.runCommandLocal "base16-kvantum" {} ''
+        directory="$out/share/Kvantum/Base16Kvantum"
+        mkdir --parents "$directory"
+        cat ${kvconfig} >>"$directory/Base16Kvantum.kvconfig"
+        cat ${svg} >>"$directory/Base16Kvantum.svg"
+      '';
+    in {
+      "Kvantum/Base16Kvantum".source = "${kvantumPackage}/share/Kvantum/Base16Kvantum";
+
+      "Kvantum/kvantum.kvconfig".source =
+        (pkgs.formats.ini {}).generate
+        "kvantum.kvconfig" {
+          General.theme = "Base16Kvantum";
+        };
+
+      "qt5ct/qt5ct.conf".text = qtctConfig;
+
+      "qt6ct/qt6ct.conf".text = qtctConfig;
+    };
+  }

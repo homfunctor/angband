@@ -1,8 +1,10 @@
 {
+  config,
   lib,
   pkgs,
   ...
-}: {
+}:
+lib.mkIf config.nixos.opts.tier.personal.enabled {
   environment.systemPackages = [pkgs.lact];
 
   hardware = {
