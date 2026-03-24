@@ -16,6 +16,8 @@
       };
     };
 
+    colorschemes.base16.enable = true;
+
     diagnostic.settings.config = {
       float = {
         border = "single";
@@ -134,8 +136,8 @@
     ];
 
     performance.byteCompileLua = {
-      configs = true;
       enable = true;
+      configs = true;
       nvimRuntime = true;
       plugins = true;
     };
