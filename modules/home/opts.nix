@@ -122,7 +122,7 @@ in {
 
       nixvim = {
         enable = mkBoolOpt false "";
-        plugin = mkAttrOpt false "";
+        plugin = mkStrOpt false "";
         transparentBackground = {
           main = mkBoolOpt false "";
           signColumn = mkBoolOpt false "";
