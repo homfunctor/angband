@@ -117,7 +117,7 @@ in {
     stylix.targets = {
       gtk = {
         enable = mkBoolOpt false "";
-        extraCss = mkAttrOpt null "";
+        extraCss = mkStrOpt null "";
       };
 
       nixvim = {

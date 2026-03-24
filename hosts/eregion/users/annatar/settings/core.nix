@@ -5,7 +5,7 @@
   ...
 }: {
   imports = with flake.modules.home; [
-    purpose-niceTTY
+    purpose-work
 
     LaTeX
     defaultApplications

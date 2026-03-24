@@ -31,7 +31,7 @@ in
 
         (mkIf quirk.strawberry.enable rec {
           desktop = "strawberry";
-          exe = getExe audio.pkg;
+          exe = getExe pkg;
           pkg = pkgs.strawberry;
         })
       ];
@@ -39,13 +39,13 @@ in
       browser = mkMerge [
         (mkIf (!quirk.vivaldi.enable) rec {
           desktop = "firefox";
-          exe = getExe browser.pkg;
+          exe = getExe pkg;
           pkg = config.programs.firefox.package;
         })
 
         (mkIf quirk.vivaldi.enable rec {
           desktop = "vivaldi-stable";
-          exe = getExe browser.pkg;
+          exe = getExe pkg;
           pkg = pkgs.vivaldi;
         })
       ];

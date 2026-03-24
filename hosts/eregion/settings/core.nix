@@ -4,7 +4,7 @@
   ...
 }: {
   imports = with flake.modules.nixos; [
-    purpose-niceTTY
+    purpose-work
 
     lanzaboote
     lixStable
