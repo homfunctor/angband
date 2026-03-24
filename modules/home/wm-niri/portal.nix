@@ -1,4 +1,10 @@
-{pkgs, ...}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+lib.mkIf config.home.opts.tier.work.enabled {
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
