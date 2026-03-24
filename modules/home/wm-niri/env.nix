@@ -1,10 +1,7 @@
 {
   config,
-  inputs,
   ...
 }: {
-  imports = [inputs.utumno.modules.home.extraSessionVars];
-
   programs.niri.settings.environment = with config.home.opts.apps; {
     BROWSER = browser.exe;
     CLUTTER_BACKEND = "wayland";

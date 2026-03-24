@@ -1,11 +1,8 @@
 {
   config,
-  inputs,
   lib,
   ...
 }: {
-  imports = [inputs.stylix.nixosModules.stylix];
-
   config = let
     cfg =
       config.nixos.opts.stylix.enable

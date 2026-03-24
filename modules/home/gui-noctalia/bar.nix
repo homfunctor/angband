@@ -7,8 +7,7 @@
 }: let
   inherit (osConfig.nixos.opts.gui) noct;
 in {
-  # todo: require tier
-  # imports = [inputs.utumno.homeModules.niri-doxtalia];
+  imports = [inputs.utumno.homeModules.gui-doxtalia];
 
   programs = lib.mkIf config.home.opts.tier.work.enabled {
     noctalia-shell.settings = {

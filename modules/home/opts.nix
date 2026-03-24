@@ -112,6 +112,32 @@ in {
         });
     };
 
+    # stylix.nix
+    # to bypass imports nonsense
+    stylix.targets = {
+      gtk = {
+        enable = mkBoolOpt false "";
+        extraCss = mkAttrOpt null "";
+      };
+
+      nixvim = {
+        enable = mkBoolOpt false "";
+        plugin = mkAttrOpt false "";
+        transparentBackground = {
+          main = mkBoolOpt false "";
+          signColumn = mkBoolOpt false "";
+        };
+      };
+
+      noctalia-shell = {
+        enable = mkBoolOpt false "";
+      };
+
+      qt = {
+        enable = mkBoolOpt false "";
+      };
+    };
+
     # syncthing.nix
     syncthing = {
       enable = mkBoolOpt false "enable syncthing";

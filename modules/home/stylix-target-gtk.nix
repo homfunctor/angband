@@ -26,7 +26,7 @@ in
       };
     };
 
-    stylix.targets.gtk = {
+    home.opts.stylix.targets.gtk = {
       enable = true;
       # disable rounded corners where possible
       extraCss = ''

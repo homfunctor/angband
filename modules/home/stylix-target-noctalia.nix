@@ -9,7 +9,7 @@
     && config.home.opts.tier.work.enabled;
 in
   lib.mkIf cfg {
-    stylix.targets.noctalia-shell.enable = lib.mkForce false;
+    home.opts.stylix.targets.noctalia-shell.enable = lib.mkForce false;
 
     programs.noctalia-shell = {
       colors = with config.lib.stylix.colors.withHashtag; {

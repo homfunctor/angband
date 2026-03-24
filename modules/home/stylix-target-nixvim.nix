@@ -10,7 +10,7 @@
     && config.home.opts.tier.niceTTY.enabled;
 in
   mkIf cfg {
-    stylix.targets.nixvim = {
+    home.opts.stylix.targets.nixvim = {
       plugin = "base16-nvim";
       transparentBackground = {
         main = true;

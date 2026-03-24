@@ -4,22 +4,18 @@
   osConfig,
   ...
 }: {
-  imports = with flake.modules.home;
-    [
-      purpose-work
+  imports = with flake.modules.home; [
+    purpose-minTTY
 
-      LaTeX
-      defaultApplications
-      gui-noctalia
-      shell-fish-integration
-      vivaldi
-      wm-niri
-      wm-niri-workLaptop
-      workStuff
-    ]
-    ++ (with inputs; [
-      nixvim.homeModules.nixvim
-    ]);
+    LaTeX
+    defaultApplications
+    gui-noctalia
+    shell-fish-integration
+    vivaldi
+    wm-niri
+    wm-niri-workLaptop
+    workStuff
+  ];
   home.opts = {
     userName = builtins.elemAt osConfig.nixos.opts.userNames 0;
 

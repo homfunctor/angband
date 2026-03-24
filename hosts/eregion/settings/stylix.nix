@@ -14,7 +14,7 @@
   ];
 
   nixos.opts.stylix = {
-    enable = true;
+    enable = false;
 
     fontSizes = {
       applications = 16;

@@ -12,8 +12,6 @@
   noctExe = lib.getExe osConfig.nixos.opts.gui.noct.pkg;
   noctCmd = cmd: [noctExe "ipc" "call"] ++ (flake.lib.splitArg cmd);
 in {
-  imports = [inputs.noctalia.homeModules.default];
-
   programs = lib.mkIf config.home.opts.tier.work.enabled {
     niri.settings.spawn-at-startup = [
       {

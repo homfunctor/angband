@@ -24,7 +24,6 @@
 # no_window_pattern=true
 # does it work? no idea.
 {
-  config,
   inputs,
   lib,
   osConfig,
@@ -33,49 +32,51 @@
 }: let
   cfg =
     osConfig.nixos.opts.stylix.enable
-    && config.home.opts.tier.work.enabled;
+    && osConfig.nixos.opts.tier.work.enabled;
 in
   lib.mkIf cfg
   {
-    stylix.targets.qt.enable = true;
-
     qt = {
       enable = true;
       platformTheme.name = lib.mkForce "kvantum";
     };
 
-    home.packages = let
-      inherit (builtins) unsafeDiscardStringContext;
-      inherit (config.lib.stylix) colors;
+    home = {
+      opts.stylix.targets.qt.enable = true;
 
-      svg = colors {
-        extension = "svg";
-        template =
-          /.
-          + unsafeDiscardStringContext
-          "${inputs.utumno}/assets/kvantum-svg.mustache";
-      };
+      packages = let
+        inherit (builtins) unsafeDiscardStringContext;
+        inherit (osConfig.lib.stylix) colors;
 
-      kvconfig = colors {
-        extension = ".kvconfig";
-        template =
-          /.
-          + unsafeDiscardStringContext
-          "${inputs.utumno}/assets/kvconfig.mustache";
-      };
+        svg = colors {
+          extension = "svg";
+          template =
+            /.
+            + unsafeDiscardStringContext
+            "${inputs.utumno}/assets/kvantum-svg.mustache";
+        };
 
-      kvantumPackage = pkgs.runCommandLocal "base16-kvantum" {} ''
-        directory="$out/share/Kvantum/Base16Kvantum"
-        mkdir --parents "$directory"
-        cat ${kvconfig} >>"$directory/Base16Kvantum.kvconfig"
-        cat ${svg} >>"$directory/Base16Kvantum.svg"
-      '';
-    in [kvantumPackage];
+        kvconfig = colors {
+          extension = ".kvconfig";
+          template =
+            /.
+            + unsafeDiscardStringContext
+            "${inputs.utumno}/assets/kvconfig.mustache";
+        };
+
+        kvantumPackage = pkgs.runCommandLocal "base16-kvantum" {} ''
+          directory="$out/share/Kvantum/Base16Kvantum"
+          mkdir --parents "$directory"
+          cat ${kvconfig} >>"$directory/Base16Kvantum.kvconfig"
+          cat ${svg} >>"$directory/Base16Kvantum.svg"
+        '';
+      in [kvantumPackage];
+    };
 
     xdg.configFile = let
       inherit (builtins) unsafeDiscardStringContext;
-      inherit (config.lib.stylix) colors;
-      inherit (config.stylix) fonts;
+      inherit (osConfig.lib.stylix) colors;
+      inherit (osConfig.stylix) fonts;
 
       fixedFonts =
         "${fonts.monospace.name},"

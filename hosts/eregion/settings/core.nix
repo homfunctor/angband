@@ -1,22 +1,17 @@
 {
   flake,
-  inputs,
   pkgs,
   ...
 }: {
-  imports = with flake.modules.nixos;
-    [
-      purpose-work
+  imports = with flake.modules.nixos; [
+    purpose-minTTY
 
-      lanzaboote
-      lixStable
-      scx
-      shell-fish
-      sops-nix
-    ]
-    ++ (with inputs; [
-      stylix.nixosModules.stylix
-    ]);
+    lanzaboote
+    lixStable
+    scx
+    shell-fish
+    sops-nix
+  ];
 
   nixos.opts = rec {
     adminUser = "annatar";
