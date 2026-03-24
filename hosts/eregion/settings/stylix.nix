@@ -1,11 +1,5 @@
-{
-  flake,
-  inputs,
-  ...
-}: {
+{flake, ...}: {
   imports = with flake.modules.nixos; [
-    inputs.stylix.nixosModules.stylix
-
     stylix
     stylix-cursor-nordzy
     stylix-fonts-iosevka
@@ -14,7 +8,7 @@
   ];
 
   nixos.opts.stylix = {
-    enable = false;
+    enable = true;
 
     fontSizes = {
       applications = 16;
