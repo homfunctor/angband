@@ -41,7 +41,7 @@ in {
       genAttrs appType (_: {
         args = mkStrOpt null "";
         desktop = mkStrOpt null "";
-        exe = mkPathOpt null "";
+        exe = mkPathOpt (./.) "";
         pkg = mkPkgOpt null "";
       });
 
