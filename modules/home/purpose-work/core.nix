@@ -6,7 +6,6 @@
     libreOffice
     qt
     sioyek
-    starship
     syncthing
     xournal
   ];

@@ -7,6 +7,8 @@
     purpose-minTTY
 
     neovim
+    starship
+    zoxide
   ];
 
   home = {

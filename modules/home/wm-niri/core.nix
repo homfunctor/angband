@@ -1,7 +1,5 @@
 {
-  config,
   flake,
-  lib,
   ...
 }: {
   imports = with flake.modules.home; [

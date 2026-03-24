@@ -50,8 +50,6 @@ in
           sort_sensitive = false;
         };
       };
-
-      zoxide.enable = true;
     };
 
     services = {
