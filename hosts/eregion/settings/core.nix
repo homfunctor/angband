@@ -11,6 +11,7 @@
     scx
     shell-fish
     sops-nix
+    wm-niri
   ];
 
   nixos.opts = rec {
