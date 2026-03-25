@@ -27,16 +27,10 @@ in
       xwayland-satellite
     ];
 
-    programs = {
-      cava.enable = true;
-
-      niri.settings = lib.mkIf niriBindsEnabled {
-        binds = with config.lib.niri.actions; {
-          "Mod+Ctrl+Shift+C".action.spawn = lib.getExe pkgs.gnome-calculator;
-        };
+    programs.niri.settings = lib.mkIf niriBindsEnabled {
+      binds = with config.lib.niri.actions; {
+        "Mod+Ctrl+Shift+C".action.spawn = lib.getExe pkgs.gnome-calculator;
       };
-
-      eza.enable = true;
     };
 
     services = {

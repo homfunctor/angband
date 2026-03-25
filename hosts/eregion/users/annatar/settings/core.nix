@@ -10,6 +10,7 @@
     LaTeX
     defaultApplications
     gui-noctalia
+    nixTools
     shell-fish-integration
     vivaldi
     wm-niri

@@ -7,6 +7,7 @@
     dconf2nix
     nix-init
     nix-search
+    nix-tree
     nurl
   ];
 }

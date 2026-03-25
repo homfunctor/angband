@@ -3,6 +3,5 @@
     niriSuite
     swayidle
     swaylock
-    yazi
   ];
 }

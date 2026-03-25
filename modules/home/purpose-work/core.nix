@@ -1,5 +1,6 @@
 {flake, ...}: {
   imports = with flake.modules.home; [
+    eza
     firefox
     imageEditing
     kitty
@@ -8,6 +9,7 @@
     sioyek
     syncthing
     xournal
+    yazi
   ];
 
   home.opts.tier.work.enabled = true;

@@ -42,16 +42,15 @@ lib.mkIf config.nixos.opts.tier.niceTTY.enabled {
       cat = "bat";
       cd = "z";
       erd = "erd -I --suppress-size";
-      eza = "eza -G -x --color=always --icons=always";
       gita = "git add .";
       gitc = "git commit -m";
       gitlol = "gita && gitc \"ok\" && gitps";
       gitpl = "git pull";
       gitps = "git push";
       grep = "rg";
-      ls = "eza -G -x --color=always --icons=always";
+      ls = "eza";
       n = "nvim";
-      yz = "yazi .";
+      yz = "EDITOR='nvim' yazi";
     };
 
     # starship and zoxide handled by home-manager

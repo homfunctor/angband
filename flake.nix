@@ -85,11 +85,6 @@
       url = "github:mic92/nix-index-database";
     };
 
-    nix-search = {
-      inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:diamondburned/nix-search";
-    };
-
     nixcord = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:kaylorben/nixcord";
