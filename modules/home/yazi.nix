@@ -11,9 +11,13 @@
         sort_sensitive = false;
       };
 
+      # directly referring to neovim in the nix store
+      # causes a bug in yazi (freaks out about
+      # ~/.config/nvim/init.lua requiring
+      # base16-colosceheme). this fixes it
       opener.edit = [
         {
-          run = "nvim %s";
+          run = "neovide %s";
           block = false;
           orphan = true;
         }
