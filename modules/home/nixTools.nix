@@ -5,10 +5,8 @@
   #   nix-ld, nix-index-database, nix-output-monitor
   home.packages = with pkgs; [
     dconf2nix
-    graphviz
     nix-init
     nix-search
-    nixoscope
     nurl
   ];
 }
