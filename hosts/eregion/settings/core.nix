@@ -18,8 +18,6 @@
     adminUser = "annatar";
     userNames = [adminUser];
 
-    hostName = "eregion";
-
     sops = {
       syncthing.enable = false;
       users.enable = true;

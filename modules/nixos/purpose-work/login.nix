@@ -1,6 +1,6 @@
-# todo: check this works
 {config, ...}: {
   services = {
+    # swap from getty autologin to gdm autologin
     getty = {
       autologinOnce = false;
       autologinUser = null;

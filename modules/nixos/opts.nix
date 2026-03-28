@@ -24,7 +24,6 @@ in {
     # over-complicated system to make things depend on specific tiers
     tier = let
       tiers = [
-        "minTTY"
         "niceTTY"
         "work"
         "personal"
@@ -34,7 +33,6 @@ in {
         enabled = mkBoolOpt false "tier ${name} is enabled";
       });
 
-    hostName = mkStrOpt null "host name";
     sops = {
       syncthing.enable = mkBoolOpt false "allow sops-nix to manage syncthing";
       users.enable = mkBoolOpt false "allow sops-nix to manage users";

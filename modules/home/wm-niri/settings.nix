@@ -52,6 +52,7 @@ in
         screenshotDir = "${config.xdg.userDirs.pictures}/Screenshots";
       in "${screenshotDir}/screenshot-%Y-%m-%d-%H:%M:%S.png";
 
+      # i'm very particular about my workspaces
       workspaces = let
         num = range 1 ((length monitors) * numWSPerD);
         mon =

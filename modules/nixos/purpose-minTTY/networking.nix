@@ -1,10 +1,10 @@
 {
-  config,
+  hostName,
   lib,
   ...
 }: {
   networking = {
-    inherit (config.nixos.opts) hostName;
+    inherit hostName;
 
     firewall.enable = true;
 

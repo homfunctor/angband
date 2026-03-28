@@ -1,4 +1,10 @@
-{pkgs, ...}: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+lib.mkIf config.nixos.opts.tier.personal.enabled {
   i18n.inputMethod = {
     enable = true;
     fcitx5 = {

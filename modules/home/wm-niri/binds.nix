@@ -14,14 +14,19 @@ in
     programs.niri.settings = {
       binds = with config.lib.niri.actions; {
         # applications
-        "Mod+E".action.spawn = [apps.directory.exe] ++ (splitArg apps.directory.args);
+        "Mod+E".action.spawn =
+          [apps.directory.exe]
+          ++ (splitArg apps.directory.args);
         "Mod+Shift+E".action.spawn =
           [apps.terminal.exe]
           ++ (splitArg (getExe pkgs.yazi))
           ++ ["${homeDirectory}/angband"];
 
         "Mod+W".action.spawn = apps.terminal.exe;
-        "Mod+Shift+W".action.spawn = [apps.terminal.exe "${homeDirectory}/angband"];
+        "Mod+Shift+W".action.spawn = [
+          apps.terminal.exe
+          "${homeDirectory}/angband"
+        ];
         "Mod+Ctrl+Shift+W".action.spawn = [
           apps.terminal.exe
           (getExe pkgs.yazi)
