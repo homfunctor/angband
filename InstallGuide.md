@@ -33,8 +33,7 @@ sudo nix --experimental-features "flakes nix-command" run github:nix-community/d
 
 # install with flake
 
-## make sure purpose is set to minTTY
-
+(make sure purpose is set to minTTY)
 sudo nixos-install --flake .#HOST
 
 # copy ssh keys

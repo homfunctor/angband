@@ -12,7 +12,7 @@
 
   config = lib.mkIf config.nixos.opts.tier.personal.enabled {
     environment.systemPackages = with pkgs; [
-      protonvpn-gui
+      proton-vpn
       qbittorrent
       wireguard-tools
     ];
