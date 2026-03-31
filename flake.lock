@@ -591,11 +591,11 @@
         "nixpkgs-nixcord": "nixpkgs-nixcord"
       },
       "locked": {
-        "lastModified": 1774918211,
-        "narHash": "sha256-CT5aawiK29ze6KbBTS3SuNmF314E6a6hQr9VPAnZDhc=",
+        "lastModified": 1774946064,
+        "narHash": "sha256-nWB/n+l2lMSk3BHarxC4AgamHr2oLUbzHDvYLO17/6w=",
         "owner": "kaylorben",
         "repo": "nixcord",
-        "rev": "1cfc2a93f9e0bf99f7261670dc1d2ff071f26a96",
+        "rev": "2baeae803b75deb3a0acb8edb493d7917b5f675d",
         "type": "github"
       },
       "original": {
@@ -1122,11 +1122,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1774683562,
-        "narHash": "sha256-vv0Tf90oFVivM3eyBJJr+CqSeqQ7KvaXT1WtI0NcCos=",
+        "lastModified": 1774938218,
+        "narHash": "sha256-Em9VkeMDsUf7KKvZRsKLrQBJoIALgXrW5G5foyHP6Vo=",
         "ref": "refs/heads/main",
-        "rev": "65ca679e60109493e5777f7ea78e9d802d3697dd",
-        "revCount": 24,
+        "rev": "13c2ecb079eb373e5fdcbda5377323ff404840e8",
+        "revCount": 25,
         "shallow": false,
         "type": "git",
         "url": "ssh://git@github.com/homfunctor/utumno"

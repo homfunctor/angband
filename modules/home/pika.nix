@@ -4,6 +4,6 @@
   pkgs,
   ...
 }:
-lib.mkIf config.home.opts.tier.personal.enabled {
+lib.mkIf config.home.opts.tier.work.enabled {
   home.packages = [pkgs.pika-backup];
 }

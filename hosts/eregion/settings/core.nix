@@ -18,6 +18,8 @@
     adminUser = "annatar";
     userNames = [adminUser];
 
+    lanzaboote.enable = true;
+
     sops = {
       syncthing.enable = false;
       users.enable = true;

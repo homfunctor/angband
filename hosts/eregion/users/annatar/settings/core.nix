@@ -7,6 +7,8 @@
   imports = with flake.modules.home; [
     purpose-work
 
+    pika
+
     LaTeX
     defaultApplications
     gui-noctalia
