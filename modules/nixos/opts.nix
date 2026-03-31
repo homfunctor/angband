@@ -66,7 +66,7 @@ in {
 
     # shell.nix
     shell = {
-      extraAliases = mkAttrOpt null "extra shell aliases";
+      extraAliases = mkAttrOpt {} "extra shell aliases";
       name = mkStrOpt "fish" "shell to use";
     };
 

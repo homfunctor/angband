@@ -1,6 +1,6 @@
 # per-host settings that are used by hm modules
 {perSystem, ...}: {
-  nixos.opts.noct = {
+  nixos.opts.gui.noct = {
     # latest version
     pkg = perSystem.noctalia.default;
 

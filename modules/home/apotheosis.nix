@@ -4,6 +4,6 @@
   perSystem,
   ...
 }:
-lib.mkIf config.tier.personal.enabled {
+lib.mkIf config.home.opts.tier.personal.enabled {
   home.packages = [perSystem.self.apotheosis];
 }

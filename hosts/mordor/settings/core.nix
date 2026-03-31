@@ -24,7 +24,7 @@
       "mairon"
     ];
 
-    fish.extraAliases = {
+    shell.extraAliases = {
       # sometimes needed when using xwayland(-satellite)
       "m1" = "xrandr --output DP-1 --primary";
       "m2" = "xrandr --output HDMI-A-1 --primary";
