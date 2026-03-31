@@ -10,8 +10,6 @@
 in {
   hardware.enableRedistributableFirmware = true;
 
-  nixos.opts.tier.minTTY.enabled = true;
-
   nix = {
     # still need to run 'just purgech' once
     channel.enable = false;

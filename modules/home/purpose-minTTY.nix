@@ -10,8 +10,5 @@
     inputs.utumno.modules.home.git
   ];
 
-  home = {
-    opts.tier.minTTY.enabled = true;
-    stateVersion = "25.11";
-  };
+  home.stateVersion = "25.11";
 }
