@@ -5,24 +5,37 @@
   ...
 }: {
   imports = with flake.modules.home; [
-    purpose-work
+    purpose-minTTY
 
     LaTeX
+    apotheosis
+    civ5-map-image
     defaultApplications
     gui-noctalia
+    ironyModManager
     neovim-standardEnv
     nix-index
     nixTools
     shell-fish-integration
     vivaldi
     wm-niri
-    wm-niri-workLaptop
+    wm-niri-personal
     workStuff
   ];
   home.opts = {
     userName = builtins.elemAt osConfig.nixos.opts.userNames 0;
 
-    display.backgrounds = ["${inputs.utumno}/assets/eregion.png"];
+    customUserDirs = {
+      music = "/vault/Music";
+      pictures = "/vault/Pictures";
+      videos = "/vault/Videos";
+    };
+
+    display.backgrounds = [
+      "${inputs.utumno}/assets/winter1.png"
+      "${inputs.utumno}/assets/winter4.png"
+      "${inputs.utumno}/assets/winter5.png"
+    ];
 
     shellInt = {
       eza.enable = true;
@@ -33,8 +46,9 @@
       zoxide.enable = true;
     };
 
-    quirk.vivaldi.enable = true;
-
-    wm.niri.screencast.enable = true;
+    quirk = {
+      strawberry.enable = true;
+      vivaldi.enable = true;
+    };
   };
 }

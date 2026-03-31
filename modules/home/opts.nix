@@ -57,7 +57,6 @@ in {
     # over-complicated system to make things depend on specific tiers
     tier = let
       tiers = [
-        "minTTY"
         "niceTTY"
         "work"
         "personal"

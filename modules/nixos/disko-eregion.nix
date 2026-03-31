@@ -1,6 +1,9 @@
-# this file is also consumed by disko
+# this file is consumed by disko during installation of NixOS
+# details:
+#   standard single-SSD laptop setup with LUKS encryption
 {
   disko.devices = {
+    #   is that all there is?
     disk.main = {
       device = "/dev/nvme0n1";
       type = "disk";
@@ -39,6 +42,7 @@
       };
     };
 
+    #   yeah that's all there is.
     lvm_vg.pool = {
       type = "lvm_vg";
 

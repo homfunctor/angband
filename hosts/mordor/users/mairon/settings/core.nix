@@ -5,7 +5,7 @@
   ...
 }: {
   imports = with flake.modules.home; [
-    purpose-work
+    purpose-minTTY
 
     LaTeX
     defaultApplications
@@ -14,15 +14,18 @@
     nix-index
     nixTools
     shell-fish-integration
-    vivaldi
     wm-niri
-    wm-niri-workLaptop
+    wm-niri-workAtHome
     workStuff
   ];
   home.opts = {
-    userName = builtins.elemAt osConfig.nixos.opts.userNames 0;
+    userName = builtins.elemAt osConfig.nixos.opts.userNames 1;
 
-    display.backgrounds = ["${inputs.utumno}/assets/eregion.png"];
+    display.backgrounds = [
+      "${inputs.utumno}/assets/winter1.png"
+      "${inputs.utumno}/assets/winter4.png"
+      "${inputs.utumno}/assets/winter5.png"
+    ];
 
     shellInt = {
       eza.enable = true;
@@ -32,9 +35,5 @@
       yazi.enable = true;
       zoxide.enable = true;
     };
-
-    quirk.vivaldi.enable = true;
-
-    wm.niri.screencast.enable = true;
   };
 }

@@ -4,10 +4,15 @@
 # reboot, enable secure boot, login
 # 'sudo sbctl enroll-keys --microsoft'
 # reboot, verify with 'bootctl status'
-{inputs, ...}: {
+{
+  config,
+  inputs,
+  lib,
+  ...
+}: {
   imports = [inputs.lanzaboote.nixosModules.lanzaboote];
 
-  boot = {
+  boot = lib.mkIf config.nixos.opts.lanzaboote.enable {
     lanzaboote = {
       enable = true;
       pkiBundle = "/var/lib/sbctl";

@@ -21,6 +21,8 @@ in {
     adminUser = mkStrOpt null "main user";
     userNames = mkListOpt str null "all usernames";
 
+    lanzaboote.enable = mkBoolOpt false "enable lanzaboote";
+
     # over-complicated system to make things depend on specific tiers
     tier = let
       tiers = [
@@ -63,7 +65,10 @@ in {
     };
 
     # shell.nix
-    shell.name = mkStrOpt "fish" "shell to use";
+    shell = {
+      extraAliases = mkAttrOpt null "extra shell aliases";
+      name = mkStrOpt "fish" "shell to use";
+    };
 
     # stylix.nix
     stylix = {
