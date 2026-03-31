@@ -56,12 +56,12 @@ in {
 
     # hardware.nix
     display = {
-      extMonitors = mkListOpt str null "names of external/extra monitors";
+      extMonitors = mkListOpt str [] "names of external/extra monitors";
       mainMonitor = mkStrOpt null "main monitor";
-      monitors = mkListOpt str null "names of monitors";
+      monitors = mkListOpt str [] "names of monitors";
       numWSPerD = mkIntOpt 2 "number of workspaces per display";
-      positions = mkListOpt (listOf int) null "positions of monitors";
-      resolutions = mkListOpt (listOf int) null "resolutions of monitors";
+      positions = mkListOpt (listOf int) [] "positions of monitors";
+      resolutions = mkListOpt (listOf int) [] "resolutions of monitors";
     };
 
     # shell.nix

@@ -4,7 +4,7 @@
   ...
 }: {
   imports = with flake.modules.nixos; [
-    purpose-minTTY
+    purpose-work
 
     lanzaboote
     lixStable
@@ -34,11 +34,11 @@
       modsums = "hashdeep -l -r -c md5 */ | awk -F, 'NR>4 {print $2 \"  \" $3}'";
     };
 
-    lanzaboote.enable = false;
+    lanzaboote.enable = true;
 
     sops = {
       syncthing.enable = false;
-      users.enable = false;
+      users.enable = true;
     };
 
     wm.niri = {
