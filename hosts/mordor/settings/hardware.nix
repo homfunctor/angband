@@ -1,7 +1,7 @@
 {flake, ...}: {
   imports = with flake.modules.nixos; [
-    hw-cpu-intel
-    hw-gpu-intel
+    hw-cpu-amd
+    hw-gpu-amd
     hw-printing
     hw-ssd
     hw-tablet
