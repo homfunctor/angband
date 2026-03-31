@@ -1,6 +1,6 @@
-# todo...
 {
   flake,
+  inputs,
   pkgs,
   ...
 }: {
@@ -9,7 +9,7 @@
     discord
     gaming
     ironyModManager
-    utumno.flake.modules.home.privateApps
+    inputs.utumno.modules.home.privateApps
   ];
 
   home = {
@@ -21,10 +21,10 @@
       soundconverter
       strawberry
     ];
+  };
 
-    programs.niri.settings.environment = {
-      PROTON_ENABLE_WAYLAND = "1";
-      WINEDLLOVERRIDES = "winemenubuilder.exe=d";
-    };
+  programs.niri.settings.environment = {
+    PROTON_ENABLE_WAYLAND = "1";
+    WINEDLLOVERRIDES = "winemenubuilder.exe=d";
   };
 }

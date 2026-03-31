@@ -42,7 +42,7 @@
     };
 
     wm.niri = {
-      appBinds.enable = false;
+      appBinds.enable = true;
       pkg = pkgs.niri-unstable;
     };
   };
