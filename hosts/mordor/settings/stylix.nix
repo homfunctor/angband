@@ -9,7 +9,6 @@
 
   nixos.opts.stylix = {
     enable = true;
-
     fontSizes.terminal = 14;
   };
 }
