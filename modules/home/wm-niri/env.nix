@@ -9,7 +9,7 @@ lib.mkIf config.home.opts.tier.work.enabled {
     CLUTTER_BACKEND = "wayland";
     DISABLE_QT5_COMPAT = "0";
     DISABLE_QT_COMPAT = "0";
-    EDITOR = term-text.exe;
+    EDITOR = term-text.desktop;
     ELECTRON_OZONE_PLATFORM_HINT = "auto";
     GDK_SCALE = "1";
     MOZ_ENABLE_WAYLAND = "1";

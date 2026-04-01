@@ -13,8 +13,16 @@
 in {
   services.syncthing = lib.mkIf cfg.enable {
     # strictly declarative
-    cert = mkSecPath osConfig [userName "syncthing" "cert"];
-    key = mkSecPath osConfig [userName "syncthing" "key"];
+    cert = mkSecPath osConfig [
+      userName
+      "syncthing"
+      "cert"
+    ];
+    key = mkSecPath osConfig [
+      userName
+      "syncthing"
+      "key"
+    ];
 
     overrideDevices = true;
     overrideFolders = true;

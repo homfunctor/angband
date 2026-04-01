@@ -101,6 +101,7 @@ in
       };
 
       term-text = {
+        desktop = "nvim";
         exe = getExe term-text.pkg;
         pkg = config.programs.nixvim.package;
       };

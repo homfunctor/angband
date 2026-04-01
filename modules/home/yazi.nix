@@ -15,13 +15,13 @@
       # causes a bug in yazi (freaks out about
       # ~/.config/nvim/init.lua requiring
       # base16-colosceheme). this fixes it
-      opener.edit = [
-        {
-          run = "neovide %s";
-          block = false;
-          orphan = true;
-        }
-      ];
+      # opener.edit = [
+      #   {
+      #     run = "neovide %s";
+      #     block = false;
+      #     orphan = true;
+      #   }
+      # ];
     };
   };
 }
