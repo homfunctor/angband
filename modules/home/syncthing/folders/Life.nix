@@ -4,7 +4,7 @@
   ...
 }: let
   inherit (config.home) homeDirectory;
-  dirName = "Books";
+  dirName = "Life";
 
   cfg = config.home.opts.syncthing;
 in {

@@ -4,7 +4,7 @@
   ...
 }: let
   inherit (config.home) homeDirectory;
-  dirName = "Books";
+  dirName = "Rust";
 
   cfg = config.home.opts.syncthing;
 in {

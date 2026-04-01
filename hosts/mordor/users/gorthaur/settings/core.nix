@@ -18,6 +18,7 @@
     nixTools
     pika
     shell-fish-integration
+    syncthing
     vivaldi
     wm-niri
     wm-niri-personal

@@ -1,4 +1,3 @@
-# todo: setup certs and keys
 {
   config,
   flake,

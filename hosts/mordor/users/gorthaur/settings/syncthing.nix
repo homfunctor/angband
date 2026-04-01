@@ -1,9 +1,16 @@
-# todo: redo...
 {
   home.opts.syncthing = {
-    enable = false;
+    enable = true;
     folder = {
-      # todo
+      Books.enable = true;
+      Fish.enable = true;
+      Life.enable = true;
+      Math.enable = true;
+      Misc.enable = true;
+      Nix.enable = true;
+      Python.enable = true;
+      Rust.enable = true;
+      Work.enable = true;
     };
   };
 }

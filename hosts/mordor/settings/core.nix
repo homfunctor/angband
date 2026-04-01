@@ -38,7 +38,7 @@
     lanzaboote.enable = true;
 
     sops = {
-      syncthing.enable = false;
+      syncthing.enable = true;
       users.enable = true;
     };
 
