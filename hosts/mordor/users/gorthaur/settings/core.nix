@@ -16,6 +16,7 @@
     neovim-standardEnv
     nix-index
     nixTools
+    pika
     shell-fish-integration
     vivaldi
     wm-niri

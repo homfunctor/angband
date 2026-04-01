@@ -7,7 +7,7 @@
     purpose-personal
 
     lanzaboote
-    lixStable
+    lixFresh
     notNix
     rustOverlay
     scx
