@@ -39,10 +39,11 @@ in {
       ];
     in
       genAttrs appType (_: {
-        args = mkStrOpt null "";
-        desktop = mkStrOpt null "";
-        exe = mkPathOpt (./.) "";
-        pkg = mkPkgOpt null "";
+        args = mkStrOpt null "arguments usually used with application";
+        desktop = mkStrOpt null "name of .desktop file";
+        exe = mkPathOpt ./. "actual location of executable in store";
+        pkg = mkPkgOpt null "package used";
+        which = mkStrOpt null "directly references output of 'which applicationName' ";
       });
 
     customUserDirs = mkAttrOpt {} "custom settings for user directories (XDG)";

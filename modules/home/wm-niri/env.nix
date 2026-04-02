@@ -9,7 +9,7 @@ lib.mkIf config.home.opts.tier.work.enabled {
     CLUTTER_BACKEND = "wayland";
     DISABLE_QT5_COMPAT = "0";
     DISABLE_QT_COMPAT = "0";
-    EDITOR = term-text.exe;
+    EDITOR = term-text.which; # stylix compatibility
     ELECTRON_OZONE_PLATFORM_HINT = "auto";
     GDK_SCALE = "1";
     MOZ_ENABLE_WAYLAND = "1";
@@ -22,7 +22,7 @@ lib.mkIf config.home.opts.tier.work.enabled {
     QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
     SDL_VIDEODRIVER = "wayland";
     SHELL = shell.exe;
-    SOPS_EDITOR = term-text.exe;
+    SOPS_EDITOR = term-text.which; # stylix again
     TERMINAL = terminal.exe;
     VISUAL = text.exe;
     _JAVA_AWT_WM_NONREPARENTING = "1";
