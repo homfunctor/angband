@@ -1,9 +1,10 @@
-# todo: redo...
 {
   home.opts.syncthing = {
-    enable = false;
+    enable = true;
     folder = {
-      # todo
+      Books.enable = true;
+      Math.enable = true;
+      Work.enable = true;
     };
   };
 }

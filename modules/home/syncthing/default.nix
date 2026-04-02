@@ -5,5 +5,8 @@
 }: {
   imports =
     (flake.lib.genImportsFromDir ./.)
-    ++ [inputs.utumno.modules.home.syncthing];
+    ++ [
+      # provides syncthing.settings.devices
+      inputs.utumno.modules.home.syncthing
+    ];
 }
