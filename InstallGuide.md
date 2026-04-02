@@ -3,7 +3,7 @@ these are the steps i use when installing NixOS. there may be better ways, easie
 # deploy ssh keys
 
 1. nix-shell -p cryptsetup
-2. sudo cryptsetup luksOpen /dev/sdX4 tmp
+2. sudo cryptsetup luksOpen /dev/sdXN tmp
 3. mkdir ~/tmp
 4. sudo mount /dev/mapper/tmp ~/tmp
 5. cd ~/tmp/HOST/USER
