@@ -4,11 +4,11 @@ Screenshot:
 # Main points
 - Avoids excessive boilerplate by using opinionated directory structure and Numtide's Blueprint:
   - Hosts and users are declared in /hosts. For example, Blueprint generates the host **eregion** from **/hosts/eregion** and defines its sole user **annatar** from **/hosts/eregion/users/annatar**
-  - Modules are automatically setup according to file or directory names in **/modules/nixos** and **/modules/home**.
-  - A few basic functions are setup in **/lib/default.nix**.
+  - Modules are automatically set up according to file or directory names in **/modules/nixos** and **/modules/home**.
+  - A few basic functions are set up in **/lib/default.nix**.
   
 - Instead I have my own excessive boilerplate:
-  - Important options used throughout the flake's modules are setup in **/modules/nixos/opts.nix** and **/modules/home/opts.nix**
+  - Important options used throughout the flake's modules are set up in **/modules/nixos/opts.nix** and **/modules/home/opts.nix**
   - Typically I declare those options in **/hosts** and use them in **/modules**
   - An excessively over-complicated **opts.tier** set which declares the minimum tier required for a given module to exist. Tiers are
     - purpose-minTTY: barebones installation settings
@@ -23,7 +23,7 @@ Screenshot:
     
 - The config could probably be easily modified to easily switch to other shells, tiling managers, etc. because I avoided hard-coding things where I could - but no guarantees. 
 - I use Stylix for automatic theming of GTK and QT stuff. The QT stuff uses Kvantum. The source of the stolen code is in the module file. Also, I hate round corners. So I enforce sharp corners for GTK stuff and one day I'd like to do the same with QT. Noctalia-Shell has built-in support for this and I'm very grateful for that. 
-- Over-complicated modules for Niri. I use Niri-Flake. This allows me to use a stable version of Niri on my work laptop and unsable at home. 
+- Over-complicated modules for Niri. I use Niri-Flake. This allows me to use a stable version of Niri on my work laptop and unstable at home. 
 - Gaming stuff. Wine with Wayland. Eventually I'll declare video game options in the config. Eventually. Surely.
 - Syncthing. Needs improving.
 - A private flake is used for secrets and things I prefer to keep private. I like privacy. A lot. I use a simple approach where I define subsets of settings in a module in Utumno, my private flake, and then import that directly through imports in the relevant public module(s). Nothing too complicated. 
