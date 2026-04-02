@@ -34,9 +34,9 @@
     };
 
     display.backgrounds = [
-      "${inputs.utumno}/assets/winter1.png"
-      "${inputs.utumno}/assets/winter4.png"
-      "${inputs.utumno}/assets/winter5.png"
+      "${inputs.utumno}/assets/minas-morgul.png"
+      "${inputs.utumno}/assets/barad-dur.png"
+      "${inputs.utumno}/assets/orodruin.png"
     ];
 
     shellInt = {
