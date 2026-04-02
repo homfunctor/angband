@@ -20,10 +20,9 @@ in {
         copyOwnershipFromParent = true;
 
         devices = [
-          # "eregion"
-          # "mirkwood"
+          "eregion"
+          "mirkwood"
           "mordor"
-          # "numenor"
         ];
       };
     };
