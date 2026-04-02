@@ -2,8 +2,9 @@
   inherit (config.home) homeDirectory opts;
 in {
   services.syncthing.settings = {
-    configDir = "${homeDirectory}/.config/syncthing";
     extraOptions = [
+      "--data=${homeDirectory}"
+      "--config=${homeDirectory}/.local/state/syncthing"
       "--no-default-folder"
     ];
 
