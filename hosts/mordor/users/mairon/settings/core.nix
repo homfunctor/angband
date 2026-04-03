@@ -35,5 +35,7 @@
       yazi.enable = true;
       zoxide.enable = true;
     };
+
+    syncthing.enable = true;
   };
 }

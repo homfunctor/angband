@@ -24,6 +24,8 @@
 
     display.backgrounds = ["${inputs.utumno}/assets/eregion.png"];
 
+    quirk.vivaldi.enable = true;
+
     shellInt = {
       eza.enable = true;
       kitty.enable = true;
@@ -33,7 +35,7 @@
       zoxide.enable = true;
     };
 
-    quirk.vivaldi.enable = true;
+    syncthing.enable = true;
 
     wm.niri.screencast.enable = true;
   };

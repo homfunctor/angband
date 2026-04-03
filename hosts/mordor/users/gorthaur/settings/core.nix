@@ -39,6 +39,11 @@
       "${inputs.utumno}/assets/orodruin.png"
     ];
 
+    quirk = {
+      strawberry.enable = true;
+      vivaldi.enable = true;
+    };
+
     shellInt = {
       eza.enable = true;
       kitty.enable = true;
@@ -48,9 +53,6 @@
       zoxide.enable = true;
     };
 
-    quirk = {
-      strawberry.enable = true;
-      vivaldi.enable = true;
-    };
+    syncthing.enable = true;
   };
 }

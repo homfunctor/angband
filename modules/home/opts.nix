@@ -13,7 +13,7 @@
     mkStrOpt
     nameListFromDir
     ;
-  inherit (lib) genAttrs;
+  inherit (lib) genAttrs types;
 in {
   options.home.opts = {
     # core.nix
@@ -55,18 +55,6 @@ in {
       vivaldi.enable = mkBoolOpt false "make vivaldi the default browser";
     };
 
-    # over-complicated system to make things depend on specific tiers
-    tier = let
-      tiers = [
-        "niceTTY"
-        "work"
-        "personal"
-      ];
-    in
-      genAttrs tiers (name: {
-        enabled = mkBoolOpt false "tier ${name} is enabled";
-      });
-
     shellInt = let
       apps = [
         "eza"
@@ -81,10 +69,41 @@ in {
         enable = mkBoolOpt false "enable ${name} shell integration";
       });
 
+    syncthing = {
+      enable = mkBoolOpt false "enable syncthing";
+
+      versioning = mkAttrOpt {
+        params = {
+          cleanoutDays = "0";
+          keep = "10";
+        };
+        type = "simple";
+      } "default versioning settings";
+
+      folders = let
+        dirNames = nameListFromDir ./syncthing/folders;
+      in
+        genAttrs dirNames (name: {
+          devices = mkListOpt types.str [] "devices which want ${name}";
+        });
+    };
+
+    # over-complicated system to make things depend on specific tiers
+    tier = let
+      tiers = [
+        "niceTTY"
+        "work"
+        "personal"
+      ];
+    in
+      genAttrs tiers (name: {
+        enabled = mkBoolOpt false "tier ${name} is enabled";
+      });
+
     # gui.nix
     display = {
       backgrounds =
-        mkListOpt lib.types.str null
+        mkListOpt types.str null
         "file paths for backgrounds, one for each monitor";
     };
 
@@ -136,26 +155,6 @@ in {
       qt = {
         enable = mkBoolOpt false "";
       };
-    };
-
-    # syncthing.nix
-    syncthing = {
-      enable = mkBoolOpt false "enable syncthing";
-
-      versioning = mkAttrOpt {
-        params = {
-          cleanoutDays = "0";
-          keep = "10";
-        };
-        type = "simple";
-      } "default versioning settings";
-
-      folder =
-        genAttrs (
-          nameListFromDir ./syncthing/folders
-        ) (name: {
-          enable = mkBoolOpt false "sync ${name}";
-        });
     };
 
     # wm.nix
