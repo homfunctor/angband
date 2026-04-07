@@ -18,29 +18,20 @@ in
     # list of names of all non-default.nix nix files in directory
     # for automating option generation
     nameListFromDir = dir:
-      pipe (builtins.readDir dir) [
-        (
-          filterAttrs (name: type:
+      map (removeSuffix ".nix")
+      (attrNames
+        (filterAttrs
+          (name: type:
             type == "regular" && hasSuffix ".nix" name)
-        )
-        attrNames
-        (
-          map (
-            name: removeSuffix ".nix" name
-          )
-        )
-      ];
+          (builtins.readDir dir)));
 
     # strictly only for auto-defining imports
     # use carefully!
     genImportsFromDir = dir:
-      builtins.filter (hasSuffix ".nix") (
-        map toString (
-          builtins.filter (p: p != (dir + "/default.nix")) (
-            listFilesRecursive dir
-          )
-        )
-      );
+      map toString
+      (builtins.filter
+        (p: p != (dir + "/default.nix") && hasSuffix ".nix" p)
+        (listFilesRecursive dir));
 
     # mkOption utilities
     mkOpt = type: default: description:
