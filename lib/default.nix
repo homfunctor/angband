@@ -6,7 +6,6 @@
     filterAttrs
     hasSuffix
     mkOption
-    pipe
     removeSuffix
     splitString
     types
@@ -26,7 +25,7 @@ in
           (builtins.readDir dir)));
 
     # strictly only for auto-defining imports
-    # use carefully!
+    # use carefully - recursive!
     genImportsFromDir = dir:
       map toString
       (builtins.filter
@@ -35,9 +34,7 @@ in
 
     # mkOption utilities
     mkOpt = type: default: description:
-      mkOption {
-        inherit type default description;
-      };
+      mkOption {inherit type default description;};
 
     mkAttrOpt = mkOpt attrs;
 
