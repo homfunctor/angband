@@ -1,26 +1,33 @@
-{config, ...}: let
+{
+  config,
+  lib,
+  ...
+}: let
   inherit (config.home) homeDirectory opts;
-in {
-  services.syncthing.settings = {
-    extraOptions = [
-      "--data=${homeDirectory}"
-      "--config=${homeDirectory}/.local/state/syncthing"
-      "--no-default-folder"
-    ];
 
-    group = "users";
-    gui.theme = "black";
-    openDefaultPorts = true;
-    user = opts.userName;
+  cfg = opts.syncthing.enable && opts.tier.work.enabled;
+in
+  lib.mkIf cfg {
+    services.syncthing.settings = {
+      extraOptions = [
+        "--data=${homeDirectory}"
+        "--config=${homeDirectory}/.local/state/syncthing"
+        "--no-default-folder"
+      ];
 
-    options = {
-      listenAddresses = ["default"];
-      minHomeDiskFree = {
-        unit = "%";
-        value = 1;
+      group = "users";
+      gui.theme = "black";
+      openDefaultPorts = true;
+      user = opts.userName;
+
+      options = {
+        listenAddresses = ["default"];
+        minHomeDiskFree = {
+          unit = "%";
+          value = 1;
+        };
+        # :)
+        urAccepted = -1;
       };
-      # :)
-      urAccepted = -1;
     };
-  };
-}
+  }

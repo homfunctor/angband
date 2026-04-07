@@ -1,5 +1,4 @@
-# this was painful, but it works
-# todo: maybe clean this up
+# todo rework
 {
   config,
   lib,
