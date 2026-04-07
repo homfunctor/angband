@@ -1,6 +1,7 @@
 {
   flake,
   lib,
+  osConfig,
   ...
 }: let
   inherit
@@ -71,6 +72,10 @@ in {
 
     syncthing = {
       enable = mkBoolOpt false "enable syncthing";
+
+      deviceName =
+        mkStrOpt osConfig.networking.hostName
+        "name of syncthing device";
 
       versioning = mkAttrOpt {
         params = {

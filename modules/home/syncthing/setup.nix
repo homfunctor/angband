@@ -1,33 +1,36 @@
-# todo rework
 {
   config,
   lib,
   ...
 }: let
   inherit (config.home) homeDirectory opts;
-  dirNames = builtins.attrNames opts.syncthing.folders;
+  syncOpts = opts.syncthing;
 
-  cfg = opts.syncthing;
+  foldersToMk = builtins.attrNames syncOpts.folders;
+
+  mkFolders = dirList: (
+    map (dirName:
+      lib.nameValuePair
+      "${homeDirectory}/${dirName}" {
+        enable =
+          builtins.elem syncOpts.deviceName
+          syncOpts.folders.${dirName}.devices;
+        inherit (syncOpts) versioning;
+        inherit (syncOpts.folders.${dirName}) devices;
+
+        id = dirName;
+        label = dirName;
+
+        copyOwnershipFromParent = true;
+      })
+    dirList
+  );
+
+  cfg = syncOpts.enable && opts.tier.work.enabled;
 in {
-  config = lib.mkIf cfg.enable {
-    services.syncthing.settings = let
-      folders = builtins.listToAttrs (
-        map (dirName:
-          lib.nameValuePair
-          "${homeDirectory}/${dirName}" {
-            enable = true;
-            inherit (cfg) versioning;
-            inherit (cfg.folders.${dirName}) devices;
-
-            id = dirName;
-            label = dirName;
-
-            copyOwnershipFromParent = true;
-          })
-        dirNames
-      );
-    in {
-      inherit folders;
+  services = lib.mkIf cfg {
+    syncthing.settings = {
+      folders = builtins.listToAttrs (mkFolders foldersToMk);
     };
   };
 }
