@@ -12,10 +12,15 @@
     map (dirName:
       lib.nameValuePair
       "${homeDirectory}/${dirName}" {
+        # only enable if desired by this device
+        # assumes 'autoAcceptFolders' is false
+        # todo: still get notification that must be rejected
+        #   in web-ui. can that be done automatically?
         enable =
           builtins.elem syncOpts.deviceName
           syncOpts.folders.${dirName}.devices;
         inherit (syncOpts) versioning;
+        # declared in ./folders
         inherit (syncOpts.folders.${dirName}) devices;
 
         id = dirName;
