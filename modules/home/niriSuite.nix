@@ -38,8 +38,8 @@ in
       udiskie = {
         enable = true;
 
-        automount = true;
-        notify = true;
+        automount = false;
+        notify = false;
         tray = "always";
       };
     };
