@@ -23,7 +23,7 @@
     ];
 
     loader = {
-      efi.canTouchEfiVariables = true;
+      efi.canTouchEfiVariables = lib.mkDefault true;
       systemd-boot.enable = lib.mkDefault true;
     };
 
