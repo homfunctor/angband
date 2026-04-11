@@ -1,10 +1,10 @@
 {
   config,
-  lib,
+  flake,
   pkgs,
   ...
 }:
-lib.mkIf config.nixos.opts.tier.personal.enabled {
+flake.lib.reqNTier config "personal" {
   environment.systemPackages = with pkgs; [
     virt-manager
     virtio-win

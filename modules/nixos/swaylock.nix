@@ -1,8 +1,8 @@
 {
   config,
-  lib,
+  flake,
   ...
 }:
-lib.mkIf config.nixos.opts.tier.work.enabled {
+flake.lib.reqNTier config "work" {
   security.pam.services.swaylock.text = "auth include login";
 }

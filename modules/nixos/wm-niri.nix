@@ -2,7 +2,6 @@
   config,
   flake,
   inputs,
-  lib,
   ...
 }: {
   imports = with flake.modules.nixos; [
@@ -10,7 +9,7 @@
     swaylock
   ];
 
-  config = lib.mkIf config.nixos.opts.tier.work.enabled {
+  config = flake.lib.reqNTier config "work" {
     nixpkgs.overlays = [inputs.niri-flake.overlays.niri];
 
     programs.niri = {

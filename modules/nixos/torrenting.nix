@@ -1,7 +1,7 @@
 {
   config,
+  flake,
   inputs,
-  lib,
   pkgs,
   ...
 }: {
@@ -10,8 +10,8 @@
     inputs.utumno.modules.nixos.torrenting
   ];
 
-  config = lib.mkIf config.nixos.opts.tier.personal.enabled {
-    environment.systemPackages = with pkgs; [
+  environment = flake.lib.reqNTier config "personal" {
+    systemPackages = with pkgs; [
       proton-vpn
       qbittorrent
       wireguard-tools

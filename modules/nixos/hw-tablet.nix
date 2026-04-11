@@ -1,10 +1,10 @@
 # todo: check on multi-user bug (problematic file in /tmp)
 {
   config,
-  lib,
+  flake,
   ...
 }:
-lib.mkIf config.nixos.opts.tier.work.enabled {
+flake.lib.reqNTier config "work" {
   hardware.opentabletdriver = {
     enable = true;
     daemon.enable = true;

@@ -1,8 +1,11 @@
 {
+  config,
+  flake,
   inputs,
   pkgs,
   ...
-}: {
+}:
+flake.lib.reqNTier config "niceTTY" {
   environment.systemPackages = with pkgs; [
     gcc
     rust-bin.stable.latest.default

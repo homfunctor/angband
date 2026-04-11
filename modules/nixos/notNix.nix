@@ -1,7 +1,7 @@
 {
   config,
+  flake,
   inputs,
-  lib,
   pkgs,
   ...
 }: {
@@ -10,7 +10,7 @@
     inputs.utumno.modules.nixos.nix-ldLibs
   ];
 
-  config = lib.mkIf config.nixos.opts.tier.work.enabled {
+  config = flake.lib.reqNTier config "work" {
     environment.systemPackages = [pkgs.patchelf];
 
     programs.nix-ld.enable = true;

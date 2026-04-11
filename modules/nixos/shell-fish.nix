@@ -1,11 +1,11 @@
 # it's nice
 {
   config,
-  lib,
+  flake,
   pkgs,
   ...
 }:
-lib.mkIf config.nixos.opts.tier.niceTTY.enabled {
+flake.lib.reqNTier config "niceTTY" {
   environment.systemPackages = with pkgs.fishPlugins;
     [
       colored-man-pages

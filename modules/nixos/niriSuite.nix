@@ -1,9 +1,9 @@
 {
   config,
-  lib,
+  flake,
   ...
 }:
-lib.mkIf config.nixos.opts.tier.work.enabled {
+flake.lib.reqNTier config "work" {
   programs.seahorse.enable = true;
   services.udisks2.enable = true;
 }

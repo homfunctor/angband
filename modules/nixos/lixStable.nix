@@ -1,4 +1,10 @@
-{pkgs, ...}: {
+{
+  config,
+  flake,
+  pkgs,
+  ...
+}:
+flake.lib.reqNTier config "niceTTY" {
   nix.package = pkgs.lixPackageSets.stable.lix;
 
   nixpkgs.overlays = [

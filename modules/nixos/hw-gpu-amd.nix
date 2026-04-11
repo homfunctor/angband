@@ -1,10 +1,11 @@
 {
   config,
+  flake,
   lib,
   pkgs,
   ...
 }:
-lib.mkIf config.nixos.opts.tier.personal.enabled {
+flake.lib.reqNTier config "personal" {
   environment.systemPackages = [pkgs.lact];
 
   hardware = {

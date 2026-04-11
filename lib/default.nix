@@ -5,6 +5,7 @@
     concatStringsSep
     filterAttrs
     hasSuffix
+    mkIf
     mkOption
     removeSuffix
     splitString
@@ -58,4 +59,12 @@ in
 
     # niri utility
     splitArg = arg: splitString " " arg;
+
+    # slightly simpler tier code
+    # ex:
+    #   flake.lib.reqNTier config "work" {foo};
+    #   is equivalent to
+    #   lib.mkIf config.nixos.opts.tier.work.enabled {foo};
+    reqNTier = cfg: tier: attrSet: mkIf cfg.nixos.opts.tier.${tier}.enabled attrSet;
+    reqHTier = cfg: tier: attrSet: mkIf cfg.home.opts.tier.${tier}.enabled attrSet;
   }

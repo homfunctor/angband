@@ -1,4 +1,9 @@
-{config, ...}: {
+{
+  config,
+  flake,
+  ...
+}:
+flake.lib.reqNTier config "niceTTY" {
   boot = {
     extraModulePackages = [config.boot.kernelPackages.zenpower];
     kernelModules = ["zenpower"];
