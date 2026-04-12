@@ -4,11 +4,12 @@
   lib,
   ...
 }: let
-  inherit (config.nixos.opts) userNames;
+  inherit (config.nixos) opts;
+  inherit (opts) sops tier userNames;
 
-  cfg = config.nixos.opts.sops.users;
+  cfg = sops.users.enable && tier.niceTTY.enabled;
 in {
-  config = lib.mkIf cfg.enable {
+  config = lib.mkIf cfg {
     sops.secrets = builtins.listToAttrs (
       map (
         user: {

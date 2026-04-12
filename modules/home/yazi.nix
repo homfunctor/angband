@@ -1,4 +1,9 @@
 {
+  config,
+  flake,
+  ...
+}:
+flake.lib.reqHTier config "niceTTY" {
   programs.yazi = {
     enable = true;
     settings = {

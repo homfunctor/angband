@@ -1,3 +1,4 @@
+# todo: this would be better as a directory module
 {
   config,
   lib,

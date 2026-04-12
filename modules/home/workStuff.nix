@@ -1,10 +1,10 @@
 {
   config,
-  lib,
+  flake,
   pkgs,
   ...
 }:
-lib.mkIf config.home.opts.tier.work.enabled {
+flake.lib.reqHTier config "work" {
   home.packages = with pkgs; [
     teams-for-linux
     zoom-us

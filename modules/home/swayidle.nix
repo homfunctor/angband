@@ -1,10 +1,12 @@
+# todo: make it nicer
 {
   config,
+  flake,
   lib,
   pkgs,
   ...
 }:
-lib.mkIf config.home.opts.tier.work.enabled {
+flake.lib.reqHTier config "work" {
   services.swayidle = let
     lockExe = lib.getExe pkgs.swaylock;
   in {

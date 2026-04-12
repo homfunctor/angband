@@ -1,8 +1,8 @@
 {
   config,
-  lib,
+  flake,
   ...
 }:
-lib.mkIf config.home.opts.tier.work.enabled {
-  programs.niri.settings.layout.gaps = 5;
+flake.lib.reqHTier config "personal" {
+  programs.niri.settings.layout.gaps = 6;
 }

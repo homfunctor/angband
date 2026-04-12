@@ -4,10 +4,9 @@
   osConfig,
   ...
 }: let
-  cfg = osConfig.nixos.opts.stylix.enable;
+  cfg = osConfig.nixos.opts.stylix.enable && config.home.opts.tier.niceTTY.enabled;
 in
-  lib.mkIf (config.home.opts.tier.work.enabled
-    && cfg) {
+  lib.mkIf cfg {
     stylix = {
       enable = cfg;
       autoEnable = cfg;

@@ -138,6 +138,7 @@ in {
 
     # stylix.nix
     # to bypass imports nonsense
+    # stylix.enable is on nixos level
     stylix.targets = {
       gtk = {
         enable = mkBoolOpt false "";
@@ -163,6 +164,9 @@ in {
     };
 
     # wm.nix
-    wm.niri.screencast.enable = mkBoolOpt false "enable screencasting keybind";
+    wm.niri = {
+      enable = mkBoolOpt false "";
+      screencast.enable = mkBoolOpt false "enable screencasting keybind";
+    };
   };
 }

@@ -1,15 +1,16 @@
 {
   config,
-  lib,
+  flake,
   ...
 }:
-lib.mkIf config.home.opts.tier.work.enabled {
+flake.lib.reqHTier config "work" {
   programs.niri.settings = {
     input = {
       touchpad = {
         accel-profile = "flat";
         dwt = true;
         dwtp = true;
+        scroll-factor = 0.5;
         tap = false;
       };
       trackpoint.accel-profile = "flat";
