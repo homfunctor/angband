@@ -1,10 +1,10 @@
 {
   config,
-  lib,
+  flake,
   pkgs,
   ...
 }:
-lib.mkIf config.nixos.opts.tier.work.enabled {
+flake.lib.reqNTier config "work" {
   environment.systemPackages = [pkgs.blueman];
 
   hardware.bluetooth = {

@@ -12,8 +12,8 @@
 #   env --unset=SDL_VIDEODRIVER %command%
 {
   config,
+  flake,
   inputs,
-  lib,
   ...
 }: {
   imports = with inputs.nix-gaming.nixosModules; [
@@ -22,7 +22,7 @@
     wine
   ];
 
-  config = lib.mkIf config.nixos.opts.tier.personal.enabled {
+  config = flake.lib.reqNTier config "personal" {
     programs = {
       steam = {
         enable = true;

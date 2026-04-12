@@ -1,10 +1,10 @@
 {
   config,
-  lib,
+  flake,
   pkgs,
   ...
 }:
-lib.mkIf config.nixos.opts.tier.personal.enabled {
+flake.lib.reqNTier config "personal" {
   i18n.inputMethod = {
     enable = true;
     fcitx5 = {
