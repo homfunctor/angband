@@ -5,8 +5,8 @@
   pkgs,
   ...
 }: let
-  inherit (osConfig.nixos) opts;
-  inherit (opts) tier wm;
+  inherit (osConfig.nixos) wm;
+  inherit (config.home.opts) tier;
   cfg = wm.niri.enable && wm.niri.appBinds.enable;
 in
   lib.mkIf tier.work.enabled {

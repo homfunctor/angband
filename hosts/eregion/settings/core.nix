@@ -26,6 +26,7 @@
     };
 
     wm.niri = {
+      enable = true;
       appBinds.enable = true;
       pkg = pkgs.niri-stable;
     };

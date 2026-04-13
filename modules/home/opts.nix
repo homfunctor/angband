@@ -49,6 +49,35 @@ in {
 
     customUserDirs = mkAttrOpt {} "custom settings for user directories (XDG)";
 
+    display = {
+      backgrounds =
+        mkListOpt types.str null
+        "file paths for backgrounds, one for each monitor";
+    };
+
+    nvim = {
+      enable = mkBoolOpt false "";
+
+      # base16? no, base20
+      extraColors = mkAttrOpt {
+        Boolean.fg = "#5A6B9C";
+        Comment = {
+          fg = "#8B7AA3";
+          italic = true;
+        };
+        Keyword.fg = "#7ABF9E";
+        Number.fg = "#4A6B8A";
+      } "";
+
+      # automatically prepare options for all neovim plugin modules
+      plugins = let
+        pluginNames = nameListFromDir ./neovim/plugins;
+      in
+        genAttrs pluginNames (name: {
+          enable = mkBoolOpt false "enable ${name}";
+        });
+    };
+
     # weird things i insist upon
     quirk = {
       strawberry.enable = mkBoolOpt false "make strawberry the default audio application";
@@ -105,36 +134,7 @@ in {
         enabled = mkBoolOpt false "tier ${name} is enabled";
       });
 
-    # gui.nix
-    display = {
-      backgrounds =
-        mkListOpt types.str null
-        "file paths for backgrounds, one for each monitor";
-    };
-
-    # neovim.nix
-    nvim = {
-      enable = mkBoolOpt false "";
-
-      # base16? no, base20
-      extraColors = mkAttrOpt {
-        Boolean.fg = "#5A6B9C";
-        Comment = {
-          fg = "#8B7AA3";
-          italic = true;
-        };
-        Keyword.fg = "#7ABF9E";
-        Number.fg = "#4A6B8A";
-      } "";
-
-      # automatically prepare options for all neovim plugin modules
-      plugins = let
-        pluginNames = nameListFromDir ./neovim/plugins;
-      in
-        genAttrs pluginNames (name: {
-          enable = mkBoolOpt false "enable ${name}";
-        });
-    };
+    wm.niri.screencast.enable = mkBoolOpt false "enable screencasting keybind";
 
     # stylix.nix
     # to bypass imports nonsense
@@ -154,19 +154,9 @@ in {
         };
       };
 
-      noctalia-shell = {
-        enable = mkBoolOpt false "";
-      };
+      noctalia-shell.enable = mkBoolOpt false "";
 
-      qt = {
-        enable = mkBoolOpt false "";
-      };
-    };
-
-    # wm.nix
-    wm.niri = {
-      enable = mkBoolOpt false "";
-      screencast.enable = mkBoolOpt false "enable screencasting keybind";
+      qt.enable = mkBoolOpt false "";
     };
   };
 }

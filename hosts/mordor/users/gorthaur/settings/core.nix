@@ -22,7 +22,6 @@
     vivaldi
     wm-niri
     wm-niri-personal
-    workStuff
   ];
   home.opts = {
     userName = builtins.elemAt osConfig.nixos.opts.userNames 0;

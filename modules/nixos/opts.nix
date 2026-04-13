@@ -23,6 +23,11 @@ in {
 
     lanzaboote.enable = mkBoolOpt false "enable lanzaboote";
 
+    shell = {
+      extraAliases = mkAttrOpt {} "extra shell aliases";
+      name = mkStrOpt "fish" "shell to use";
+    };
+
     # over-complicated system to make things depend on specific tiers
     tier = let
       tiers = [
@@ -38,6 +43,13 @@ in {
     sops = {
       syncthing.enable = mkBoolOpt false "allow sops-nix to manage syncthing";
       users.enable = mkBoolOpt false "allow sops-nix to manage users";
+    };
+
+    wm.niri = {
+      appBinds.enable =
+        mkBoolOpt false
+        "additional niri binds for opening some applications";
+      pkg = mkAttrOpt pkgs.niri "niri package to use";
     };
 
     # gui.nix
@@ -64,12 +76,6 @@ in {
       resolutions = mkListOpt (listOf int) [] "resolutions of monitors";
     };
 
-    # shell.nix
-    shell = {
-      extraAliases = mkAttrOpt {} "extra shell aliases";
-      name = mkStrOpt "fish" "shell to use";
-    };
-
     # stylix.nix
     stylix = {
       enable = mkBoolOpt false "enable stylix";
@@ -91,14 +97,6 @@ in {
         popups = mkFloatOpt 0.95 "popups opacity";
         terminal = mkFloatOpt 0.80 "terminal opacity";
       };
-    };
-
-    # wm.nix
-    wm.niri = {
-      appBinds.enable =
-        mkBoolOpt false
-        "additional niri binds for opening some applications";
-      pkg = mkAttrOpt pkgs.niri "niri package to use";
     };
   };
 }
