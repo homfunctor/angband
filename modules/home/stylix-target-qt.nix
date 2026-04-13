@@ -30,11 +30,11 @@
   pkgs,
   ...
 }: let
-  cfg =
+  enabled =
     osConfig.nixos.opts.stylix.enable
     && osConfig.nixos.opts.tier.work.enabled;
 in
-  lib.mkIf cfg
+  lib.mkIf enabled
   {
     qt = {
       enable = true;

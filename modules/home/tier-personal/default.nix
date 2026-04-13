@@ -1,5 +1,5 @@
 {flake, ...}: {
   imports = with flake;
     (lib.genImportsFromDir ./.)
-    ++ [modules.nixos.purpose-work];
+    ++ [modules.home.tier-work];
 }

@@ -4,7 +4,7 @@
   ...
 }: {
   imports = with flake.modules.home; [
-    purpose-minTTY
+    tier-minTTY
 
     neovim
     starship

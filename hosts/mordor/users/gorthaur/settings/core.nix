@@ -5,7 +5,7 @@
   ...
 }: {
   imports = with flake.modules.home; [
-    purpose-personal
+    tier-personal
 
     LaTeX
     apotheosis

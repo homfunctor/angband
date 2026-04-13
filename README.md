@@ -11,13 +11,13 @@ Screenshot:
   - Important options used throughout the flake's modules are set up in **/modules/nixos/opts.nix** and **/modules/home/opts.nix**
   - Typically I declare those options in **/hosts** and use them in **/modules**
   - An excessively over-complicated **opts.tier** set which declares the minimum tier required for a given module to exist. Tiers are
-    - purpose-minTTY: barebones installation settings
-    - purpose-niceTTY: slightly nicer TTY (with optional support for Stylix, Lanzaboote, Nixvim, and Sops-Nix - but all of these can be delayed until another tier or not used at all)
-    - purpose-work: final tier for work laptop and is the first tier that supports gui stuff like Niri and Noctalia-Shell
-    - purpose-personal: the fun stuff for my personal pc.
+    - tier-minTTY: barebones installation settings
+    - tier-niceTTY: slightly nicer TTY (with optional support for Stylix, Lanzaboote, Nixvim, and Sops-Nix - but all of these can be delayed until another tier or not used at all)
+    - tier-work: final tier for work laptop and is the first tier that supports gui stuff like Niri and Noctalia-Shell
+    - tier-personal: the fun stuff for my personal pc.
     The **opts.tier** stuff allows me to import all the modules I will eventually use in **/hosts** from the very beginning. Then I can switch between the used tiers by modifying only a few lines in a few files (to be specific, for each host the number of files that need to be modified for tier switching is: 1+2n, where n is the number of users. It would be only 1+n but I'm not knowledgable enough to deal with the way Stylix sets up its Home-Manager modules when you manage it at the system level.) Funny things might happen if different tiers are enabled for the host and the users. I have not tested all the combinations, but I do have the following on my home pc:
-       - host: purpose-personal
-       - users: purpose-personal for main user, purpose-work for work user.
+       - host: tier-personal
+       - users: tier-personal for main user, tier-work for work user.
      
     Why do all this? It's fun.
     

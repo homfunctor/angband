@@ -5,6 +5,7 @@
   ...
 }: {
   imports = with flake.modules.nixos; [
+    dm-gdm
     niriSuite
     swaylock
   ];

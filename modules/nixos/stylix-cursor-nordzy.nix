@@ -4,11 +4,11 @@
   pkgs,
   ...
 }: let
-  cfg =
+  enabled =
     config.nixos.opts.stylix.enable
     && config.nixos.opts.tier.work.enabled;
 in
-  lib.mkIf cfg {
+  lib.mkIf enabled {
     stylix.cursor = {
       name = "Nordzy-cursors-white";
       package = pkgs.nordzy-cursor-theme;

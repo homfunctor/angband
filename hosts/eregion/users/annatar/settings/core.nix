@@ -5,7 +5,7 @@
   ...
 }: {
   imports = with flake.modules.home; [
-    purpose-work
+    tier-work
 
     LaTeX
     defaultApplications

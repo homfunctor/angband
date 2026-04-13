@@ -4,12 +4,12 @@
   osConfig,
   ...
 }: let
-  cfg = osConfig.nixos.opts.stylix.enable && config.home.opts.tier.niceTTY.enabled;
+  enabled = osConfig.nixos.opts.stylix.enable && config.home.opts.tier.niceTTY.enabled;
 in
-  lib.mkIf cfg {
+  lib.mkIf enabled {
     stylix = {
-      enable = cfg;
-      autoEnable = cfg;
+      enable = enabled;
+      autoEnable = enabled;
       inherit (config.home.opts.stylix) targets;
     };
   }

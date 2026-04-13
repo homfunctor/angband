@@ -4,7 +4,7 @@
   ...
 }: {
   imports = with flake.modules.nixos; [
-    purpose-personal
+    tier-personal
 
     lanzaboote
     lixFresh

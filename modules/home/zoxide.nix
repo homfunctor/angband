@@ -1,3 +1,4 @@
+# todo: settings
 {
   config,
   flake,

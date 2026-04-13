@@ -7,9 +7,9 @@
   inherit (config.nixos) opts;
   inherit (opts) sops tier userNames;
 
-  cfg = sops.users.enable && tier.niceTTY.enabled;
+  enabled = sops.users.enable && tier.niceTTY.enabled;
 in {
-  config = lib.mkIf cfg {
+  config = lib.mkIf enabled {
     sops.secrets = builtins.listToAttrs (
       map (
         user: {

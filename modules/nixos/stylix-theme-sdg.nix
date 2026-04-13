@@ -4,11 +4,11 @@
   ...
 }: {
   config = let
-    cfg =
+    enabled =
       config.nixos.opts.stylix.enable
       && config.nixos.opts.tier.niceTTY.enabled;
   in
-    lib.mkIf cfg {
+    lib.mkIf enabled {
       stylix.base16Scheme = {
         base00 = "#000000";
         base01 = "#1E2B38";
