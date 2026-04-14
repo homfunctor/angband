@@ -1,10 +1,11 @@
 {
   config,
+  flake,
   lib,
   pkgs,
   ...
 }:
-lib.mkIf config.home.opts.tier.personal.enabled {
+flake.lib.reqHTier config "personal" {
   home.packages = with pkgs; [
     hashdeep
     heroic

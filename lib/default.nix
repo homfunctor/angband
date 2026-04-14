@@ -54,8 +54,12 @@ in
     mkStrOpt = mkOpt str;
 
     # sops utilities
-    mkSec = path: concatStringsSep "/" (map (v: removeSuffix "/" v) path);
-    mkSecPath = config: path: config.sops.secrets."${mkSec path}".path;
+    mkSec = path:
+      concatStringsSep "/"
+      (map
+        (v: removeSuffix "/" v)
+        path);
+    mkSecPath = cfg: path: cfg.sops.secrets."${mkSec path}".path;
 
     # niri utility
     splitArg = arg: splitString " " arg;
@@ -65,6 +69,6 @@ in
     #   flake.lib.reqNTier config "work" {foo};
     #   is equivalent to
     #   lib.mkIf config.nixos.opts.tier.work.enabled {foo};
-    reqNTier = cfg: tier: attrSet: mkIf cfg.nixos.opts.tier.${tier}.enabled attrSet;
     reqHTier = cfg: tier: attrSet: mkIf cfg.home.opts.tier.${tier}.enabled attrSet;
+    reqNTier = cfg: tier: attrSet: mkIf cfg.nixos.opts.tier.${tier}.enabled attrSet;
   }

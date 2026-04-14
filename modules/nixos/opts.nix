@@ -1,3 +1,4 @@
+# always imported in hosts/<host>/configuration.nix
 {
   flake,
   lib,
@@ -46,6 +47,7 @@ in {
     };
 
     wm.niri = {
+      enable = mkBoolOpt false "";
       appBinds.enable =
         mkBoolOpt false
         "additional niri binds for opening some applications";

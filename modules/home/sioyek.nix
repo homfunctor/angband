@@ -1,4 +1,10 @@
+# imported by tier-work
 {
+  config,
+  flake,
+  ...
+}:
+flake.lib.reqHTier config "work" {
   programs.sioyek = {
     enable = true;
 

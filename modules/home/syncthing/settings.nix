@@ -5,9 +5,9 @@
 }: let
   inherit (config.home) homeDirectory opts;
 
-  cfg = opts.syncthing.enable && opts.tier.work.enabled;
+  enabled = opts.syncthing.enable && opts.tier.work.enabled;
 in
-  lib.mkIf cfg {
+  lib.mkIf enabled {
     services.syncthing.settings = {
       extraOptions = [
         "--data=${homeDirectory}"

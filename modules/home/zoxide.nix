@@ -1,3 +1,4 @@
+# imported by tier-niceTTY
 # todo: settings
 {
   config,

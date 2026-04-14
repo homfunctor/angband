@@ -4,8 +4,8 @@
   ...
 }: let
   inherit (config.home) homeDirectory opts;
-  syncOpts = opts.syncthing;
 
+  syncOpts = opts.syncthing;
   foldersToMk = builtins.attrNames syncOpts.folders;
 
   mkFolders = dirList: (
@@ -31,9 +31,9 @@
     dirList
   );
 
-  cfg = syncOpts.enable && opts.tier.work.enabled;
+  enabled = syncOpts.enable && opts.tier.work.enabled;
 in {
-  services = lib.mkIf cfg {
+  services = lib.mkIf enabled {
     syncthing.settings = {
       folders = builtins.listToAttrs (mkFolders foldersToMk);
     };

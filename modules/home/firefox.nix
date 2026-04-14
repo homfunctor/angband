@@ -1,5 +1,10 @@
-# todo: more settings. need to gut a lot of stuff out.
+# imported by tier-work
 {
+  config,
+  flake,
+  ...
+}:
+flake.lib.reqHTier config "work" {
   programs.firefox = {
     enable = true;
     profiles.default = {

@@ -9,6 +9,7 @@
     discord
     gaming
     ironyModManager
+    # todo: check it checks tier
     inputs.utumno.modules.home.privateApps
   ];
 

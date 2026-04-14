@@ -1,9 +1,10 @@
 {
   config,
+  flake,
   lib,
   perSystem,
   ...
 }:
-lib.mkIf config.home.opts.tier.personal.enabled {
+flake.lib.reqHTier config "personal" {
   home.packages = [perSystem.self.irony-mod-manager];
 }

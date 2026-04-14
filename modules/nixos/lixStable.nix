@@ -1,3 +1,4 @@
+# mutually exclusive with lixFresh
 {
   config,
   flake,

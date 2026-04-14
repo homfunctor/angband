@@ -1,4 +1,5 @@
 # this file is consumed by disko during installation of NixOS
+# and so should import anything nor be passed anything
 # details:
 #   /root on NVMe SSD, and swap
 #   media files on HDD mounted at /vault

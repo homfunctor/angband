@@ -9,15 +9,21 @@
   inputs,
   lib,
   ...
-}: {
+}: let
+  enabled =
+    config.nixos.opts.lanzaboote.enable
+    && config.nixos.opts.tier.niceTTY.enabled;
+in {
   imports = [inputs.lanzaboote.nixosModules.lanzaboote];
 
-  boot = lib.mkIf config.nixos.opts.lanzaboote.enable {
-    lanzaboote = {
-      enable = true;
-      pkiBundle = "/var/lib/sbctl";
-    };
+  config = lib.mkIf enabled {
+    boot = {
+      lanzaboote = {
+        enable = true;
+        pkiBundle = "/var/lib/sbctl";
+      };
 
-    loader.systemd-boot.enable = false;
+      loader.systemd-boot.enable = false;
+    };
   };
 }

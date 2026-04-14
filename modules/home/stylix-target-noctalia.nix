@@ -4,11 +4,11 @@
   osConfig,
   ...
 }: let
-  cfg =
-    osConfig.nixos.opts.stylix.enable
-    && config.home.opts.tier.work.enabled;
+  enabled =
+    config.home.opts.tier.work.enabled
+    && osConfig.nixos.opts.stylix.enable;
 in
-  lib.mkIf cfg {
+  lib.mkIf enabled {
     home.opts.stylix.targets.noctalia-shell.enable = lib.mkForce false;
 
     programs.noctalia-shell = {

@@ -1,4 +1,5 @@
 # this file is consumed by disko during installation of NixOS
+# and so should import anything nor be passed anything
 # details:
 #   standard single-SSD laptop setup with LUKS encryption
 {

@@ -81,6 +81,7 @@ in
       fixedFonts =
         "${fonts.monospace.name},"
         + toString fonts.sizes.terminal;
+
       generalFonts =
         "${fonts.sansSerif.name},"
         + toString fonts.sizes.applications;

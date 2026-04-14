@@ -1,10 +1,14 @@
+# imported by tier-work
 {
   config,
+  flake,
+  inputs,
   lib,
+  osConfig,
   pkgs,
   ...
 }:
-lib.mkIf config.home.opts.tier.work.enabled {
+flake.lib.reqHTier config "work" {
   home.packages = with pkgs; [
     libsForQt5.qt5.qtwayland
     libsForQt5.qt5ct

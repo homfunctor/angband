@@ -1,3 +1,4 @@
+# imported by type-minTTY
 {
   programs.git = {
     enable = true;
