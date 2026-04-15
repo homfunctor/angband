@@ -2,9 +2,6 @@
 {
   config,
   flake,
-  inputs,
-  lib,
-  osConfig,
   pkgs,
   ...
 }:

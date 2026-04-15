@@ -1,10 +1,7 @@
 # imported by tier-work
 {
   config,
-  flake,
-  inputs,
   lib,
-  osConfig,
   pkgs,
   ...
 }: let

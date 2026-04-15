@@ -2,7 +2,6 @@
   config,
   flake,
   inputs,
-  lib,
   ...
 }: {
   imports = with inputs; [
