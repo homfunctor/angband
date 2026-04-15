@@ -7,7 +7,7 @@
 }: let
   enabled =
     config.home.opts.nvim.plugins.render-markdown.enable
-    && config.home.opts.tier.niceTTY.enable
+    && config.home.opts.tier.niceTTY.enabled
     && osConfig.nixos.opts.stylix.enable;
 in
   lib.mkIf enabled {

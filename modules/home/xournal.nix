@@ -6,7 +6,7 @@
   ...
 }: let
   inherit (config.home.opts) tier;
-  inherit (osConfig.nixos) wm;
+  inherit (osConfig.nixos.opts) wm;
 
   enabled = wm.niri.enable && wm.niri.appBinds.enable;
 in
