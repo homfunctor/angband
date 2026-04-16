@@ -38,19 +38,12 @@ in
       mkOption {inherit type default description;};
 
     mkAttrOpt = mkOpt attrs;
-
     mkBoolOpt = mkOpt bool;
-
     mkFloatOpt = mkOpt float;
-
     mkIntOpt = mkOpt int;
-
     mkListOpt = type: mkOpt (listOf type);
-
     mkPathOpt = mkOpt path;
-
     mkPkgOpt = mkOpt package;
-
     mkStrOpt = mkOpt str;
 
     # sops utilities

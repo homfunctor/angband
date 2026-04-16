@@ -1,6 +1,8 @@
 # per-host settings that are used by hm modules
 {
   nixos.opts.gui.noct = {
+    enable = true;
+
     # inherited within bar as widgets
     bar.widgets = {
       left = [

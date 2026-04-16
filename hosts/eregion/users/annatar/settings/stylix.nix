@@ -6,4 +6,11 @@
     stylix-target-noctalia
     stylix-target-qt
   ];
+
+  home.opts.stylix.targets = {
+    gtk.enable = true;
+    nixvim.enable = true;
+    noctalia-shell.enable = true;
+    qt.enable = true;
+  };
 }
