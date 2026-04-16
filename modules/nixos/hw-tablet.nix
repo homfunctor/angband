@@ -1,3 +1,4 @@
+# imported by hosts/<host>/settings/hardware.nix
 # todo: check on multi-user bug (problematic file in /tmp)
 {
   config,

@@ -1,3 +1,4 @@
+# imported by tier-personal
 {
   config,
   flake,
@@ -6,7 +7,6 @@
 }: {
   imports = with inputs; [
     nixcord.homeModules.nixcord
-    # check it checks tier
     # plugins.*.enable
     utumno.modules.home.nixcord
   ];

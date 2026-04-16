@@ -1,3 +1,4 @@
+# imported by hosts/<host>/users/<user>/settings/stylix.nix
 {
   config,
   lib,

@@ -13,7 +13,7 @@
     neovim-standardEnv
     nix-index
     nixTools
-    shell-fish-integration
+    shell-integration
     vivaldi
     wm-niri
     wm-niri-workLaptop

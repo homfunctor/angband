@@ -1,3 +1,4 @@
+# imported by hosts/<host>/users/<user>/settings/stylix.nix
 {
   config,
   lib,
@@ -6,6 +7,7 @@
 }: let
   enabled =
     config.home.opts.tier.work.enabled
+    && osConfig.nixos.opts.gui.noct.enable
     && osConfig.nixos.opts.stylix.enable;
 in
   lib.mkIf enabled {

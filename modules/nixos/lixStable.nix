@@ -1,3 +1,4 @@
+# imported by hosts/<host>/settings/core.nix
 # mutually exclusive with lixFresh
 {
   config,

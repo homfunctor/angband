@@ -17,7 +17,7 @@
     nix-index
     nixTools
     pika
-    shell-fish-integration
+    shell-integration
     syncthing
     vivaldi
     wm-niri

@@ -1,13 +1,19 @@
+# imported by wm-niri
 {
   config,
+  flake,
   lib,
   osConfig,
   pkgs,
   ...
 }: let
+  enabled =
+    config.home.opts.tier.work.enabled
+    && osConfig.nixos.opts.wm.niri.enable;
+
   niriBindsEnabled = osConfig.nixos.opts.wm.niri.appBinds.enable;
 in
-  lib.mkIf config.home.opts.tier.work.enabled {
+  lib.mkIf enabled {
     home.packages = with pkgs; [
       eog
       gnome-calculator

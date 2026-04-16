@@ -6,10 +6,12 @@
   ...
 }: let
   inherit (osConfig.nixos.opts.gui) noct;
+
+  enabled = config.home.opts.tier.work.enabled && noct.enable;
 in {
   imports = [inputs.utumno.homeModules.gui-doxtalia];
 
-  programs = lib.mkIf config.home.opts.tier.work.enabled {
+  programs = lib.mkIf enabled {
     noctalia-shell.settings = {
       bar = {
         inherit (noct.bar) widgets;

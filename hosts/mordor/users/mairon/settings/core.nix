@@ -8,12 +8,13 @@
     tier-work
 
     LaTeX
+    chromium
     defaultApplications
     gui-noctalia
     neovim-standardEnv
     nix-index
     nixTools
-    shell-fish-integration
+    shell-integration
     wm-niri
     wm-niri-workAtHome
     workStuff

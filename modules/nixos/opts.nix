@@ -60,6 +60,7 @@ in {
       controlCenter =
         mkAttrOpt null
         "noctalia-shell control center cards and shortcuts";
+      enable = mkBoolOpt false "";
       misc =
         mkAttrOpt null
         "misc settings adjoined to noctalia-shell.settings";

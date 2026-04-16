@@ -1,9 +1,10 @@
+# imported by hosts/<host>/users/<user>/settings/core.nix
 # todo: settings
 {
   config,
-  lib,
+  flake,
   ...
 }:
-lib.mkIf config.home.opts.tier.work.enabled {
+flake.lib.reqHTier config "work" {
   programs.chromium.enable = true;
 }

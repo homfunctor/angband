@@ -1,9 +1,10 @@
+# imported by hosts/<host>/users/<user>/settings/core.nix
 {
   config,
-  lib,
+  flake,
   pkgs,
   ...
 }:
-lib.mkIf config.home.opts.tier.work.enabled {
+flake.lib.reqHTier config "personal" {
   home.packages = [pkgs.pika-backup];
 }

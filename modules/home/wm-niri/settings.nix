@@ -16,8 +16,12 @@
     range
     zipListsWith
     ;
+
+  enabled =
+    config.home.opts.tier.work.enabled
+    && osConfig.nixos.opts.wm.niri.enable;
 in
-  mkIf config.home.opts.tier.work.enabled {
+  mkIf enabled {
     programs.niri.settings = with display; {
       hotkey-overlay.skip-at-startup = true;
       gestures.hot-corners.enable = false;

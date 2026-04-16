@@ -6,10 +6,13 @@
   ...
 }: let
   display = osConfig.nixos.opts.display // config.home.opts.display;
-
   genericBG = "${inputs.utumno}/assets/base.png";
+
+  enabled =
+    config.home.opts.tier.work.enabled
+    && osConfig.nixos.opts.gui.noct.enable;
 in
-  lib.mkIf config.home.opts.tier.work.enabled {
+  lib.mkIf enabled {
     programs.noctalia-shell.settings.wallpaper = {
       enabled = true;
       transitionType = "none";

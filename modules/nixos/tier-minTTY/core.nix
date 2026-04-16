@@ -1,3 +1,4 @@
+# imported by hosts/<host>/settings/core.nix
 {
   config,
   inputs,
@@ -66,7 +67,8 @@ in {
   };
 
   nixpkgs = {
-    config.allowUnfree = true;
+    # declared in flake.nix
+    # config.allowUnfree = true;
     hostPlatform = lib.mkDefault "x86_64-linux";
   };
 

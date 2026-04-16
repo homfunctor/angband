@@ -1,3 +1,4 @@
+# imported by hosts/<host>/settings/hardware.nix
 {
   config,
   flake,

@@ -1,3 +1,4 @@
+# imported by hosts/<host>/settings/hardware.nix
 # obviously assumes we're on a thinkpad t490
 # or rather it thinks it is
 #

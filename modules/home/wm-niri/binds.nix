@@ -2,6 +2,7 @@
   config,
   flake,
   lib,
+  osConfig,
   pkgs,
   ...
 }: let
@@ -9,8 +10,12 @@
   inherit (config.home.opts) apps tier;
   inherit (flake.lib) splitArg;
   inherit (lib) getExe mkIf;
+
+  enabled =
+    tier.work.enabled
+    && osConfig.nixos.opts.wm.niri.enable;
 in
-  mkIf tier.work.enabled {
+  mkIf enabled {
     programs.niri.settings = {
       binds = with config.lib.niri.actions; {
         # applications

@@ -1,3 +1,4 @@
+# imported by hosts/<host>/users/<user>/home-configuration.nix
 {
   flake,
   lib,

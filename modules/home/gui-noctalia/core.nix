@@ -1,3 +1,4 @@
+# imported by hosts/<host>/users/<user>/settings/core.nix
 {
   config,
   flake,
@@ -8,26 +9,30 @@
   ...
 }: let
   inherit (config.home.opts) userName;
+  inherit (lib) mkIf;
+  nixOpts = osConfig.nixos.opts;
 
   noctExe = lib.getExe osConfig.nixos.opts.gui.noct.pkg;
   noctCmd = cmd: [noctExe "ipc" "call"] ++ (flake.lib.splitArg cmd);
 in {
-  programs = lib.mkIf config.home.opts.tier.work.enabled {
-    niri.settings.spawn-at-startup = [
-      {
-        command = [
-          noctExe
-          "--no-duplicate"
-        ];
-      }
-      {
-        command = noctCmd "volume muteInput";
-      }
-    ];
+  programs = flake.lib.reqHTier config "work" {
+    niri = mkIf nixOpts.wm.niri.enable {
+      settings.spawn-at-startup = [
+        {
+          command = [
+            noctExe
+            "--no-duplicate"
+          ];
+        }
+        {
+          command = noctCmd "volume muteInput";
+        }
+      ];
+    };
 
     noctalia-shell = {
       enable = true;
-      package = osConfig.nixos.opts.gui.noct.pkg;
+      package = nixOpts.gui.noct.pkg;
 
       settings =
         {
@@ -72,7 +77,7 @@ in {
             tooltipsEnabled = true;
           };
         }
-        // osConfig.nixos.opts.gui.noct.misc;
+        // nixOpts.gui.noct.misc;
     };
   };
 }

@@ -1,4 +1,6 @@
+# imported by hosts/<host>/users/<user>/settings/core.nix
 # pointlessly over-complicated
+# for fun
 {
   config,
   lib,

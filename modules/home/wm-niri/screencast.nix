@@ -5,6 +5,7 @@
   pkgs,
   ...
 }: let
+  inherit (config.home.opts) tier wm;
   inherit (osConfig.nixos.opts) display;
 
   mirrorExe = "${pkgs.wl-mirror}/bin/wl-present";
@@ -12,10 +13,12 @@
   mirrorArgs = "--fullscreen-output";
   presentCmd = "pkill wl-mirror ||  ${mirrorCmd} ${mirrorArgs}";
 
-  cfg = config.home.opts.wm.niri.screencast;
+  enabled =
+    tier.work.enabled
+    && wm.niri.screencast.enable
+    && osConfig.nixos.opts.wm.niri.enable;
 in
-  lib.mkIf (config.home.opts.tier.work.enabled
-    && cfg.enable) {
+  lib.mkIf enabled {
     home.packages = [pkgs.wl-mirror];
 
     programs.niri.settings.binds = with config.lib.niri.actions; {

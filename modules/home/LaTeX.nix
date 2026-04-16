@@ -1,18 +1,22 @@
+# imported by hosts/<host>/users/<user>/settings/core.nix
 {
   config,
   lib,
   pkgs,
   ...
 }: let
-  conformEnabled =
-    config.home.opts.nvim.plugins.conform.enable
-    && config.home.opts.nvim.enable;
+  inherit (config.home) opts;
+  enabled =
+    opts.nvim.enable
+    && opts.tier.work.enabled;
 in
-  lib.mkIf config.home.opts.tier.work.enabled {
+  lib.mkIf enabled {
     home.packages = [pkgs.texliveFull];
 
-    programs = lib.mkIf conformEnabled {
-      nixvim.plugins.conform-nvim.settings.formatters_by_ft.tex = ["tex-fmt"];
+    programs = lib.mkIf opts.nvim.plugins.conform.enable {
+      nixvim.plugins.conform-nvim.settings = {
+        formatters_by_ft.tex = ["tex-fmt"];
+      };
 
       tex-fmt = {
         enable = true;

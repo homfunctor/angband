@@ -1,3 +1,4 @@
+# imported by hosts/<host>/users/<user>/settings/core.nix
 # default application settings
 # designed for use with xdg mimeapps setup (set name, desktop),
 # and general usage (args, exe, pkg)

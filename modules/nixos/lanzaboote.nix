@@ -1,3 +1,4 @@
+# imported by hosts/<host>/settings/core.nix
 # enable module
 # 'sudo sbctl create-keys'
 # rebuild, verify with 'sbctl verify'

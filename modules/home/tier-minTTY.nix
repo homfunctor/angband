@@ -1,3 +1,4 @@
+# imported by hosts/<host>/users/<user>/settings/core.nix
 {
   flake,
   inputs,

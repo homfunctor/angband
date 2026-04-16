@@ -1,3 +1,5 @@
+# imported by hosts/<host>/users/<user>/settings/stylix.nix
+#
 # https://github.com/nix-community/stylix/blob/master/modules/qt/hm.nix
 # Added the following to kvconfig.mustache:
 # [General]

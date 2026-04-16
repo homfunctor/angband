@@ -1,3 +1,4 @@
+# imported by tier-niceTTY
 {
   programs = {
     neovide.enable = true;

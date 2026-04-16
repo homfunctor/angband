@@ -2,7 +2,7 @@ default:
     @just --list
 
 # flake check
-cf:
+fc:
     nix flake check
 
 # collect garbage

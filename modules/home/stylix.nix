@@ -1,10 +1,13 @@
+# imported by hosts/<host>/users/<user>/home-configuration.nix
 {
   config,
   lib,
   osConfig,
   ...
 }: let
-  enabled = osConfig.nixos.opts.stylix.enable && config.home.opts.tier.niceTTY.enabled;
+  enabled =
+    config.home.opts.tier.niceTTY.enabled
+    && osConfig.nixos.opts.stylix.enable;
 in
   lib.mkIf enabled {
     stylix = {

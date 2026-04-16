@@ -1,4 +1,4 @@
-# hm module for stylix imports and applies this
+# imported by hosts/<host>/settings/stylix.nix
 {
   config,
   lib,

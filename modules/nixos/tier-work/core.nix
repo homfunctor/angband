@@ -1,3 +1,4 @@
+# imported by hosts/<host>/settings/core.nix
 {pkgs, ...}: {
   nixos.opts.tier.work.enabled = true;
 
