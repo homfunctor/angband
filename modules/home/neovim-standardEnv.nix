@@ -6,8 +6,8 @@
   ...
 }: let
   enabledPlugins = [
+    "barbar"
     "blink"
-    "bufferline"
     "colorizer"
     "conform"
     "lint"

@@ -5,3 +5,4 @@
 8. swayidle and swaylock refinement. add monitor turn off. see archwiki
 9. can imperatively made secrets be stored via sops-nix?
 10. hilarious bug discovered: sometimes instead of killing the screencast the screencast command makes another set of workspaces. this is repeatable. look for a better screencast command.
+11. yazi derounding
