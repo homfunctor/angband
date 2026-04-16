@@ -135,7 +135,13 @@ in {
         enabled = mkBoolOpt false "tier ${name} is enabled";
       });
 
-    wm.niri.screencast.enable = mkBoolOpt false "enable screencasting keybind";
+    wm.niri = {
+      screencast.enable = mkBoolOpt false "enable screencasting keybind";
+      # there isn't an official niri module in stylix
+      # this is if i want to disable my stylix settings
+      # for niri
+      stylix.enable = mkBoolOpt true "";
+    };
 
     # stylix.nix
     # to bypass imports nonsense
@@ -155,6 +161,8 @@ in {
         };
       };
 
+      # stays false to override stylix's own
+      # noctalia-shell settings
       noctalia-shell.enable = mkBoolOpt false "";
 
       qt.enable = mkBoolOpt false "";
