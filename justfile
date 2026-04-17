@@ -18,25 +18,25 @@ update:
     sudo nixos-rebuild switch --flake . --log-format internal-json |& nom --json
 
 # update flake inputs
-nfu:
+inputs:
     nix flake update
 
 # update utumno
-nfuu:
+utumno:
     nix flake update utumno
 
 # current flake config applied on next boot (uses sudo)
-upboot:
+boot:
     sudo nixos-rebuild boot --flake . --log-format internal-json |& nom --json
 
 # --dry-activate (uses sudo)
-upcheck:
+check:
     sudo nixos-rebuild dry-activate --flake .  --log-format internal-json |& nom --json
 
 # --dry-activate  --show-trace (uses sudo)
-uptrace:
+trace:
     sudo nixos-rebuild dry-activate --flake . --log-format internal-json --show-trace |& nom --json
 
 # violently destroy all remains of nixos channels (uses sudo)
-purgech:
+purge:
     sudo rm -rf /root/.nix-defexpr/channels && sudo rm -rf /nix/var/nix/profiles/per-user/root/channels
