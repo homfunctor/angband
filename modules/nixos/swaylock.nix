@@ -2,8 +2,13 @@
 {
   config,
   flake,
+  lib,
   ...
-}:
-flake.lib.reqNTier config "work" {
-  security.pam.services.swaylock.text = "auth include login";
-}
+}: let
+  enabled =
+    config.nixos.opts.tier.work.enabled
+    && config.nixos.opts.wm.niri.enable;
+in
+  lib.mkIf enabled {
+    security.pam.services.swaylock.text = "auth include login";
+  }

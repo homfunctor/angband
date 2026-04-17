@@ -4,8 +4,7 @@
   flake,
   pkgs,
   ...
-}:
-flake.lib.reqNTier config "personal" {
+}: {
   i18n.inputMethod = {
     enable = true;
     fcitx5 = {

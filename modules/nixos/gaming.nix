@@ -23,21 +23,19 @@
     wine
   ];
 
-  config = flake.lib.reqNTier config "personal" {
-    programs = {
-      steam = {
-        enable = true;
-        platformOptimizations.enable = true;
-        protontricks.enable = true;
-      };
-
-      wine.ntsync.enable = true;
-    };
-
-    services.pipewire.lowLatency = {
+  programs = {
+    steam = {
       enable = true;
-      quantum = 512;
-      rate = 48000; # default value
+      platformOptimizations.enable = true;
+      protontricks.enable = true;
     };
+
+    wine.ntsync.enable = true;
+  };
+
+  services.pipewire.lowLatency = {
+    enable = true;
+    quantum = 512;
+    rate = 48000; # default value
   };
 }

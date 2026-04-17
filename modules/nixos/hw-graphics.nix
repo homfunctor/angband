@@ -4,8 +4,7 @@
   flake,
   pkgs,
   ...
-}:
-flake.lib.reqNTier config "work" {
+}: {
   hardware.graphics = {
     enable = true;
 

@@ -18,8 +18,12 @@ update:
     sudo nixos-rebuild switch --flake . --log-format internal-json |& nom --json
 
 # update flake inputs
-upflake:
+nfu:
     nix flake update
+
+# update utumno
+nfuu:
+    nix flake update utumno
 
 # current flake config applied on next boot (uses sudo)
 upboot:

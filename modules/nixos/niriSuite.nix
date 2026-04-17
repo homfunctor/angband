@@ -2,9 +2,14 @@
 {
   config,
   flake,
+  lib,
   ...
-}:
-flake.lib.reqNTier config "work" {
-  programs.seahorse.enable = true;
-  services.udisks2.enable = true;
-}
+}: let
+  enabled =
+    config.nixos.opts.tier.work.enabled
+    && config.nixos.opts.wm.niri.enable;
+in
+  lib.mkIf enabled {
+    programs.seahorse.enable = true;
+    services.udisks2.enable = true;
+  }

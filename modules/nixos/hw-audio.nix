@@ -3,8 +3,7 @@
   config,
   flake,
   ...
-}:
-flake.lib.reqNTier config "work" {
+}: {
   services.pipewire = {
     enable = true;
 
