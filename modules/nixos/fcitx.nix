@@ -1,7 +1,5 @@
 # imported by tier-personal
 {
-  config,
-  flake,
   pkgs,
   ...
 }: {

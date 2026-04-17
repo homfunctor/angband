@@ -2,7 +2,6 @@
 # todo: make it nicer
 {
   config,
-  flake,
   lib,
   osConfig,
   pkgs,

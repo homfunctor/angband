@@ -12,8 +12,6 @@
 # stellaris
 #   env --unset=SDL_VIDEODRIVER %command%
 {
-  config,
-  flake,
   inputs,
   ...
 }: {

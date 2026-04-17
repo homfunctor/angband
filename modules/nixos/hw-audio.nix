@@ -1,9 +1,5 @@
 # imported by tier-work
-{
-  config,
-  flake,
-  ...
-}: {
+_: {
   services.pipewire = {
     enable = true;
 

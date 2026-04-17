@@ -1,7 +1,5 @@
 # imported by tier-work
 {
-  config,
-  flake,
   pkgs,
   ...
 }: {

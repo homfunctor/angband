@@ -1,7 +1,6 @@
 # imported by wm-niri
 {
   config,
-  flake,
   lib,
   osConfig,
   pkgs,

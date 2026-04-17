@@ -4,7 +4,7 @@
   lib,
   ...
 }: let
-  inherit (flake.lib) mkSec reqNTier;
+  inherit (flake.lib) mkSec;
 
   enabled =
     config.nixos.opts.sops.syncthing.enable
