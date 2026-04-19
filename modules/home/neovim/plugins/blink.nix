@@ -5,8 +5,8 @@
   ...
 }: let
   cfg = config.home.opts.nvim.plugins.blink;
-in {
-  config = lib.mkIf cfg.enable {
+in
+  lib.mkIf cfg.enable {
     home.packages = [pkgs.wordnet];
 
     programs.nixvim = {
@@ -238,5 +238,4 @@ in {
         };
       };
     };
-  };
-}
+  }

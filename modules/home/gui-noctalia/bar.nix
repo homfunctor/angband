@@ -1,20 +1,18 @@
 {
   config,
+  flake,
   inputs,
-  lib,
   osConfig,
   ...
 }: let
-  inherit (osConfig.nixos.opts.gui) noct;
-
-  enabled = config.home.opts.tier.work.enabled && noct.enable;
+  inherit (osConfig.nixos.opts.gui) noctalia;
 in {
   imports = [inputs.utumno.homeModules.gui-doxtalia];
 
-  programs = lib.mkIf enabled {
+  programs = flake.lib.reqHTier config "work" {
     noctalia-shell.settings = {
       bar = {
-        inherit (noct.bar) widgets;
+        inherit (noctalia.bar) widgets;
 
         barType = "simple";
         compactMode = false;
@@ -48,7 +46,7 @@ in {
       ];
 
       controlCenter = {
-        inherit (noct.controlCenter) cards shortcuts;
+        inherit (noctalia.controlCenter) cards shortcuts;
         position = "close_to_bar_button";
         useErrorColor = true;
       };

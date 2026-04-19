@@ -1,4 +1,4 @@
-# imported by tier-niceTTY
+# imported by hosts/<host>/users/<user>/settings/core.nix
 # todo: change time format, and other stuff
 {
   config,
@@ -7,7 +7,7 @@
 }: let
   colors = config.lib.stylix.colors.withHashtag;
 in
-  flake.lib.reqHTier config "niceTTY" {
+  flake.lib.reqHTier config "work" {
     programs.starship = {
       enable = true;
 

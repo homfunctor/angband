@@ -4,13 +4,14 @@
   ...
 }: let
   cfg = config.home.opts.nvim.plugins.which-key;
-in {
-  programs.nixvim.plugins.which-key = lib.mkIf cfg.enable {
-    enable = true;
+in
+  lib.mkIf cfg.enable {
+    programs.nixvim.plugins.which-key = {
+      enable = true;
 
-    settings = {
-      delay = 1000;
-      win.border = "single";
+      settings = {
+        delay = 1000;
+        win.border = "single";
+      };
     };
-  };
-}
+  }

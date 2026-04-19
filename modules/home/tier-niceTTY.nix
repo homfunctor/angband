@@ -4,13 +4,7 @@
   pkgs,
   ...
 }: {
-  imports = with flake.modules.home; [
-    tier-minTTY
-
-    neovim
-    starship
-    zoxide
-  ];
+  imports = [flake.modules.home.tier-minTTY];
 
   home = {
     opts.tier.niceTTY.enabled = true;

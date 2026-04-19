@@ -5,9 +5,9 @@
   ...
 }: let
   enabled =
-    config.home.opts.nvim.enable
+    config.home.opts.nvim.enabled
     && config.home.opts.tier.niceTTY.enabled
-    && osConfig.nixos.opts.stylix.enable;
+    && osConfig.nixos.opts.stylix.enabled;
 in
   lib.mkIf enabled {
     home.opts.stylix.targets.nixvim = {

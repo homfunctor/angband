@@ -12,11 +12,12 @@
   inherit (lib) mkIf;
   nixOpts = osConfig.nixos.opts;
 
-  noctExe = lib.getExe osConfig.nixos.opts.gui.noct.pkg;
+  noctExe = lib.getExe osConfig.nixos.opts.gui.noctalia.pkg;
   noctCmd = cmd: [noctExe "ipc" "call"] ++ (flake.lib.splitArg cmd);
 in {
   programs = flake.lib.reqHTier config "work" {
-    niri = mkIf nixOpts.wm.niri.enable {
+    # niri starts noctalia-shell
+    niri = mkIf nixOpts.wm.niri.enabled {
       settings.spawn-at-startup = [
         {
           command = [
@@ -32,7 +33,7 @@ in {
 
     noctalia-shell = {
       enable = true;
-      package = nixOpts.gui.noct.pkg;
+      package = nixOpts.gui.noctalia.pkg;
 
       settings =
         {
@@ -77,7 +78,7 @@ in {
             tooltipsEnabled = true;
           };
         }
-        // nixOpts.gui.noct.misc;
+        // nixOpts.gui.noctalia.misc;
     };
   };
 }

@@ -1,7 +1,6 @@
 # imported by hosts/<host>/users/<user>/settings/core.nix
 {
   config,
-  flake,
   lib,
   ...
 }: let
@@ -24,8 +23,12 @@
     "web-devicons"
     "which-key"
   ];
+
+  enabled =
+    config.opts.home.tier.niceTTY.enabled
+    && config.opts.home.nvim.enabled;
 in
-  flake.lib.reqHTier config "niceTTY" {
+  lib.mkIf enabled {
     home.opts.nvim = {
       enable = true;
 

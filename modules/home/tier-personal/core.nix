@@ -1,5 +1,6 @@
 # imported by hosts/<host>/users/<user>/settings/core.nix
 {
+  config,
   flake,
   inputs,
   pkgs,
@@ -7,9 +8,12 @@
 }: {
   imports = with flake.modules.home; [
     apotheosis
+    civ5-map-image
     discord
     gaming
     ironyModManager
+    pika
+
     inputs.utumno.modules.home.privateApps
   ];
 
@@ -20,7 +24,10 @@
       baobab
       picard
       soundconverter
-      strawberry
+
+      (lib.mkIf
+        config.home.opts.quirk.strawberry.enable
+        strawberry)
     ];
   };
 

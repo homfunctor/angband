@@ -1,6 +1,11 @@
-# imported by tier-niceTTY
+# imported by hosts/<host>/users/<user>/settings/core.nix
 {
-  home.opts.nvim.enable = true;
+  config,
+  flake,
+  ...
+}:
+flake.lib.reqHTier config "niceTTY" {
+  home.opts.nvim.enabled = true;
 
   programs = {
     neovide.enable = true;

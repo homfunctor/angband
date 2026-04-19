@@ -1,14 +1,9 @@
 {
   config,
-  lib,
+  flake,
   osConfig,
   ...
-}: let
-  enabled =
-    config.home.opts.tier.work.enabled
-    && osConfig.nixos.opts.gui.noct.enable;
-in
-  lib.mkIf enabled {
+}: flake.lib.reqHTier config "work" {
     programs.noctalia-shell.settings.notifications = {
       enabled = true;
 

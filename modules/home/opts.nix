@@ -57,7 +57,7 @@ in {
     };
 
     nvim = {
-      enable = mkBoolOpt false "";
+      enabled = mkBoolOpt false "nvim enabled";
 
       # base16? no, base20
       extraColors = mkAttrOpt {
@@ -68,7 +68,7 @@ in {
         };
         Keyword.fg = "#7ABF9E";
         Number.fg = "#4A6B8A";
-      } "";
+      } "extra colors for nicer highlighting";
 
       # automatically prepare options for all neovim plugin modules
       plugins = let
@@ -101,7 +101,7 @@ in {
       });
 
     syncthing = {
-      enable = mkBoolOpt false "enable syncthing";
+      enabled = mkBoolOpt false "syncthing enabled";
 
       deviceName =
         mkStrOpt osConfig.networking.hostName
@@ -135,17 +135,13 @@ in {
         enabled = mkBoolOpt false "tier ${name} is enabled";
       });
 
-    wm.niri = {
-      screencast.enable = mkBoolOpt false "enable screencasting keybind";
-      # there isn't an official niri module in stylix
-      # this is if i want to disable my stylix settings
-      # for niri
-      stylix.enable = mkBoolOpt true "";
-    };
+    wm.niri.screencast.enable = mkBoolOpt false "enable screencasting keybind";
 
     # stylix.nix
-    # to bypass imports nonsense
-    # stylix.enable is on nixos level
+    # used to declare stylix settings regardless of
+    #  whether or not stylix hm module is available.
+    # stylix.enabled is on nixos level.
+    # using "enable" instead of "enabled" since it is imported.
     stylix.targets = {
       gtk = {
         enable = mkBoolOpt false "";

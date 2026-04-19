@@ -6,7 +6,7 @@
   pkgs,
   ...
 }:
-flake.lib.reqNTier config "niceTTY" {
+flake.lib.reqNTier config "work" {
   environment.systemPackages = with pkgs.fishPlugins;
     [
       colored-man-pages

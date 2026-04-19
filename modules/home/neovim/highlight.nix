@@ -1,5 +1,10 @@
 # 'stylix-target-nixvim' overrides more stuff
-{config, ...}: {
+{
+  config,
+  flake,
+  ...
+}:
+flake.lib.reqHTier config "niceTTY" {
   programs.nixvim.highlightOverride = {
     inherit
       (config.home.opts.nvim.extraColors)

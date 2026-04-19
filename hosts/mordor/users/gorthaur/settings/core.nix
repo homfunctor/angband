@@ -5,23 +5,25 @@
   ...
 }: {
   imports = with flake.modules.home; [
+    # temp, testing
+    # tier-minTTY
+    # tier-niceTTY
+    # tier-work
     tier-personal
 
     LaTeX
-    apotheosis
-    civ5-map-image
     defaultApplications
     gui-noctalia
-    ironyModManager
+    neovim
     neovim-standardEnv
     nix-index
     nixTools
-    pika
     shell-integration
-    syncthing
+    starship
     vivaldi
     wm-niri
     wm-niri-personal
+    zoxide
   ];
   home.opts = {
     userName = builtins.elemAt osConfig.nixos.opts.userNames 0;
@@ -51,7 +53,5 @@
       yazi.enable = true;
       zoxide.enable = true;
     };
-
-    syncthing.enable = true;
   };
 }

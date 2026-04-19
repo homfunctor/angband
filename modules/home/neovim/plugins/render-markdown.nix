@@ -5,8 +5,8 @@
   ...
 }: let
   cfg = config.home.opts.nvim.plugins.render-markdown;
-in {
-  config = lib.mkIf cfg.enable {
+in
+  lib.mkIf cfg.enable {
     home.packages = with pkgs; [
       marksman
       python312Packages.pylatexenc
@@ -28,5 +28,4 @@ in {
         }
       ];
     };
-  };
-}
+  }

@@ -1,5 +1,10 @@
-# todo: revise
-{pkgs, ...}: {
+{
+  config,
+  flake,
+  pkgs,
+  ...
+}:
+flake.lib.reqHTier config "niceTTY" {
   programs.nixvim = {
     defaultEditor = true;
     viAlias = true;

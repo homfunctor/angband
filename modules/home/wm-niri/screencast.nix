@@ -16,7 +16,7 @@
   enabled =
     tier.work.enabled
     && wm.niri.screencast.enable
-    && osConfig.nixos.opts.wm.niri.enable;
+    && osConfig.nixos.opts.wm.niri.enabled;
 in
   lib.mkIf enabled {
     home.packages = [pkgs.wl-mirror];

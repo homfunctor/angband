@@ -1,10 +1,7 @@
-# imported by hosts/<host>/users/<user>/settings/core.nix
+# imported by tier-personal
 {
-  config,
-  flake,
   perSystem,
   ...
-}:
-flake.lib.reqHTier config "personal" {
+}: {
   home.packages = [perSystem.self.civ5-map-image];
 }

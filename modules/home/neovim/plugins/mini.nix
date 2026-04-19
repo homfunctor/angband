@@ -4,11 +4,12 @@
   ...
 }: let
   cfg = config.home.opts.nvim.plugins.mini;
-in {
-  programs.nixvim = lib.mkIf cfg.enable {
-    plugins.mini = {
-      enable = true;
-      modules.cursorword = {};
+in
+  lib.mkIf cfg.enable {
+    programs.nixvim = {
+      plugins.mini = {
+        enable = true;
+        modules.cursorword = {};
+      };
     };
-  };
-}
+  }

@@ -1,11 +1,8 @@
 # imported by tier-work
 {
-  config,
-  flake,
   pkgs,
   ...
-}:
-flake.lib.reqHTier config "work" {
+}: {
   home.packages = with pkgs; [gimp3];
 
   xdg.mimeApps = {

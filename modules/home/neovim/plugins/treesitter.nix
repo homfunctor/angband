@@ -5,8 +5,8 @@
   ...
 }: let
   cfg = config.home.opts.nvim.plugins.treesitter;
-in {
-  config = lib.mkIf cfg.enable {
+in
+  lib.mkIf cfg.enable {
     home.packages = with pkgs; [
       nodejs
       tree-sitter
@@ -58,5 +58,4 @@ in {
 
       treesitter-context.enable = true;
     };
-  };
-}
+  }

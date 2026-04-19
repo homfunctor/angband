@@ -53,7 +53,7 @@ in {
     };
 
     # gui.nix
-    gui.noct = {
+    gui.noctalia = {
       bar.widgets = mkAttrOpt null "widgets for noctalia-shell";
       controlCenter =
         mkAttrOpt null

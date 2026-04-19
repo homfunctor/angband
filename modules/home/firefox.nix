@@ -1,10 +1,5 @@
 # imported by tier-work
 {
-  config,
-  flake,
-  ...
-}:
-flake.lib.reqHTier config "work" {
   programs.firefox = {
     enable = true;
     profiles.default = {

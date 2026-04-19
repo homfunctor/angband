@@ -13,7 +13,7 @@
 
   enabled =
     tier.work.enabled
-    && osConfig.nixos.opts.wm.niri.enable;
+    && osConfig.nixos.opts.wm.niri.enabled;
 in
   mkIf enabled {
     programs.niri.settings = {

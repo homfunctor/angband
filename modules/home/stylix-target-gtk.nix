@@ -7,7 +7,7 @@
 }: let
   enabled =
     config.home.opts.tier.work.enabled
-    && osConfig.nixos.opts.stylix.enable;
+    && osConfig.nixos.opts.stylix.enabled;
 in
   lib.mkIf enabled {
     gtk = {

@@ -1,5 +1,10 @@
-{config, ...}: let
+{
+  config,
+  lib,
+  ...
+}: let
   cfg = config.home.opts.nvim.plugins.precognition;
-in {
-  programs.nixvim.plugins.precognition.enable = cfg.enable;
-}
+in
+  lib.mkIf cfg.enable {
+    programs.nixvim.plugins.precognition.enable = true;
+  }

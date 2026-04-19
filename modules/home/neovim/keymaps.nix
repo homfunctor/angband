@@ -1,5 +1,9 @@
-# todo: revise
 {
+  config,
+  flake,
+  ...
+}:
+flake.lib.reqHTier config "niceTTY" {
   programs.nixvim = {
     globals = {
       mapleader = " ";

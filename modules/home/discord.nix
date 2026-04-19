@@ -1,7 +1,5 @@
 # imported by tier-personal
 {
-  config,
-  flake,
   inputs,
   ...
 }: {
@@ -10,14 +8,12 @@
     # plugins.*.enable
     utumno.modules.home.nixcord
   ];
-  programs = flake.lib.reqHTier config "personal" {
-    nixcord = {
-      enable = true;
+  programs.nixcord = {
+    enable = true;
 
-      config = {
-        frameless = true;
-        useQuickCss = true;
-      };
+    config = {
+      frameless = true;
+      useQuickCss = true;
     };
   };
 }

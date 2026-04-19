@@ -6,8 +6,7 @@
   ...
 }: let
   enabled =
-    osConfig.nixos.opts.gui.noct.enable
-    && osConfig.nixos.opts.wm.niri.enable
+    osConfig.nixos.opts.wm.niri.enabled
     && osConfig.nixos.opts.wm.niri.appBinds.enable
     && config.home.opts.tier.work.enabled;
 in

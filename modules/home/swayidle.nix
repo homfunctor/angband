@@ -1,4 +1,5 @@
 # imported by wm-niri
+# can be extended for other wms
 # todo: make it nicer
 {
   config,
@@ -9,7 +10,7 @@
 }: let
   enabled =
     config.home.opts.tier.work.enabled
-    && osConfig.nixos.opts.wm.niri.enable;
+    && osConfig.nixos.opts.wm.niri.enabled;
 in
   lib.mkIf enabled {
     services.swayidle = let

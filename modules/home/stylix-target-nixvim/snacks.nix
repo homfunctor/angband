@@ -8,7 +8,7 @@
   enabled =
     config.home.opts.stylix.targets.nixvim.enable
     && config.home.opts.tier.niceTTY.enabled
-    && osConfig.nixos.opts.stylix.enable;
+    && osConfig.nixos.opts.stylix.enabled;
 in
   lib.mkIf enabled {
     programs.nixvim = with config.lib.stylix.colors; {

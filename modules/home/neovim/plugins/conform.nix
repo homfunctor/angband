@@ -5,8 +5,8 @@
   ...
 }: let
   cfg = config.home.opts.nvim.plugins.conform;
-in {
-  config = lib.mkIf cfg.enable {
+in
+  lib.mkIf cfg.enable {
     home.packages = with pkgs; [
       black
       clang-tools
@@ -61,5 +61,4 @@ in {
         notify_on_error = true;
       };
     };
-  };
-}
+  }

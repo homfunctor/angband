@@ -7,7 +7,7 @@
 }: let
   inherit (config.home) opts;
   enabled =
-    opts.nvim.enable
+    opts.nvim.enabled
     && opts.tier.work.enabled;
 in
   lib.mkIf enabled {

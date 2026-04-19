@@ -1,4 +1,4 @@
-# imported by tier-niceTTY
+# imported by hosts/<host>/users/<user>/settings/core.nix
 # todo: settings
 {
   config,

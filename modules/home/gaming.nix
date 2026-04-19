@@ -1,11 +1,8 @@
 # imported by tier-personal
 {
-  config,
-  flake,
   pkgs,
   ...
-}:
-flake.lib.reqHTier config "personal" {
+}: {
   home.packages = with pkgs; [
     hashdeep
     heroic

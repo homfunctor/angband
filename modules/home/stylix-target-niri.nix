@@ -6,9 +6,9 @@
   ...
 }: let
   enabled =
-    config.home.opts.wm.niri.stylix.enable
-    && config.home.opts.tier.work.enabled
-    && osConfig.nixos.opts.stylix.enable;
+    config.home.opts.tier.work.enabled
+    && osConfig.nixos.opts.wm.niri.enabled
+    && osConfig.nixos.opts.stylix.enabled;
 in
   lib.mkIf enabled {
     programs.niri.settings = {

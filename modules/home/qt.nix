@@ -1,11 +1,8 @@
 # imported by tier-work
 {
-  config,
-  flake,
   pkgs,
   ...
-}:
-flake.lib.reqHTier config "work" {
+}: {
   home.packages = with pkgs; [
     libsForQt5.qt5.qtwayland
     libsForQt5.qt5ct

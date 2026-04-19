@@ -30,10 +30,8 @@
       })
     dirList
   );
-
-  enabled = syncOpts.enable && opts.tier.work.enabled;
 in {
-  services = lib.mkIf enabled {
+  services = {
     syncthing.settings = {
       folders = builtins.listToAttrs (mkFolders foldersToMk);
     };
