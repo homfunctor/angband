@@ -6,9 +6,9 @@
   ...
 }: let
   enabled =
-    osConfig.nixos.opts.wm.niri.enabled
-    && osConfig.nixos.opts.wm.niri.appBinds.enable
-    && config.home.opts.tier.work.enabled;
+    config.home.opts.tier.work.enabled
+    && osConfig.nixos.opts.wm.niri.enabled
+    && osConfig.nixos.opts.wm.niri.appBinds.enable;
 in
   lib.mkIf enabled
   {

@@ -11,8 +11,8 @@
 in
   lib.mkIf enabled {
     stylix = {
-      enable = enabled;
-      autoEnable = enabled;
+      enable = true;
+      autoEnable = true;
       inherit (config.home.opts.stylix) targets;
     };
   }

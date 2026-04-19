@@ -11,13 +11,16 @@
     chromium
     defaultApplications
     gui-noctalia
+    neovim
     neovim-standardEnv
     nix-index
     nixTools
     shell-integration
+    starship
     wm-niri
     wm-niri-workAtHome
     workStuff
+    zoxide
   ];
   home.opts = {
     userName = builtins.elemAt osConfig.nixos.opts.userNames 1;

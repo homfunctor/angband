@@ -6,7 +6,8 @@
   ...
 }: let
   enabled =
-    config.home.opts.tier.work.enabled
+    config.home.opts.gui.noctalia.enabled
+    && config.home.opts.tier.work.enabled
     && osConfig.nixos.opts.stylix.enabled;
 in
   lib.mkIf enabled {

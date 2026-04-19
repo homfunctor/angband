@@ -18,7 +18,6 @@
   inherit (lib) genAttrs types;
 in {
   options.home.opts = {
-    # core.nix
     userName = mkStrOpt null "current user's name";
 
     # monolithic default application settings
@@ -55,6 +54,8 @@ in {
         mkListOpt types.str null
         "file paths for backgrounds, one for each monitor";
     };
+
+    gui.noctalia.enabled = mkBoolOpt false "is noctalia-shell enabled?";
 
     nvim = {
       enabled = mkBoolOpt false "nvim enabled";
