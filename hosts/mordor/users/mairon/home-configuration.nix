@@ -13,6 +13,6 @@
       inputs.nixvim.homeModules.nixvim
       inputs.noctalia.homeModules.default
     ]
-    ++ (lib.optionals osConfig.nixos.opts.stylix.enable
+    ++ (lib.optionals osConfig.nixos.opts.stylix.enabled
       [flake.modules.home.stylix]);
 }

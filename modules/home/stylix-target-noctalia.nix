@@ -7,10 +7,10 @@
 }: let
   enabled =
     config.home.opts.tier.work.enabled
-    && osConfig.nixos.opts.gui.noct.enable
-    && osConfig.nixos.opts.stylix.enable;
+    && osConfig.nixos.opts.stylix.enabled;
 in
   lib.mkIf enabled {
+    # i prefer a different style than stylix uses
     home.opts.stylix.targets.noctalia-shell.enable = lib.mkForce false;
 
     programs.noctalia-shell = {

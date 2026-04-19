@@ -1102,11 +1102,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1776428229,
-        "narHash": "sha256-czkwpCgrWnDgCOr0ixL+ntcpVqQKQG/AihE2xcbAxnE=",
+        "lastModified": 1776574339,
+        "narHash": "sha256-XmEw/hGOOWDzTN2enrjrU2FgUSUuzvm64qJZAlry9Ro=",
         "ref": "refs/heads/main",
-        "rev": "84839fc8eb1cb1f54732ae12a72d90e6e25adee2",
-        "revCount": 52,
+        "rev": "d51dbdefb45e6c70861459d7f1c443204085c992",
+        "revCount": 53,
         "shallow": false,
         "type": "git",
         "url": "ssh://git@github.com/homfunctor/utumno"

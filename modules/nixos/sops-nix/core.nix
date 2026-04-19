@@ -16,8 +16,6 @@
       sops
     ];
 
-    nixos.opts.sops.enabled = true;
-
     sops = {
       age = {
         keyFile = "/home/${config.nixos.opts.adminUser}/.config/sops/age/keys.txt";

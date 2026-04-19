@@ -37,9 +37,6 @@
       zoxide.enable = true;
     };
 
-    syncthing = {
-      enable = true;
-      deviceName = "numenor";
-    };
+    syncthing.deviceName = "numenor";
   };
 }

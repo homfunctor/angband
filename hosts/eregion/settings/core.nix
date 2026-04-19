@@ -18,15 +18,12 @@
     adminUser = "annatar";
     userNames = [adminUser];
 
-    lanzaboote.enable = true;
-
     sops = {
       syncthing.enable = true;
       users.enable = true;
     };
 
     wm.niri = {
-      enable = true;
       appBinds.enable = true;
       pkg = pkgs.niri-stable;
     };

@@ -33,7 +33,7 @@
   ...
 }: let
   enabled =
-    osConfig.nixos.opts.stylix.enable
+    osConfig.nixos.opts.stylix.enabled
     && osConfig.nixos.opts.tier.work.enabled;
 in
   lib.mkIf enabled

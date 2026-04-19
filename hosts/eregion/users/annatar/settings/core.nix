@@ -35,8 +35,6 @@
       zoxide.enable = true;
     };
 
-    syncthing.enable = true;
-
     wm.niri.screencast.enable = true;
   };
 }
