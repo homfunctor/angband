@@ -1,5 +1,5 @@
 # imported by hosts/<host>/settings/core.nix
-# mutually exclusive with lixFresh
+# uses stable version of lix, no compiling
 {
   config,
   flake,

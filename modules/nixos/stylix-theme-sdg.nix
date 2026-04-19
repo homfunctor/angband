@@ -5,7 +5,7 @@
   ...
 }: let
   enabled =
-    config.nixos.opts.stylix.enable
+    config.nixos.opts.stylix.enabled
     && config.nixos.opts.tier.niceTTY.enabled;
 in
   lib.mkIf enabled {

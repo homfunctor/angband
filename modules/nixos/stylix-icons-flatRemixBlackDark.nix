@@ -6,7 +6,7 @@
   ...
 }: let
   enabled =
-    config.nixos.opts.stylix.enable
+    config.nixos.opts.stylix.enabled
     && config.nixos.opts.tier.work.enabled;
 in {
   nixos.opts.stylix.iconTheme = lib.mkIf enabled {

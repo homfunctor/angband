@@ -22,8 +22,6 @@ in {
     adminUser = mkStrOpt null "main user";
     userNames = mkListOpt str null "all usernames";
 
-    lanzaboote.enable = mkBoolOpt false "enable lanzaboote";
-
     shell = {
       extraAliases = mkAttrOpt {} "extra shell aliases";
       name = mkStrOpt "fish" "shell to use";
@@ -47,7 +45,7 @@ in {
     };
 
     wm.niri = {
-      enable = mkBoolOpt false "";
+      enabled = mkBoolOpt false "niri is enabled";
       appBinds.enable =
         mkBoolOpt false
         "additional niri binds for opening some applications";
@@ -60,7 +58,6 @@ in {
       controlCenter =
         mkAttrOpt null
         "noctalia-shell control center cards and shortcuts";
-      enable = mkBoolOpt false "";
       misc =
         mkAttrOpt null
         "misc settings adjoined to noctalia-shell.settings";
@@ -81,7 +78,7 @@ in {
 
     # stylix.nix
     stylix = {
-      enable = mkBoolOpt false "enable stylix";
+      enabled = mkBoolOpt false "stylix is enabled";
 
       fontSizes = {
         applications = mkIntOpt 12 "size of application fonts";

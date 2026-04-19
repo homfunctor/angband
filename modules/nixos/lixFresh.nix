@@ -1,5 +1,5 @@
 # imported by hosts/<host>/settings/core.nix
-# mutually exclusive with lixStable
+# will compile newest version of lix
 {
   config,
   inputs,

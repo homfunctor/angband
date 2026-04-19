@@ -7,7 +7,7 @@
   ...
 }:
 flake.lib.reqNTier config "niceTTY" {
-  nixos.opts.stylix.enable = true;
+  nixos.opts.stylix.enabled = true;
 
   stylix = {
     enable = true;

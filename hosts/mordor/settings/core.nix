@@ -4,6 +4,10 @@
   ...
 }: {
   imports = with flake.modules.nixos; [
+    # temp, testing
+    # tier-minTTY
+    # tier-niceTTY
+    # tier-work
     tier-personal
 
     lanzaboote
@@ -13,8 +17,8 @@
     scx
     shell-fish
     sops-nix
-    wm-niri
     vm
+    wm-niri
   ];
 
   nixos.opts = rec {
@@ -35,15 +39,12 @@
       modsums = "hashdeep -l -r -c md5 */ | awk -F, 'NR>4 {print $2 \"  \" $3}'";
     };
 
-    lanzaboote.enable = true;
-
     sops = {
       syncthing.enable = true;
       users.enable = true;
     };
 
     wm.niri = {
-      enable = true;
       appBinds.enable = true;
       pkg = pkgs.niri-unstable;
     };

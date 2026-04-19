@@ -1,13 +1,10 @@
 # imported by wm-niri
+# but this module works with any wm
 {
   config,
-  lib,
+  flake,
   ...
-}: let
-  enabled =
-    config.nixos.opts.tier.work.enabled
-    && config.nixos.opts.wm.niri.enable;
-in
-  lib.mkIf enabled {
-    security.pam.services.swaylock.text = "auth include login";
-  }
+}:
+flake.lib.reqNTier config "work" {
+  security.pam.services.swaylock.text = "auth include login";
+}

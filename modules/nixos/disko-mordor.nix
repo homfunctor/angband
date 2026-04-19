@@ -1,4 +1,4 @@
-# always imported by hosts/mordor/configuration.nix
+# imported by hosts/mordor/settings/disko.nix
 # this file is consumed by disko during installation of NixOS
 # and so should not import anything nor be passed anything
 # details:
@@ -7,7 +7,7 @@
 #   all are LUKS encrypted
 {
   disko.devices = {
-    #   /root on NVMe SSD, and swap
+    # /root on NVMe SSD, and swap
     disk = {
       main = {
         device = "/dev/nvme0n1";
@@ -47,7 +47,7 @@
         };
       };
 
-      #   media files on HDD mounted at /vault
+      # media files on HDD mounted at /vault
       media = {
         device = "/dev/sda";
         type = "disk";
