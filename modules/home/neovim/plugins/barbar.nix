@@ -10,7 +10,7 @@ in
       enable = true;
       keymaps = {
         silent = true;
-        close.key = "<C-w>";
+        close.key = "<C-L>";
         next.key = "<TAB>";
         previous.key = "<S-TAB>";
       };
