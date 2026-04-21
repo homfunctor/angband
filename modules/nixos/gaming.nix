@@ -11,10 +11,7 @@
 #
 # stellaris
 #   env --unset=SDL_VIDEODRIVER %command%
-{
-  inputs,
-  ...
-}: {
+{inputs, ...}: {
   imports = with inputs.nix-gaming.nixosModules; [
     pipewireLowLatency
     platformOptimizations

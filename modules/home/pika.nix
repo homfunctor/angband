@@ -1,7 +1,4 @@
 # imported by tier-personal
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = [pkgs.pika-backup];
 }

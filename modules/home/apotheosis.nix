@@ -1,7 +1,4 @@
 # imported by tier-personal
-{
-  perSystem,
-  ...
-}: {
+{perSystem, ...}: {
   home.packages = [perSystem.self.apotheosis];
 }

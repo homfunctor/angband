@@ -1,8 +1,5 @@
 # imported by tier-work
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   hardware.graphics = {
     enable = true;
 

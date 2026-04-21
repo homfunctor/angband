@@ -1,7 +1,4 @@
 # imported by tier-work
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = [pkgs.libreoffice-fresh];
 }

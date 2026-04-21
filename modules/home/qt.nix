@@ -1,8 +1,5 @@
 # imported by tier-work
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     libsForQt5.qt5.qtwayland
     libsForQt5.qt5ct

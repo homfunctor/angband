@@ -1,8 +1,5 @@
 # imported by tier-work
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [gimp3];
 
   xdg.mimeApps = {

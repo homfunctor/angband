@@ -1,8 +1,5 @@
 # imported by tier-personal
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   i18n.inputMethod = {
     enable = true;
     fcitx5 = {

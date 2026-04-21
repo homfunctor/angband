@@ -1,8 +1,5 @@
 # imported by tier-personal
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     hashdeep
     heroic

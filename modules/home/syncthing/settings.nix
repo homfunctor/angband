@@ -1,7 +1,4 @@
-{
-  config,
-  ...
-}: let
+{config, ...}: let
   inherit (config.home) homeDirectory opts;
 in {
   services.syncthing.settings = {

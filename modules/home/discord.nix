@@ -1,8 +1,5 @@
 # imported by tier-personal
-{
-  inputs,
-  ...
-}: {
+{inputs, ...}: {
   imports = with inputs; [
     nixcord.homeModules.nixcord
     # plugins.*.enable

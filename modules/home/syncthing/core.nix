@@ -1,8 +1,5 @@
 # imported by tier-work
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   services.syncthing = {
     enable = true;
     package = pkgs.syncthing;
