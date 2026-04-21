@@ -11,6 +11,7 @@
     scx
     shell-fish
     sops-nix
+    stylix
     wm-niri
   ];
 
