@@ -10,14 +10,17 @@
     LaTeX
     defaultApplications
     gui-noctalia
+    neovim
     neovim-standardEnv
     nix-index
     nixTools
     shell-integration
+    starship
     vivaldi
     wm-niri
     wm-niri-workLaptop
     workStuff
+    zoxide
   ];
   home.opts = {
     userName = builtins.elemAt osConfig.nixos.opts.userNames 0;
