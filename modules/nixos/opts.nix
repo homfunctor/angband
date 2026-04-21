@@ -88,7 +88,7 @@ in {
       };
 
       iconTheme = {
-        name = mkStrOpt null "icon theme name";
+        name = mkStrOpt "" "icon theme name";
         package = mkAttrOpt null "icon theme package";
       };
 

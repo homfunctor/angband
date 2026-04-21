@@ -4,8 +4,12 @@
   lib,
   ...
 }: let
-  inherit (config.nixos) opts;
-  inherit (opts) sops tier userNames;
+  inherit
+    (config.nixos.opts)
+    sops
+    tier
+    userNames
+    ;
 
   enabled = sops.users.enable && tier.niceTTY.enabled;
 in {

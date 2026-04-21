@@ -7,3 +7,4 @@
 10. hilarious bug discovered: sometimes instead of killing the screencast the screencast command makes another set of workspaces. this is repeatable. look for a better screencast command.
 11. yazi derounding
 12. reorganize "requires tier" system explanation
+13. change barbar styling
