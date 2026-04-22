@@ -67,9 +67,7 @@ in {
   };
 
   nixpkgs = {
-    # declared in flake.nix so that it gets passed to
-    #   nix-shell -p
-    # config.allowUnfree = true;
+    config.allowUnfree = true;
     hostPlatform = lib.mkDefault "x86_64-linux";
   };
 
