@@ -12,6 +12,7 @@
     tier-personal
 
     LaTeX
+    chromium
     defaultApplications
     gui-noctalia
     neovim

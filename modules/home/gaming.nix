@@ -10,9 +10,8 @@ in {
   home = {
     packages = with pkgs; [
       hashdeep
-      heroic
+      faugus-launcher
       ludusavi
-      lutris
       protonplus
       steamcmd
       umu-launcher
