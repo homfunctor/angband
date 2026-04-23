@@ -1,4 +1,5 @@
 # imported by tier-work
+# todo: review what is needed
 {pkgs, ...}: {
   hardware.graphics = {
     enable = true;
