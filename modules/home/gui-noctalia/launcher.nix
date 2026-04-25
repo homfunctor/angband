@@ -14,7 +14,10 @@ flake.lib.reqHTier config "work" {
     autoPasteClipboard = false;
     density = "compact";
     enableClipPreview = false;
+    enableClipboardChips = false;
     enableClipboardHistory = false;
+    enableClipboardSmartIcons = false;
+    enableSessionsSearch = false;
     enableSettingsSearch = false;
     enableWindowsSearch = false;
     iconMode = "native";
@@ -24,7 +27,7 @@ flake.lib.reqHTier config "work" {
     showCategories = true;
     showIconBackground = false;
     sortByMostUsed = false;
-    terminalCommand = config.home.opts.apps.terminal.exe + " -e";
+    terminalCommand = "${config.home.opts.apps.terminal.exe}  -e";
     useApp2Unit = true;
     viewMode = "grid";
   };

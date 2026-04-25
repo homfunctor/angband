@@ -21,6 +21,8 @@ in {
         floating = false;
         outerCorners = false;
         position = "top";
+        rightClickAction = "launcherPanel";
+        rightClickFollowMouse = true;
         showCapsule = true;
         showOutline = true;
         transparent = false;

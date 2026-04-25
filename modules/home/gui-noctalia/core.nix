@@ -43,6 +43,7 @@ in
             general = {
               allowPanelsOnScreenWithoutBar = true;
               avatarImage = "${inputs.utumno}/assets/${userName}.png";
+              dimmerOpacity = 0;
               forceBlackScreenCorners = false;
               showScreenCorners = false;
 
@@ -55,9 +56,10 @@ in
               animationDisabled = false;
               animationSpeed = 1;
               enableShadows = true;
-              shadowDirection = "bottom_left";
+              shadowDirection = "bottom_right";
               shadowOffsetX = 2;
               shadowOffsetY = 3;
+              telemetryEnabled = false;
             };
 
             audio = {
@@ -72,13 +74,17 @@ in
             ui = with config.stylix; {
               boxBorderEnabled = true;
               fontDefault = fonts.sansSerif.name;
-              fontDefaultScale = 1.25;
+              fontDefaultScale = 1;
               fontFixed = fonts.monospace.name;
-              fontFixedScale = 1.25;
-              panelBackgroundOpacity = opacity.desktop;
+              fontFixedScale = 1;
+              panelBackgroundOpacity = 1;
               panelsAttachedToBar = true;
-              settingsPanelAttachToBar = true;
+              scrollbarAlwaysVisible = true;
+              settingsPanelAttachToBar = false;
+              settingsPanelMode = "window";
+              settingsPanelSideBarCardStyle = false;
               tooltipsEnabled = true;
+              translucentWidgets = false;
             };
           }
           // nixOpts.gui.noctalia.misc;

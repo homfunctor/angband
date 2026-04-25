@@ -12,33 +12,32 @@ in
   flake.lib.reqHTier config "work" {
     programs.noctalia-shell.settings.wallpaper = {
       enabled = true;
-      transitionType = "none";
+      skipStartupTransition = false;
+      transitionType = "stripes";
     };
 
     home.file.".cache/noctalia/wallpapers.json" = lib.mkForce {
       text = builtins.toJSON {
         # separated to handle EXTernal/EXTra monitors
         wallpapers = with display; let
-          mainMonitors = lib.listToAttrs (
-            lib.zipListsWith (
-              m: b: {
+          mainMonitors =
+            lib.listToAttrs
+            (lib.zipListsWith
+              (m: b: {
                 name = m;
                 value = b;
-              }
-            )
-            monitors
-            backgrounds
-          );
+              })
+              monitors
+              backgrounds);
 
-          extraMonitors = lib.listToAttrs (
-            map (
-              m: {
+          extraMonitors =
+            lib.listToAttrs
+            (map
+              (m: {
                 name = m;
                 value = genericBG;
-              }
-            )
-            extMonitors
-          );
+              })
+              extMonitors);
         in
           mainMonitors // extraMonitors;
       };

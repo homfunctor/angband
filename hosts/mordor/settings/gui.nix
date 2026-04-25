@@ -43,8 +43,9 @@
       right = [
         {
           id = "Tray";
-          usePrimaryColor = true;
+          colorizeIcons = false;
           drawerEnabled = false;
+          hidePassive = false;
         }
         {
           id = "Volume";
