@@ -90,7 +90,8 @@
     };
 
     nixvim = {
-      inputs.nixpkgs.follows = "nixpkgs";
+      # temp 2026-04-25 treesitter drama
+      # inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/nixvim";
     };
 

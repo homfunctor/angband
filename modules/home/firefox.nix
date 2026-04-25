@@ -1,7 +1,16 @@
 # imported by tier-work
 {
+  config,
+  lib,
+  osConfig,
+  ...
+}: {
   programs.firefox = {
     enable = true;
+
+    # 25.11 -> 26.05
+    configPath = "${config.xdg.configHome}/mozilla/firefox";
+
     profiles.default = {
       id = 0;
       isDefault = true;
@@ -22,5 +31,9 @@
         "pdfjs.enableAltText" = false;
       };
     };
+  };
+
+  home.opts.stylix.targets = lib.mkIf osConfig.nixos.opts.stylix.enabled {
+    firefox.profileNames = ["default"];
   };
 }

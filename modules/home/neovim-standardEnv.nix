@@ -19,7 +19,7 @@
     "render-markdown"
     "smartcolumn"
     "snacks"
-    "treesitter"
+    # "treesitter"
     "vimtex"
     "web-devicons"
     "which-key"

@@ -137,7 +137,7 @@ in
                   ];
 
                   gap = 1;
-                  treesitter = ["lsp"];
+                  # treesitter = ["lsp"];
                 };
               };
             };

@@ -144,6 +144,8 @@ in {
     # stylix.enabled is on nixos level.
     # using "enable" instead of "enabled" since it is imported.
     stylix.targets = {
+      firefox.profileNames = mkListOpt types.str null "";
+
       gtk = {
         enable = mkBoolOpt false "";
         extraCss = mkStrOpt null "";
