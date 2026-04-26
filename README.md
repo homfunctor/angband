@@ -15,13 +15,15 @@ Screenshot:
     - tier-niceTTY: slightly nicer TTY (with optional support for Stylix, Lanzaboote, Nixvim, and Sops-Nix - but all of these can be delayed until another tier or not used at all)
     - tier-work: final tier for work laptop and is the first tier that supports gui stuff like Niri and Noctalia-Shell
     - tier-personal: the fun stuff for my personal pc.
-      The **opts.tier** stuff allows me to import all the modules I will eventually use in **/hosts** from the very beginning. Then I can switch between the used tiers by modifying only a few lines in a few files (to be specific, for each host the number of files that need to be modified for tier switching is: 1+2n, where n is the number of users. It would be only 1+n but I'm not knowledgable enough to deal with the way Stylix sets up its Home-Manager modules when you manage it at the system level.) Funny things might happen if different tiers are enabled for the host and the users.
+
+    The **opts.tier** stuff allows me to import all the modules I will eventually use in **/hosts** from the very beginning. Then I can switch between the used tiers by modifying only a few lines in a few files (to be specific, for each host the number of files that need to be modified for tier switching is: 1+n, where n is the number of users.
 
     I have not tested all the combinations, but I do have the following on my home pc:
     - host: tier-personal
     - users: tier-personal for main user, tier-work for work user.
 
-    Why do all this? It's fun.
+    Why do all this? It's fun and kinda nice that only 2 or 3 lines need to be changed to completely switch up the configuration of a given device. But the same can be accomplished by just commenting modules out, which is probably a better option in most cases. Will likely simplify all this soon. I'm sure there's something in builtins or lib that already does all these things and in better ways. But it was a fun project.
+
 - The config could probably be easily modified to easily switch to other shells, tiling managers, etc. because I avoided hard-coding things where I could - but no guarantees.
 - I use Stylix for automatic theming of GTK and QT stuff. The QT stuff uses Kvantum. The source of the stolen code is in the module file. Also, I hate round corners. So I enforce sharp corners for GTK stuff and one day I'd like to do the same with QT. Noctalia-Shell has built-in support for this and I'm very grateful for that.
 - Over-complicated modules for Niri. I use Niri-Flake. This allows me to use a stable version of Niri on my work laptop and unstable at home.

@@ -74,9 +74,9 @@ in
             ui = with config.stylix; {
               boxBorderEnabled = true;
               fontDefault = fonts.sansSerif.name;
-              fontDefaultScale = 1;
+              fontDefaultScale = 1.25;
               fontFixed = fonts.monospace.name;
-              fontFixedScale = 1;
+              fontFixedScale = 1.25;
               panelBackgroundOpacity = 1;
               panelsAttachedToBar = true;
               scrollbarAlwaysVisible = true;
