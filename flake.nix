@@ -89,11 +89,7 @@
       url = "github:kaylorben/nixcord";
     };
 
-    nixvim = {
-      # temp 2026-04-25 treesitter drama
-      # inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:nix-community/nixvim";
-    };
+    nixvim.url = "github:nix-community/nixvim";
 
     rust-overlay = {
       inputs.nixpkgs.follows = "nixpkgs";
