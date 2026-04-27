@@ -4,10 +4,6 @@
   ...
 }: {
   imports = with flake.modules.nixos; [
-    # temp, testing
-    # tier-minTTY
-    # tier-niceTTY
-    # tier-work
     tier-personal
 
     lanzaboote

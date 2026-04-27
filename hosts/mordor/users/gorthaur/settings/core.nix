@@ -5,10 +5,6 @@
   ...
 }: {
   imports = with flake.modules.home; [
-    # temp, testing
-    # tier-minTTY
-    # tier-niceTTY
-    # tier-work
     tier-personal
 
     LaTeX
