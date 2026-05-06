@@ -24,9 +24,7 @@
       url = "github:nix-community/home-manager";
     };
 
-    # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # temp 2026-05-04: arbitrarily chosen to deal with unfree issue
-    nixpkgs.url = "github:nixos/nixpkgs?ref=37d78747ad5197ebf10add5c1eac4b444496af41";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     sops-nix = {
       inputs.nixpkgs.follows = "nixpkgs";
