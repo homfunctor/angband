@@ -9,3 +9,4 @@
 12. reorganize "requires tier" system explanation
 13. change barbar styling
 14. some modules need to check if stylix is enabled
+15. niri and noctalia-shell modules bother me. feel disjointed.
