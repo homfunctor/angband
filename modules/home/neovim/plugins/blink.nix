@@ -188,7 +188,7 @@ in
                 "lsp"
                 "path"
                 "ripgrep"
-                "spell"
+                # "spell"
               ];
 
               providers = {
@@ -228,11 +228,11 @@ in
                   };
                 };
 
-                spell = {
-                  module = "blink-cmp-spell";
-                  name = "Spell";
-                  score_offset = 1;
-                };
+                # spell = {
+                #   module = "blink-cmp-spell";
+                #   name = "Spell";
+                #   score_offset = 1;
+                # };
               };
             };
           };
