@@ -14,8 +14,6 @@ in
 
       plugins = {
         blink-cmp-dictionary.enable = true;
-        # todo: license issue
-        # blink-cmp-spell.enable = true;
         blink-compat.enable = true;
         blink-emoji.enable = true;
         blink-ripgrep.enable = true;
@@ -138,7 +136,6 @@ in
                   ];
 
                   gap = 1;
-                  # treesitter = ["lsp"];
                 };
               };
             };
@@ -188,7 +185,6 @@ in
                 "lsp"
                 "path"
                 "ripgrep"
-                # "spell"
               ];
 
               providers = {
@@ -227,12 +223,6 @@ in
                     project_root_marker = ".git";
                   };
                 };
-
-                # spell = {
-                #   module = "blink-cmp-spell";
-                #   name = "Spell";
-                #   score_offset = 1;
-                # };
               };
             };
           };
