@@ -20,7 +20,6 @@ in
           "lsp"
           "path"
           "ripgrep"
-          "spell"
           "vimtex"
         ];
 
