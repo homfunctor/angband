@@ -1,3 +1,4 @@
+# todo: add more
 {
   config,
   flake,
@@ -81,9 +82,18 @@ in
         "Mod+Shift+3".action.focus-workspace = "6";
 
         # moving windows to specific workspaces
-        "Mod+Ctrl+1".action.move-window-to-workspace = [{focus = false;} "1"];
-        "Mod+Ctrl+2".action.move-window-to-workspace = [{focus = false;} "2"];
-        "Mod+Ctrl+3".action.move-window-to-workspace = [{focus = false;} "3"];
+        "Mod+Ctrl+1".action.move-window-to-workspace = [
+          {focus = false;}
+          "1"
+        ];
+        "Mod+Ctrl+2".action.move-window-to-workspace = [
+          {focus = false;}
+          "2"
+        ];
+        "Mod+Ctrl+3".action.move-window-to-workspace = [
+          {focus = false;}
+          "3"
+        ];
         "Mod+Ctrl+Shift+1".action.move-window-to-workspace = [
           {focus = false;}
           "4"

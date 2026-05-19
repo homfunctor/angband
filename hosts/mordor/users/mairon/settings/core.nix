@@ -26,9 +26,9 @@
     userName = builtins.elemAt osConfig.nixos.opts.userNames 1;
 
     display.backgrounds = [
-      "${inputs.utumno}/assets/winter1.png"
-      "${inputs.utumno}/assets/winter4.png"
-      "${inputs.utumno}/assets/winter5.png"
+      "${inputs.utumno}/assets/valinor.png"
+      "${inputs.utumno}/assets/rivendell.png"
+      "${inputs.utumno}/assets/numenor.png"
     ];
 
     shellInt = {
