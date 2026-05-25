@@ -89,10 +89,7 @@
       url = "github:kaylorben/nixcord";
     };
 
-    nixvim = {
-      inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:nix-community/nixvim";
-    };
+    nixvim.url = "github:nix-community/nixvim";
 
     rust-overlay = {
       inputs.nixpkgs.follows = "nixpkgs";
