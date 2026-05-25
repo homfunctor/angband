@@ -1,11 +1,4 @@
 # imported by hosts/<host>/settings/core.nix
-# requires imperative steps:
-# enable module
-# 'sudo sbctl create-keys'
-# rebuild, verify with 'sbctl verify'
-# reboot, enable secure boot, login
-# 'sudo sbctl enroll-keys --microsoft'
-# reboot, verify with 'bootctl status'
 {
   config,
   flake,
@@ -18,6 +11,12 @@
     lanzaboote = {
       enable = true;
       pkiBundle = "/var/lib/sbctl";
+
+      autoGenerateKeys.enable = true;
+      autoEnrollKeys = {
+        enable = true;
+        autoReboot = true;
+      };
     };
 
     loader.systemd-boot.enable = false;

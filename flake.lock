@@ -111,11 +111,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779226674,
-        "narHash": "sha256-wuOkjI6pRiN4sEn/EPBRnNW5cmcpvd7xtIM8y5LooAs=",
+        "lastModified": 1779699611,
+        "narHash": "sha256-EcCaSTKnmg2o4wLKaN1aqQFomwyhO7ik0bX9COdyCas=",
         "owner": "nix-community",
         "repo": "disko",
-        "rev": "65fb947964bd44fc0008faf77d1fcb7a9f40bb32",
+        "rev": "5ba0c9555c28685e57fa54c7a25e42c7efdbfc8d",
         "type": "github"
       },
       "original": {
@@ -546,11 +546,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779595159,
-        "narHash": "sha256-vPptBGz1vTKIT8HkFIUXyo7TMFqICBXlk/P2lM79bu0=",
+        "lastModified": 1779682703,
+        "narHash": "sha256-+89u+znf0/h2ziuXzY4INyCF6AYqcMWD2LkEOJfUtQ0=",
         "owner": "fufexan",
         "repo": "nix-gaming",
-        "rev": "9d88b0ca570a98849c12e898f14989a19f5090b3",
+        "rev": "8358d46120803ea055fe8e3ce5934450d47f5292",
         "type": "github"
       },
       "original": {
@@ -619,17 +619,17 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1779508470,
-        "narHash": "sha256-Ap9KJX+5xHIn3bPIpfNgT6MEXdAECECwo4/rmlQD74M=",
+        "lastModified": 1778907598,
+        "narHash": "sha256-Z2kY1oBDszf1kmjQt5jaL/JOpbEnp+V96C+YMw3Bgmc=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "29916453413845e54a65b8a1cf996842300cd299",
+        "rev": "fe6a74b6c2d3db229714511e2c9dc1beed73e019",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "nixos-unstable",
         "repo": "nixpkgs",
+        "rev": "fe6a74b6c2d3db229714511e2c9dc1beed73e019",
         "type": "github"
       }
     },
@@ -718,11 +718,11 @@
         "systems": "systems_3"
       },
       "locked": {
-        "lastModified": 1779668152,
-        "narHash": "sha256-uw70cAlxTat7pap6LFNrncgYVEYHw8/7CYRD01Y+qt8=",
+        "lastModified": 1779683452,
+        "narHash": "sha256-Ksx8jghpDBCPDiTaTyGhYUXG1BUwqPjf5pajl0q0cqA=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "01bd278849f0e546aed4a90f15e81a65f9d131b4",
+        "rev": "afec1bae0e6f7983a5c03ec559f7ed2ec0e714a9",
         "type": "github"
       },
       "original": {
@@ -1116,11 +1116,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779181521,
-        "narHash": "sha256-2VFu08QKISj2Trvvaotxy9ojiVNSluhGSkxbvHgMB9U=",
+        "lastModified": 1779689388,
+        "narHash": "sha256-5MVjPrhtmfsPxGN2X5Y5olpTAV3SRy8FMEsjNwL8jbc=",
         "ref": "refs/heads/main",
-        "rev": "e1e8e923ee880cc21837f6ca5ba12380c458071b",
-        "revCount": 59,
+        "rev": "201ec648cdc995844f34c674622690a891e91d85",
+        "revCount": 60,
         "shallow": false,
         "type": "git",
         "url": "ssh://git@github.com/homfunctor/utumno"

@@ -15,7 +15,5 @@
     environment.systemPackages = [pkgs.patchelf];
 
     programs.nix-ld.enable = true;
-
-    services.envfs.enable = true;
   };
 }
