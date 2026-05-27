@@ -13,7 +13,6 @@
 
   config = flake.lib.reqNTier config "work" {
     environment.systemPackages = [pkgs.patchelf];
-
     programs.nix-ld.enable = true;
   };
 }

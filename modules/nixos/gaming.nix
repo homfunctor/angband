@@ -1,5 +1,4 @@
 # imported by tier-personal
-# todo: break up into directory and declare steam launch options
 # civ 5 (vox populi)
 #   launch options: env --unset=TZ  PROTON_ENABLE_WAYLAND=1 taskset --cpu-list 0-7 %command%
 #   running with wayland fixes the "feature" of audio muting on focus loss

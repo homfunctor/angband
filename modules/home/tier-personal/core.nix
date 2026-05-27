@@ -7,11 +7,8 @@
   ...
 }: {
   imports = with flake.modules.home; [
-    # apotheosis
-    # civ5-map-image
     discord
     gaming
-    # ironyModManager
     pika
 
     inputs.utumno.modules.home.privateApps

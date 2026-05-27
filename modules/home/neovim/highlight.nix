@@ -32,13 +32,6 @@ flake.lib.reqHTier config "niceTTY" {
     StatusLine.bg = "none";
     String.italic = true;
     TabLine.bg = "none";
-    TreesitterContext.bg = "none";
-    TroubleNormal.bg = "none";
-    TroubleNormalNC.bg = "none";
-    TSBoolean.link = "Boolean";
-    TSComment.link = "Comment";
-    TSKeyword.link = "Keyword";
-    TSNumber.link = "Number";
     WhichKeyNormal.bg = "none";
     WinBar.bg = "none";
     WinBarNC.bg = "none";

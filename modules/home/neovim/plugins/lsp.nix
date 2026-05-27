@@ -31,15 +31,7 @@ in
           marksman.enable = true;
           nixd = {
             enable = true;
-            settings = {
-              diagnostic.settings.suppress = ["sema-escaping-with"];
-              formatting.command = ["${lib.getExe pkgs.alejandra}"];
-              nixpkgs.expr = "import <nixpkgs> {}";
-              options = {
-                home_manager.expr = "(builtins.getFlake (\"git+file://\" + toString ./.)).homeConfigurations.options";
-                nixos.expr = "(builtins.getFlake (\"git+file://\" + toString ./.)).nixosConfigurations.options";
-              };
-            };
+            settings.formatting.command = ["${lib.getExe pkgs.alejandra}"];
           };
           qmlls.enable = true;
           sqls.enable = true;
@@ -50,6 +42,8 @@ in
           };
         };
       };
+
+      lspkind.enable = true;
 
       lspsaga = {
         enable = true;

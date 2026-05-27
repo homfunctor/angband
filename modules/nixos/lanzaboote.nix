@@ -1,11 +1,15 @@
 # imported by hosts/<host>/settings/core.nix
+# todo: check if it works
 {
   config,
   flake,
   inputs,
+  pkgs,
   ...
 }: {
   imports = [inputs.lanzaboote.nixosModules.lanzaboote];
+
+  environment.systemPackages = [pkgs.sbctl];
 
   boot = flake.lib.reqNTier config "niceTTY" {
     lanzaboote = {

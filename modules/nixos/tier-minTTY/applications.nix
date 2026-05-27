@@ -8,8 +8,7 @@
       uutils-coreutils-noprefix) # we rusty here
     just
     nix-output-monitor
-    sbctl # for setting up lanzaboote
-    ssh-to-age
+    ssh-to-age # for sops-nix
     wget
   ];
 }

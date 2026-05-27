@@ -19,8 +19,6 @@
     kernelParams = [
       "amdgpu.gpu_recovery=1"
       "amdgpu.ppfeaturemask=0xffff7fff"
-      "nowatchdog"
-      "preempt=full"
     ];
   };
 }

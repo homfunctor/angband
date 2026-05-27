@@ -7,8 +7,7 @@
 in
   lib.mkIf cfg.enable {
     programs.nixvim.plugins.barbar = {
-      # todo: license issue
-      # enable = true;
+      enable = true;
       keymaps = {
         silent = true;
         close.key = "<C-L>";

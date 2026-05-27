@@ -18,15 +18,6 @@
   inherit (lib) genAttrs types;
 in {
   options.nixos.opts = with types; {
-    # core.nix
-    adminUser = mkStrOpt null "main user";
-    userNames = mkListOpt str null "all usernames";
-
-    shell = {
-      extraAliases = mkAttrOpt {} "extra shell aliases";
-      name = mkStrOpt "fish" "shell to use";
-    };
-
     # over-complicated system to make things depend on specific tiers
     tier = let
       tiers = [
@@ -38,6 +29,15 @@ in {
       genAttrs tiers (name: {
         enabled = mkBoolOpt false "tier ${name} is enabled";
       });
+
+    # settings/core.nix
+    adminUser = mkStrOpt null "main user";
+    userNames = mkListOpt str null "all usernames";
+
+    shell = {
+      extraAliases = mkAttrOpt {} "extra shell aliases";
+      name = mkStrOpt "fish" "shell to use";
+    };
 
     sops = {
       syncthing.enable = mkBoolOpt false "allow sops-nix to manage syncthing";
@@ -52,7 +52,7 @@ in {
       pkg = mkAttrOpt pkgs.niri "niri package to use";
     };
 
-    # gui.nix
+    # settings/gui.nix
     gui.noctalia = {
       bar.widgets = mkAttrOpt null "widgets for noctalia-shell";
       controlCenter =
@@ -66,7 +66,7 @@ in {
         pkgs.noctalia-shell "noctalia-shell package";
     };
 
-    # hardware.nix
+    # settings/hardware.nix
     display = {
       extMonitors = mkListOpt str [] "names of external/extra monitors";
       mainMonitor = mkStrOpt null "main monitor";
@@ -76,7 +76,7 @@ in {
       resolutions = mkListOpt (listOf int) [] "resolutions of monitors";
     };
 
-    # stylix.nix
+    # settings/stylix.nix
     stylix = {
       enabled = mkBoolOpt false "stylix is enabled";
 

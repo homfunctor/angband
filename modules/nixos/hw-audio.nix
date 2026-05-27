@@ -1,14 +1,18 @@
 # imported by tier-work
 {
-  services.pipewire = {
-    enable = true;
-
-    alsa = {
+  services = {
+    pipewire = {
       enable = true;
-      support32Bit = true;
+
+      alsa = {
+        enable = true;
+        support32Bit = true;
+      };
+
+      pulse.enable = true;
+      wireplumber.enable = true;
     };
 
-    pulse.enable = true;
-    wireplumber.enable = true;
+    pulseaudio.enable = false;
   };
 }

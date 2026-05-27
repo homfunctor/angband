@@ -7,7 +7,7 @@
     tier-personal
 
     lanzaboote
-    lixFresh
+    lix-latest
     notNix
     rustOverlay
     scx
