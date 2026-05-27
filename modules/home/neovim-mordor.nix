@@ -6,14 +6,14 @@
   ...
 }: let
   enabledPlugins = [
-    "barbar"
     "blink"
     "colorizer"
     "conform"
     "lint"
     "lsp"
     "lualine"
-    "mini"
+    "mini-cursorword"
+    "mini-tabline"
     "noice"
     "render-markdown"
     "smartcolumn"
