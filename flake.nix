@@ -24,9 +24,9 @@
       url = "github:nix-community/home-manager";
     };
 
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # temp 2026-05-25: having boot issues. commit chosen arbitrarily.
-    # nixpkgs.url = "github:nixos/nixpkgs?ref=fe6a74b6c2d3db229714511e2c9dc1beed73e019";
+    # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # temp 2026-05-27: having boot issues.
+    nixpkgs.url = "github:nixos/nixpkgs?ref=c1083c5fbfbef6a0eff94d101f83e91e0c28e19c";
 
     sops-nix = {
       inputs.nixpkgs.follows = "nixpkgs";

@@ -6,8 +6,7 @@
   ...
 }: {
   imports = with flake.modules.nixos; [
-    # temp 2026-05-27
-    # dm-gdm
+    dm-gdm
     niriSuite
     swaylock
   ];
