@@ -21,6 +21,5 @@
     libinput.enable = true;
     timesyncd.enable = true;
     upower.enable = true;
-    xserver.enable = false;
   };
 }

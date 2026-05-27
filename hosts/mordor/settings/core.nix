@@ -10,7 +10,7 @@
     lix-latest
     notNix
     rustOverlay
-    scx
+    # scx
     shell-fish
     sops-nix
     stylix
