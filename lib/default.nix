@@ -21,8 +21,7 @@ in
       map (removeSuffix ".nix")
       (attrNames
         (filterAttrs
-          (name: type:
-            type == "regular" && hasSuffix ".nix" name)
+          (name: type: type == "regular" && hasSuffix ".nix" name)
           (builtins.readDir dir)));
 
     # strictly only for auto-defining imports
@@ -62,6 +61,8 @@ in
     #   flake.lib.reqNTier config "work" {foo};
     #   is equivalent to
     #   lib.mkIf config.nixos.opts.tier.work.enabled {foo};
-    reqHTier = cfg: tier: attrSet: mkIf cfg.home.opts.tier.${tier}.enabled attrSet;
-    reqNTier = cfg: tier: attrSet: mkIf cfg.nixos.opts.tier.${tier}.enabled attrSet;
+    reqHTier = cfg: tier: attrSet:
+      mkIf cfg.home.opts.tier.${tier}.enabled attrSet;
+    reqNTier = cfg: tier: attrSet:
+      mkIf cfg.nixos.opts.tier.${tier}.enabled attrSet;
   }

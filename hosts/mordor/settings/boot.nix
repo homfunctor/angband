@@ -11,14 +11,8 @@
       ];
     };
 
-    kernelModules = [
-      "kvm-amd"
-      "uinput"
-    ];
+    kernelModules = ["uinput"];
 
-    kernelParams = [
-      "amdgpu.gpu_recovery=1"
-      "amdgpu.ppfeaturemask=0xffff7fff"
-    ];
+    kernelParams = ["nowatchdog"];
   };
 }

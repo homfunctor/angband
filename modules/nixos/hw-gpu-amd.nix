@@ -7,6 +7,14 @@
   ...
 }:
 flake.lib.reqNTier config "personal" {
+  boot = {
+    kernelModules = ["amdgpu"];
+    kernelParams = [
+      "amdgpu.gpu_recovery=1"
+      "amdgpu.ppfeaturemask=0xffff7fff"
+    ];
+  };
+
   environment.systemPackages = [pkgs.lact];
 
   hardware = {

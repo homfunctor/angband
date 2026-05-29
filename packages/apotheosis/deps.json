@@ -36,53 +36,43 @@
   },
   {
     "pname": "Microsoft.CodeAnalysis.Analyzers",
-    "version": "3.3.4",
-    "hash": "sha256-qDzTfZBSCvAUu9gzq2k+LOvh6/eRvJ9++VCNck/ZpnE="
+    "version": "3.11.0",
+    "hash": "sha256-hQ2l6E6PO4m7i+ZsfFlEx+93UsLPo4IY3wDkNG11/Sw="
   },
   {
     "pname": "Microsoft.CodeAnalysis.Common",
-    "version": "4.8.0",
-    "hash": "sha256-3IEinVTZq6/aajMVA8XTRO3LTIEt0PuhGyITGJLtqz4="
+    "version": "5.0.0",
+    "hash": "sha256-g4ALvBSNyHEmSb1l5TFtWW7zEkiRmhqLx4XWZu9sr2U="
   },
   {
     "pname": "Microsoft.CodeAnalysis.CSharp",
-    "version": "4.8.0",
-    "hash": "sha256-MmOnXJvd/ezs5UPcqyGLnbZz5m+VedpRfB+kFZeeqkU="
+    "version": "5.0.0",
+    "hash": "sha256-ctBCkQGFpH/xT5rRE3xibu9YxPD108RuC4a4Z25koG8="
   },
   {
     "pname": "Microsoft.CodeAnalysis.CSharp.Scripting",
-    "version": "4.8.0",
-    "hash": "sha256-DoD3XoBW2PzLKcag4h1VKhkj+PqcVwZoSZv0HL+AOdQ="
+    "version": "5.0.0",
+    "hash": "sha256-gg4OAfXklchvNp8po5IGZZC3xXtk8aPh10QyLX2utGU="
   },
   {
     "pname": "Microsoft.CodeAnalysis.Scripting.Common",
-    "version": "4.8.0",
-    "hash": "sha256-7fT/Mu/zXo+OVBoWH2OQJIiU38u9F8Xej1IxV8pJquQ="
-  },
-  {
-    "pname": "Microsoft.CSharp",
-    "version": "4.7.0",
-    "hash": "sha256-Enknv2RsFF68lEPdrf5M+BpV1kHoLTVRApKUwuk/pj0="
+    "version": "5.0.0",
+    "hash": "sha256-cNKFc/VwWgEPWCxTXw++lSwE3zGlcayzRtsJbJ5kIa4="
   },
   {
     "pname": "Microsoft.NETCore.App.Host.osx-arm64",
-    "version": "9.0.5",
-    "hash": "sha256-X3ibP2lvXDxOd/QxicocL8Qb1VlzzJMbKeLbmF4OTIY="
+    "version": "10.0.7",
+    "hash": "sha256-5GUosMnNxRJ2LS3RAy/ZaTBwOXrndG2CXnBTGVtbdQY="
   },
   {
     "pname": "Microsoft.NETCore.App.Host.osx-x64",
-    "version": "9.0.5",
-    "hash": "sha256-77d16sv3n7/wDP19XLf4y/c18tpbvwiK/LNjOqtD6Ow="
+    "version": "10.0.7",
+    "hash": "sha256-0MAWP1MlRcNyH36Y7zkzjkm2NoKwlwObgfrtxUf3fZE="
   },
   {
     "pname": "Microsoft.NETCore.App.Host.win-x64",
-    "version": "9.0.5",
-    "hash": "sha256-L5s4fuWoJ4Hhxcmz0Hjx79VErJp6mfKAHHhWcJvNymo="
-  },
-  {
-    "pname": "Microsoft.NETCore.Platforms",
-    "version": "5.0.0",
-    "hash": "sha256-LIcg1StDcQLPOABp4JRXIs837d7z0ia6+++3SF3jl1c="
+    "version": "10.0.7",
+    "hash": "sha256-HlOVqTZIBsn5Z0/qjaZuFWnwn31AyRuWLkw7ECkCwHQ="
   },
   {
     "pname": "PangoSharp",
@@ -93,30 +83,5 @@
     "pname": "SixLabors.ImageSharp",
     "version": "2.1.6",
     "hash": "sha256-8t5qbExAmpEt6sHAL7ct9haCcMyzfB3ZH6GfDInUSX4="
-  },
-  {
-    "pname": "System.Collections.Immutable",
-    "version": "7.0.0",
-    "hash": "sha256-9an2wbxue2qrtugYES9awshQg+KfJqajhnhs45kQIdk="
-  },
-  {
-    "pname": "System.Reflection.Metadata",
-    "version": "7.0.0",
-    "hash": "sha256-GwAKQhkhPBYTqmRdG9c9taqrKSKDwyUgOEhWLKxWNPI="
-  },
-  {
-    "pname": "System.Runtime.CompilerServices.Unsafe",
-    "version": "5.0.0",
-    "hash": "sha256-neARSpLPUzPxEKhJRwoBzhPxK+cKIitLx7WBYncsYgo="
-  },
-  {
-    "pname": "System.Runtime.CompilerServices.Unsafe",
-    "version": "6.0.0",
-    "hash": "sha256-bEG1PnDp7uKYz/OgLOWs3RWwQSVYm+AnPwVmAmcgp2I="
-  },
-  {
-    "pname": "System.Text.Encoding.CodePages",
-    "version": "5.0.0",
-    "hash": "sha256-YJ5jJqkVPp+6fEzSXOmw1sNSdygB5Rx7TJ0TrNS/wq4="
   }
 ]

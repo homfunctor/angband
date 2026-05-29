@@ -7,21 +7,12 @@
     inherit hostName;
 
     firewall.enable = true;
-
-    networkmanager = {
-      enable = true;
-      dns = "systemd-resolved";
-    };
-
+    networkmanager.enable = true;
     useDHCP = lib.mkDefault true;
   };
 
-  services = {
-    openssh = {
-      enable = true;
-      settings.UseDns = true;
-    };
-
-    resolved.enable = true;
+  services.openssh = {
+    enable = true;
+    settings.UseDns = true;
   };
 }

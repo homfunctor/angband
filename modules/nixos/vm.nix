@@ -4,22 +4,26 @@
   flake,
   pkgs,
   ...
-}:
-flake.lib.reqNTier config "personal" {
-  environment.systemPackages = with pkgs; [
-    virt-manager
-    virtio-win
-  ];
+}: let
+  inherit (config.nixos.opts) adminUser;
+in
+  flake.lib.reqNTier config "personal" {
+    environment.systemPackages = with pkgs; [
+      virt-manager
+      virtio-win
+    ];
 
-  networking.firewall.trustedInterfaces = ["virbr0"];
+    networking.firewall.trustedInterfaces = ["virbr0"];
 
-  virtualisation.libvirtd = {
-    enable = true;
-    onShutdown = "shutdown";
-    qemu = {
-      package = pkgs.qemu_kvm;
-      runAsRoot = true;
-      vhostUserPackages = [pkgs.virtiofsd];
+    users.users.${adminUser}.extraGroups = ["libvirtd"];
+
+    virtualisation.libvirtd = {
+      enable = true;
+      onShutdown = "shutdown";
+      qemu = {
+        package = pkgs.qemu_kvm;
+        runAsRoot = true;
+        vhostUserPackages = [pkgs.virtiofsd];
+      };
     };
-  };
-}
+  }

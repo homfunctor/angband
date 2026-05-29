@@ -5,9 +5,10 @@
   lib,
   ...
 }: let
-  flakeInputs = lib.filterAttrs (_: v:
-    lib.isType "flake" v)
-  inputs;
+  flakeInputs =
+    lib.filterAttrs
+    (_: v: lib.isType "flake" v)
+    inputs;
 in {
   hardware.enableRedistributableFirmware = true;
 
@@ -25,8 +26,14 @@ in {
     optimise.automatic = true;
 
     # all the cool kids do it
-    nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
-    registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
+    nixPath =
+      lib.mapAttrsToList
+      (n: _: "${n}=flake:${n}")
+      flakeInputs;
+    registry =
+      lib.mapAttrs
+      (_: flake: {inherit flake;})
+      flakeInputs;
 
     settings = {
       allowed-users = ["@wheel"];

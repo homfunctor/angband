@@ -5,5 +5,7 @@
   ...
 }:
 flake.lib.reqNTier config "niceTTY" {
+  boot.kernelModules = ["kvm-amd"];
+
   hardware.cpu.amd.updateMicrocode = true;
 }
