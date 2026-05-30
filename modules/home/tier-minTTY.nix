@@ -11,5 +11,8 @@
     inputs.utumno.modules.home.git
   ];
 
-  home.stateVersion = "25.11";
+  home = {
+    enableNixpkgsReleaseCheck = false;
+    stateVersion = "25.11";
+  };
 }

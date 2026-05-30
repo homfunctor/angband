@@ -6,7 +6,6 @@
 # desktop: desktop file name (without extension)
 # exe: executable found at pkg path
 # pkg: package path
-# which: when the wrapped version is
 # based on modules when possible
 {
   config,
@@ -106,7 +105,6 @@ in
         desktop = "nvim";
         exe = getExe term-text.pkg;
         pkg = config.programs.nixvim.package;
-        which = "nvim";
       };
 
       text = {

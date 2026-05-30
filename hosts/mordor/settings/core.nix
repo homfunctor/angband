@@ -8,9 +8,9 @@
 
     lanzaboote
     lix-latest
-    notNix
+    nix-ld
     rustOverlay
-    # scx
+    scx
     shell-fish
     sops-nix
     stylix

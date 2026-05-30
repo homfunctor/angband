@@ -31,7 +31,10 @@ in {
       users =
         lib.genAttrs userNames
         (user: {
-          hashedPasswordFile = flake.lib.mkSecPath config [user "hashedPassword"];
+          hashedPasswordFile = flake.lib.mkSecPath config [
+            user
+            "hashedPassword"
+          ];
         });
     };
   };

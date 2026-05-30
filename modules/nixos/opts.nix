@@ -26,7 +26,8 @@ in {
         "personal"
       ];
     in
-      genAttrs tiers (name: {
+      genAttrs tiers
+      (name: {
         enabled = mkBoolOpt false "tier ${name} is enabled";
       });
 
