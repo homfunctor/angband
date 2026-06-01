@@ -30,7 +30,10 @@
     plymouth.enable = true;
   };
 
-  services.udev.extraRules = ''
-    ACTION=="add", SUBSYSTEM=="usb", DRIVER=="usb", ATTR{power/wakeup}="disabled"
-  '';
+  services.udev = {
+    enable = true;
+    extraRules = ''
+      ACTION=="add", SUBSYSTEM=="usb", DRIVER=="usb", ATTR{power/wakeup}="disabled"
+    '';
+  };
 }
