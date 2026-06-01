@@ -11,7 +11,7 @@
     defaultApplications
     gui-noctalia
     neovim
-    neovim-standardEnv
+    neovim-eregion
     nix-index
     nixTools
     shell-integration

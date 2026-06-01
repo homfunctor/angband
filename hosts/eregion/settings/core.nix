@@ -7,7 +7,7 @@
     tier-work
 
     lanzaboote
-    lixStable
+    lix-stable
     scx
     shell-fish
     sops-nix
