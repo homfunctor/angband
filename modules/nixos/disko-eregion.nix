@@ -30,7 +30,7 @@
             size = "100%";
 
             content = {
-              name = "void";
+              name = "ost-in-edhil";
               settings.allowDiscards = true;
               type = "luks";
 

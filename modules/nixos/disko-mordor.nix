@@ -33,7 +33,7 @@
               size = "100%";
 
               content = {
-                name = "obscured";
+                name = "lugburz";
                 settings.allowDiscards = true;
                 type = "luks";
 
