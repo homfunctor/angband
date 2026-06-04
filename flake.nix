@@ -24,9 +24,9 @@
       url = "github:nix-community/home-manager";
     };
 
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     # temp 2026-05-27: until gdm-50 and niri work together again
-    # nixpkgs.url = "github:nixos/nixpkgs?ref=c1083c5fbfbef6a0eff94d101f83e91e0c28e19c";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=c1083c5fbfbef6a0eff94d101f83e91e0c28e19c";
 
     sops-nix = {
       inputs.nixpkgs.follows = "nixpkgs";
@@ -36,6 +36,7 @@
     stylix = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/stylix";
+      # url = "github:nix-community/stylix/pull/2337/head";
     };
 
     treefmt-nix = {
