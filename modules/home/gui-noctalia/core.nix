@@ -5,6 +5,7 @@
   inputs,
   lib,
   osConfig,
+  perSystem,
   pkgs,
   ...
 }: let
@@ -19,7 +20,7 @@ in
     home.opts.gui.noctalia.enabled = true;
 
     programs = {
-      # niri starts noctalia-shell
+      # niri starts noctalia
       niri = mkIf nixOpts.wm.niri.enabled {
         settings.spawn-at-startup = [
           {
@@ -34,60 +35,61 @@ in
         ];
       };
 
-      noctalia-shell = {
+      noctalia = {
         enable = true;
-        package = nixOpts.gui.noctalia.pkg;
+        # package = nixOpts.gui.noctalia.pkg;
+        package = perSystem.noctalia.default;
 
-        settings =
-          {
-            general = {
-              allowPanelsOnScreenWithoutBar = true;
-              avatarImage = "${inputs.utumno}/assets/${userName}.png";
-              dimmerOpacity = 0;
-              forceBlackScreenCorners = false;
-              showScreenCorners = false;
-
-              boxRadiusRatio = 0;
-              iRadiusRatio = 0;
-              radiusRatio = 0;
-              scaleRatio = 1;
-              screenRadiusRatio = 0;
-
-              animationDisabled = false;
-              animationSpeed = 1;
-              enableShadows = true;
-              shadowDirection = "bottom_right";
-              shadowOffsetX = 2;
-              shadowOffsetY = 3;
-              telemetryEnabled = false;
-            };
-
-            audio = {
-              externalMixer = "${lib.getExe pkgs.pwvucontrol}";
-              preferredPlayer = config.home.opts.apps.audio.exe;
-            };
-
-            dock.enabled = false;
-
-            sessionMenu.showHeader = false;
-
-            ui = with config.stylix; {
-              boxBorderEnabled = true;
-              fontDefault = fonts.sansSerif.name;
-              fontDefaultScale = 1.25;
-              fontFixed = fonts.monospace.name;
-              fontFixedScale = 1.25;
-              panelBackgroundOpacity = 1;
-              panelsAttachedToBar = true;
-              scrollbarAlwaysVisible = true;
-              settingsPanelAttachToBar = false;
-              settingsPanelMode = "window";
-              settingsPanelSideBarCardStyle = false;
-              tooltipsEnabled = true;
-              translucentWidgets = false;
-            };
-          }
-          // nixOpts.gui.noctalia.misc;
+        settings = {
+          #   general = {
+          #     allowPanelsOnScreenWithoutBar = true;
+          #     avatarImage = "${inputs.utumno}/assets/${userName}.png";
+          #     dimmerOpacity = 0;
+          #     forceBlackScreenCorners = false;
+          #     showScreenCorners = false;
+          #
+          #     boxRadiusRatio = 0;
+          #     iRadiusRatio = 0;
+          #     radiusRatio = 0;
+          #     scaleRatio = 1;
+          #     screenRadiusRatio = 0;
+          #
+          #     animationDisabled = false;
+          #     animationSpeed = 1;
+          #     enableShadows = true;
+          #     shadowDirection = "bottom_right";
+          #     shadowOffsetX = 2;
+          #     shadowOffsetY = 3;
+          #     telemetryEnabled = false;
+          #   };
+          #
+          #   audio = {
+          #     externalMixer = "${lib.getExe pkgs.pwvucontrol}";
+          #     preferredPlayer = config.home.opts.apps.audio.exe;
+          #   };
+          #
+          #   dock.enabled = false;
+          #
+          #   sessionMenu.showHeader = false;
+          #
+          #   ui = with config.stylix; {
+          #     boxBorderEnabled = true;
+          #     fontDefault = fonts.sansSerif.name;
+          #     fontDefaultScale = 1.25;
+          #     fontFixed = fonts.monospace.name;
+          #     fontFixedScale = 1.25;
+          #     panelBackgroundOpacity = 1;
+          #     panelsAttachedToBar = true;
+          #     scrollbarAlwaysVisible = true;
+          #     settingsPanelAttachToBar = false;
+          #     settingsPanelMode = "window";
+          #     settingsPanelSideBarCardStyle = false;
+          #     tooltipsEnabled = true;
+          #     translucentWidgets = false;
+          #   };
+          # }
+          # // nixOpts.gui.noctalia.misc;
+        };
       };
     };
   }

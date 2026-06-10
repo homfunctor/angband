@@ -12,9 +12,10 @@
 in
   lib.mkIf enabled {
     # i prefer a different style than stylix uses
+    # temp: this will likely get changed eventually?
     home.opts.stylix.targets.noctalia-shell.enable = lib.mkForce false;
 
-    programs.noctalia-shell = {
+    programs.noctalia = {
       colors = with config.lib.stylix.colors.withHashtag; {
         mError = base08;
         mHover = base0C;

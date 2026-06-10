@@ -10,7 +10,7 @@ in {
   imports = [inputs.utumno.homeModules.gui-doxtalia];
 
   programs = flake.lib.reqHTier config "work" {
-    noctalia-shell.settings = {
+    noctalia.settings = {
       bar = {
         inherit (noctalia.bar) widgets;
 

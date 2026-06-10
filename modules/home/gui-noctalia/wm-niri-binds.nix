@@ -16,7 +16,7 @@ in
       inherit (flake.lib) splitArg;
 
       noctCmd = cmd:
-        [(lib.getExe config.programs.noctalia-shell.package) "ipc" "call"]
+        [(lib.getExe config.programs.noctalia.package) "ipc" "call"]
         ++ (splitArg cmd);
     in {
       niri.settings.binds = with config.lib.niri.actions; {

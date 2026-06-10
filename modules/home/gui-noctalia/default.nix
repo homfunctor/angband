@@ -1,1 +1,7 @@
-{flake, ...}: {imports = flake.lib.genImportsFromDir ./.;}
+# {flake, ...}: {imports = flake.lib.genImportsFromDir ./.;}
+# temp: manual imports
+{
+  imports = [
+    ./core.nix
+  ];
+}
