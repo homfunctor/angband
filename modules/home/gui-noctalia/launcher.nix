@@ -10,7 +10,7 @@ flake.lib.reqHTier config "work" {
     xdg-terminal-exec
   ];
 
-  programs.noctalia.settings.appLauncher = {
+  programs.noctalia-shell.settings.appLauncher = {
     autoPasteClipboard = false;
     density = "compact";
     enableClipPreview = false;

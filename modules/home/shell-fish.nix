@@ -1,4 +1,4 @@
-# imported by hosts/<host>/settings/core.nix
+# imported by hosts/<host>/users/<user>/settings/core.nix
 # it's nice
 {
   config,

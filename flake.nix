@@ -27,10 +27,11 @@
       url = "github:sodiboo/niri-flake";
     };
 
-    noctalia = {
-      inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:noctalia-dev/noctalia";
-    };
+    # annoying
+    # noctalia = {
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   url = "github:noctalia-dev/noctalia/legacy-v4";
+    # };
 
     # nix things
     disko = {

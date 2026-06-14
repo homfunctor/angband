@@ -14,7 +14,7 @@ in
     # i prefer a different style than stylix uses
     home.opts.stylix.targets.noctalia-shell.enable = lib.mkForce false;
 
-    programs.noctalia = {
+    programs.noctalia-shell = {
       colors = with config.lib.stylix.colors.withHashtag; {
         mError = base08;
         mHover = base0C;

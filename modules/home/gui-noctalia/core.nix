@@ -35,9 +35,9 @@ in
         ];
       };
 
-      noctalia = {
+      noctalia-shell = {
         enable = true;
-        package = perSystem.noctalia.default;
+        package = nixOpts.gui.noctalia.pkg;
 
         settings =
           {

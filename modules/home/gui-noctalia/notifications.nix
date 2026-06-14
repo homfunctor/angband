@@ -5,7 +5,7 @@
   ...
 }:
 flake.lib.reqHTier config "work" {
-  programs.noctalia.settings.notifications = {
+  programs.noctalia-shell.settings.notifications = {
     enabled = true;
 
     monitors = [osConfig.nixos.opts.display.mainMonitor];

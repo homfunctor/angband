@@ -1,9 +1,6 @@
 # per-host settings that are used by hm modules
-{perSystem, ...}: {
+{
   nixos.opts.gui.noctalia = {
-    # latest version
-    pkg = perSystem.noctalia.default;
-
     # inherited within bar as widgets
     bar.widgets = {
       left = [
@@ -24,15 +21,6 @@
       ];
 
       center = [
-        {
-          id = "SystemMonitor";
-          compactMode = false;
-          showCpuTemp = true;
-          showCpuUsage = true;
-          showMemoryAsPercent = true;
-          showMemoryUsage = true;
-          usePrimaryColor = true;
-        }
         {
           id = "Clock";
           formatHorizontal = "ddd MMM d h:mm AP";
