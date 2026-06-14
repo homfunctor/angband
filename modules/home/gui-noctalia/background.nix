@@ -10,7 +10,7 @@
   genericBG = "${inputs.utumno}/assets/base.png";
 in
   flake.lib.reqHTier config "work" {
-    programs.noctalia.settings.wallpaper = {
+    programs.noctalia-shell.settings.wallpaper = {
       enabled = true;
       skipStartupTransition = false;
       transitionType = "stripes";
