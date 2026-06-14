@@ -10,7 +10,6 @@
 {
   config,
   lib,
-  osConfig,
   pkgs,
   ...
 }: let
@@ -89,7 +88,7 @@ in
       };
 
       shell = let
-        shellName = osConfig.nixos.opts.shell.name;
+        shellName = config.home.opts.shellName;
       in {
         exe = getExe shell.pkg;
         pkg = config.programs."${shellName}".package;

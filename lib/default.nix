@@ -50,9 +50,9 @@ in
     mkStrOpt = mkOpt str;
 
     # sops utilities
-    # path is ["path" "to" "file"]
-    mkSec = path: concatStringsSep "/" path;
-    mkSecPath = cfg: path: cfg.sops.secrets."${mkSec path}".path;
+    # p is ["path" "to" "file"]
+    mkSec = p: concatStringsSep "/" p;
+    mkSecPath = cfg: p: cfg.sops.secrets."${mkSec p}".path;
 
     # niri utility
     splitArg = arg: splitString " " arg;

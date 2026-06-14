@@ -15,6 +15,7 @@
     neovim-mordor
     nix-index
     nixTools
+    shell-fish
     shell-integration
     starship
     wm-niri

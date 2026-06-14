@@ -12,9 +12,9 @@
   ];
 
   config = flake.lib.reqNTier config "work" {
-    nixpkgs.overlays = [inputs.niri-flake.overlays.niri];
-
     nixos.opts.wm.niri.enabled = true;
+
+    nixpkgs.overlays = [inputs.niri-flake.overlays.niri];
 
     programs.niri = {
       enable = true;

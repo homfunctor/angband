@@ -23,8 +23,6 @@ in {
       persistent = true;
     };
 
-    optimise.automatic = true;
-
     # all the cool kids do it
     nixPath =
       lib.mapAttrsToList
@@ -45,11 +43,7 @@ in {
       ];
       flake-registry = "";
       http-connections = 50;
-      keep-derivations = true;
-      keep-going = true;
-      keep-outputs = true;
       log-lines = 50;
-      sandbox = true;
       trusted-users = ["root" config.nixos.opts.adminUser];
       warn-dirty = false;
 
@@ -61,7 +55,6 @@ in {
         "https://noctalia.cachix.org"
         "https://numtide.cachix.org"
       ];
-
       trusted-public-keys = [
         "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
         "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="

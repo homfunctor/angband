@@ -14,12 +14,10 @@ flake.lib.reqNTier config "personal" {
       "amdgpu.ppfeaturemask=0xffff7fff"
     ];
   };
-
   environment.systemPackages = [pkgs.lact];
 
   hardware = {
     amdgpu.initrd.enable = true;
-
     graphics.extraPackages = with pkgs; [
       vulkan-extension-layer
       vulkan-loader

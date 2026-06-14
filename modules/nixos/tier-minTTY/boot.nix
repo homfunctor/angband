@@ -14,7 +14,6 @@
     };
 
     kernelPackages = pkgs.linuxPackages_latest;
-
     kernelParams = [
       "plymouth.use-simpledrm"
       "quiet"

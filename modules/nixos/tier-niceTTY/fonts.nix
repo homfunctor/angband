@@ -17,7 +17,6 @@
     fontconfig = {
       enable = true;
 
-      # todo: double check
       antialias = true;
       cache32Bit = true;
       hinting.enable = true;

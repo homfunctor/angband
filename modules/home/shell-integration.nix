@@ -5,14 +5,13 @@
   config,
   flake,
   lib,
-  osConfig,
   ...
 }: let
   inherit (lib) mkIf substring toUpper;
-  inherit (osConfig.nixos.opts.shell) name;
-  # capitalize name
-  Name = toUpper (substring 0 1 name) + substring 1 (-1) name;
-  enableNameIntegration = "enable${Name}Integration";
+  inherit (config.home.opts) shellName;
+  # capitalize shellName
+  ShellName = toUpper (substring 0 1 shellName) + substring 1 (-1) shellName;
+  enableShellNameIntegration = "enable${ShellName}Integration";
 
   cfg = config.home.opts.shellInt;
 in
@@ -20,14 +19,14 @@ in
     programs = {
       kitty = mkIf cfg.kitty.enable {
         settings.shell = config.home.opts.apps.shell.exe;
-        shellIntegration.${enableNameIntegration} = cfg.kitty.enable;
+        shellIntegration.${enableShellNameIntegration} = cfg.kitty.enable;
       };
 
-      eza.${enableNameIntegration} = cfg.eza.enable;
-      fzf.${enableNameIntegration} = cfg.fzf.enable;
-      nix-index.${enableNameIntegration} = cfg.nix-index.enable;
-      starship.${enableNameIntegration} = cfg.starship.enable;
-      yazi.${enableNameIntegration} = cfg.yazi.enable;
-      zoxide.${enableNameIntegration} = cfg.zoxide.enable;
+      eza.${enableShellNameIntegration} = cfg.eza.enable;
+      fzf.${enableShellNameIntegration} = cfg.fzf.enable;
+      nix-index.${enableShellNameIntegration} = cfg.nix-index.enable;
+      starship.${enableShellNameIntegration} = cfg.starship.enable;
+      yazi.${enableShellNameIntegration} = cfg.yazi.enable;
+      zoxide.${enableShellNameIntegration} = cfg.zoxide.enable;
     };
   }

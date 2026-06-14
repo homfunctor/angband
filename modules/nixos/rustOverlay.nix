@@ -11,6 +11,5 @@ flake.lib.reqNTier config "niceTTY" {
     gcc
     rust-bin.stable.latest.default
   ];
-
   nixpkgs.overlays = [inputs.rust-overlay.overlays.default];
 }

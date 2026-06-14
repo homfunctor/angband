@@ -10,7 +10,6 @@
   imports = [inputs.lanzaboote.nixosModules.lanzaboote];
 
   environment.systemPackages = [pkgs.sbctl];
-
   boot = flake.lib.reqNTier config "niceTTY" {
     lanzaboote = {
       enable = true;

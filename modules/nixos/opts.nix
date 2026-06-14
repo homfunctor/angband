@@ -35,11 +35,6 @@ in {
     adminUser = mkStrOpt null "main user";
     userNames = mkListOpt str null "all usernames";
 
-    shell = {
-      extraAliases = mkAttrOpt {} "extra shell aliases";
-      name = mkStrOpt "fish" "shell to use";
-    };
-
     sops = {
       syncthing.enable = mkBoolOpt false "allow sops-nix to manage syncthing";
       users.enable = mkBoolOpt false "allow sops-nix to manage users";

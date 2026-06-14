@@ -87,6 +87,8 @@ in {
       vivaldi.enable = mkBoolOpt false "make vivaldi the default browser";
     };
 
+    shellAliases = mkAttrOpt {} "aliases for shell";
+
     shellInt = let
       apps = [
         "eza"
@@ -100,6 +102,8 @@ in {
       genAttrs apps (name: {
         enable = mkBoolOpt false "enable ${name} shell integration";
       });
+
+    shellName = mkStrOpt "fish" "shell to use";
 
     syncthing = {
       enabled = mkBoolOpt false "syncthing enabled";

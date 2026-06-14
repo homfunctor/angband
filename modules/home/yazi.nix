@@ -25,5 +25,7 @@
         }
       ];
     };
+
+    shellWrapperName = "y";
   };
 }

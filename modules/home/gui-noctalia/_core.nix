@@ -2,14 +2,11 @@
 {
   config,
   flake,
-  inputs,
   lib,
   osConfig,
   perSystem,
-  pkgs,
   ...
 }: let
-  inherit (config.home.opts) userName;
   inherit (lib) mkIf;
   nixOpts = osConfig.nixos.opts;
 

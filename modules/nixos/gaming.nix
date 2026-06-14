@@ -23,7 +23,6 @@
       platformOptimizations.enable = true;
       protontricks.enable = true;
     };
-
     wine.ntsync.enable = true;
   };
 
