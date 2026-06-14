@@ -13,7 +13,7 @@ in
         # used by blink
         cmp-vimtex.enable = true;
 
-        blink.settings.sources.default = [
+        blink-cmp.settings.sources.default = [
           "buffer"
           "dictionary"
           "emoji"

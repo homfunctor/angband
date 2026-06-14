@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: let
-  cfg = config.home.opts.nvim.plugins.blink;
+  cfg = config.home.opts.nvim.plugins.blink-cmp;
 in
   lib.mkIf cfg.enable {
     home.packages = [pkgs.wordnet];

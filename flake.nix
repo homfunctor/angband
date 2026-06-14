@@ -14,32 +14,12 @@
       url = "github:numtide/blueprint";
     };
 
-    disko = {
-      inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:nix-community/disko";
-    };
-
     home-manager = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager";
     };
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
-    sops-nix = {
-      inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:mic92/sops-nix";
-    };
-
-    stylix = {
-      inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:nix-community/stylix";
-    };
-
-    treefmt-nix = {
-      inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:numtide/treefmt-nix";
-    };
 
     # niri
     niri-flake = {
@@ -53,6 +33,11 @@
     };
 
     # nix things
+    disko = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/disko";
+    };
+
     lanzaboote = {
       inputs = {
         nixpkgs.follows = "nixpkgs";
@@ -94,6 +79,21 @@
     rust-overlay = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:oxalica/rust-overlay";
+    };
+
+    sops-nix = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:mic92/sops-nix";
+    };
+
+    stylix = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/stylix";
+    };
+
+    treefmt-nix = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:numtide/treefmt-nix";
     };
 
     # secrets and privacy for the 21st century schizoid

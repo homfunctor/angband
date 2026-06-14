@@ -6,7 +6,7 @@
   ...
 }: let
   enabledPlugins = [
-    "blink"
+    "blink-cmp"
     "colorizer"
     "conform"
     "lint"

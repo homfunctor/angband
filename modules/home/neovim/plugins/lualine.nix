@@ -10,7 +10,6 @@
 in
   mkIf cfg.enable {
     programs.nixvim = {
-      plugins.colorscheme.base16.enable = true;
       extraPlugins = [
         (pkgs.vimUtils.buildVimPlugin {
           name = "lualine-so-fancy";
@@ -25,7 +24,6 @@ in
 
       plugins.lualine = mkIf cfg.enable {
         enable = true;
-        theme = "base16";
 
         settings = {
           options = {
@@ -46,6 +44,8 @@ in
             lualine_y = ["fancy_filetype"];
             lualine_z = ["fancy_searchcount" "fancy_location"];
           };
+
+          # theme = "base16";
         };
       };
     };
