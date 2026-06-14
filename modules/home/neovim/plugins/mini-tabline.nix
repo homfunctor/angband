@@ -1,4 +1,3 @@
-# todo: keybinds
 {
   config,
   lib,

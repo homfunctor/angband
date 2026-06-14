@@ -24,9 +24,7 @@
       url = "github:nix-community/home-manager";
     };
 
-    # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # temp 2026-06-10 gdm and niri issues
-    nixpkgs.url = "github:nixos/nixpkgs?ref=c1083c5fbfbef6a0eff94d101f83e91e0c28e19c";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     sops-nix = {
       inputs.nixpkgs.follows = "nixpkgs";

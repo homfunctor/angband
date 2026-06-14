@@ -12,6 +12,18 @@ flake.lib.reqHTier config "niceTTY" {
 
     keymaps = [
       {
+        action = "<cmd>:bnext<CR>";
+        key = "<Tab>";
+        mode = "n";
+      }
+
+      {
+        action = "<cmd>:bprev<CR>";
+        key = "<S-Tab>";
+        mode = "n";
+      }
+
+      {
         action = ":sort<ESC>";
         key = "<A-s>";
         mode = "v";

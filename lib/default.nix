@@ -4,6 +4,7 @@
     attrNames
     concatStringsSep
     filterAttrs
+    hasPrefix
     hasSuffix
     mkIf
     mkOption
@@ -29,7 +30,10 @@ in
     genImportsFromDir = dir:
       map toString
       (builtins.filter
-        (p: p != (dir + "/default.nix") && hasSuffix ".nix" p)
+        (p:
+          (p != (dir + "/default.nix"))
+          && !(hasPrefix "_" p)
+          && hasSuffix ".nix" p)
         (listFilesRecursive dir));
 
     # mkOption utilities
@@ -46,11 +50,8 @@ in
     mkStrOpt = mkOpt str;
 
     # sops utilities
-    mkSec = path:
-      concatStringsSep "/"
-      (map
-        (v: removeSuffix "/" v)
-        path);
+    # path is ["path" "to" "file"]
+    mkSec = path: concatStringsSep "/" path;
     mkSecPath = cfg: path: cfg.sops.secrets."${mkSec path}".path;
 
     # niri utility

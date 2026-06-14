@@ -20,5 +20,7 @@
       enable = true;
       package = config.nixos.opts.wm.niri.pkg;
     };
+
+    services.displayManager.defaultSession = "niri";
   };
 }
