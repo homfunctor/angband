@@ -9,7 +9,7 @@
 
     LaTeX
     defaultApplications
-    gui-noctalia
+    # gui-noctalia
     neovim
     neovim-eregion
     nix-index

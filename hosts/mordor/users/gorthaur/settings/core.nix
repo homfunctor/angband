@@ -10,7 +10,7 @@
     LaTeX
     chromium
     defaultApplications
-    gui-noctalia
+    # gui-noctalia
     neovim
     neovim-mordor
     nix-index
