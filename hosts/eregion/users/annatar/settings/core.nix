@@ -14,6 +14,7 @@
     neovim-eregion
     nix-index
     nixTools
+    shell-fish
     shell-integration
     starship
     vivaldi
