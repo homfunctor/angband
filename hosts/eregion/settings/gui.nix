@@ -18,14 +18,6 @@
           labelMode = "none";
           showApplications = true;
         }
-      ];
-
-      center = [
-        {
-          formatHorizontal = "ddd MMM d h:mm AP";
-          id = "Clock";
-          usePrimaryColor = true;
-        }
         {
           id = "Battery";
           alwaysShowPercentage = true;
@@ -34,6 +26,14 @@
           showNoctaliaPerformance = false;
           showPowerProfiles = false;
           warningThreshold = 20;
+        }
+      ];
+
+      center = [
+        {
+          formatHorizontal = "ddd MMM d h:mm AP";
+          id = "Clock";
+          usePrimaryColor = true;
         }
       ];
 
