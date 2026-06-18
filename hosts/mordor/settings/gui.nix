@@ -1,6 +1,8 @@
 # per-host settings that are used by hm modules
-{
+{perSystem, ...}: {
   nixos.opts.gui.noctalia = {
+    pkg = perSystem.noctalia.default;
+
     # inherited within bar as widgets
     bar.widgets = {
       left = [

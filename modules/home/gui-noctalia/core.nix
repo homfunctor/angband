@@ -5,7 +5,6 @@
   inputs,
   lib,
   osConfig,
-  perSystem,
   pkgs,
   ...
 }: let
