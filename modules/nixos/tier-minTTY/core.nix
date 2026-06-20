@@ -68,10 +68,7 @@ in {
     };
   };
 
-  nixpkgs = {
-    config.allowUnfree = true;
-    hostPlatform = lib.mkDefault "x86_64-linux";
-  };
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
   services.xserver.xkb = {
     layout = lib.mkDefault "us";

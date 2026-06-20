@@ -12,6 +12,7 @@
     scx
     sops-nix
     stylix
+    unfree
     vm
     wm-niri
   ];
