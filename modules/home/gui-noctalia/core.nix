@@ -64,7 +64,7 @@ in
 
             audio = {
               externalMixer = "${lib.getExe pkgs.pwvucontrol}";
-              preferredPlayer = config.home.opts.apps.audio.exe;
+              preferredPlayer = hmOpts.apps.audio.exe;
             };
 
             dock.enabled = false;

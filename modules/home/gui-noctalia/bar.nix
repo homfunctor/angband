@@ -7,7 +7,10 @@
 }: let
   inherit (osConfig.nixos.opts.gui) noctalia;
 in {
-  imports = [inputs.utumno.homeModules.gui-doxtalia];
+  imports = [
+    # provides location information
+    inputs.utumno.homeModules.gui-doxtalia
+  ];
 
   programs = flake.lib.reqHTier config "work" {
     noctalia-shell.settings = {
