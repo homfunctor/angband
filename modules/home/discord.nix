@@ -12,5 +12,10 @@
       frameless = true;
       useQuickCss = true;
     };
+
+    discord = {
+      equicord.enable = true;
+      vencord.enable = false;
+    };
   };
 }

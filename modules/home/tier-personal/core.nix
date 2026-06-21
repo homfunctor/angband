@@ -10,7 +10,7 @@
     discord
     gaming
     pika
-
+    # shh, secret!
     inputs.utumno.modules.home.privateApps
   ];
 
