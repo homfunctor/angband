@@ -13,11 +13,13 @@ in
   lib.mkIf enabled
   {
     programs = let
-      inherit (flake.lib) splitArg;
-
       noctCmd = cmd:
-        [(lib.getExe config.programs.noctalia-shell.package) "ipc" "call"]
-        ++ (splitArg cmd);
+        [
+          (lib.getExe config.programs.noctalia-shell.package)
+          "ipc"
+          "call"
+        ]
+        ++ (flake.lib.splitArg cmd);
     in {
       niri.settings.binds = with config.lib.niri.actions; {
         "Mod+R".action.spawn = noctCmd "launcher toggle";

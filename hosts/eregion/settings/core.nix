@@ -11,6 +11,7 @@
     scx
     sops-nix
     stylix
+    unfree
     wm-niri
   ];
 
