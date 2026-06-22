@@ -18,6 +18,7 @@
     shell-fish
     shell-integration
     starship
+    strawberry
     vivaldi
     wm-niri
     wm-niri-personal

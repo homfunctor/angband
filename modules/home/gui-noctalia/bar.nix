@@ -52,6 +52,7 @@ in {
 
       controlCenter = {
         inherit (noctalia.controlCenter) cards shortcuts;
+
         position = "close_to_bar_button";
         useErrorColor = true;
       };

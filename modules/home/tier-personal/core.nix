@@ -1,6 +1,5 @@
 # imported by hosts/<host>/users/<user>/settings/core.nix
 {
-  config,
   flake,
   inputs,
   pkgs,
@@ -21,10 +20,6 @@
       baobab
       picard
       soundconverter
-
-      (lib.mkIf
-        config.home.opts.quirk.strawberry.enable
-        strawberry)
     ];
   };
 

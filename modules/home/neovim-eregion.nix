@@ -1,4 +1,5 @@
 # imported by hosts/<host>/users/<user>/settings/core.nix
+# todo: will eventually be more lightweight than neovim-mordor
 {
   config,
   flake,
