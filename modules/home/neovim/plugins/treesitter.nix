@@ -3,9 +3,9 @@
   lib,
   ...
 }: let
-  cfg = config.home.opts.nvim.plugins.treesitter;
+  inherit (config.programs.nixvim.plugins.treesitter.package) builtGrammars;
 
-  grammars = config.programs.nixvim.plugins.treesitter.package.builtGrammars;
+  cfg = config.home.opts.nvim.plugins.treesitter;
 in
   lib.mkIf cfg.enable {
     programs.nixvim.plugins.treesitter = {
@@ -15,7 +15,7 @@ in
       highlight.enable = true;
       indent.enable = true;
 
-      grammarPackages = with grammars; [
+      grammarPackages = with builtGrammars; [
         bash
         json
         just
