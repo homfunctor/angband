@@ -6,6 +6,7 @@
   ...
 }: let
   enabledPlugins = [
+    "temp"
     "blink-cmp"
     "colorizer"
     "conform"
@@ -18,6 +19,7 @@
     "render-markdown"
     "smartcolumn"
     "snacks"
+    "treesitter"
     "vimtex"
     "web-devicons"
     "which-key"
