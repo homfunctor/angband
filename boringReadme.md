@@ -1,8 +1,3 @@
-Screenshot:
-![no](https://github.com/homfunctor/angband/blob/60633340e70c113dfea8b0a90edceda9bd12637d/screenshot-2026-04-01-22%3A37%3A01.png)
-
-# Main points
-
 - Avoids excessive boilerplate by using opinionated directory structure and Numtide's Blueprint:
   - Hosts and users are declared in /hosts. For example, Blueprint generates the host **eregion** from **/hosts/eregion** and defines its sole user **annatar** from **/hosts/eregion/users/annatar**
   - Modules are automatically set up according to file or directory names in **/modules/nixos** and **/modules/home**.
@@ -34,5 +29,3 @@ Screenshot:
 - Other stuff I'll add in here eventually. Surely.
 
 InstallGuide.md is included here in case it helps someone else with installing their own config using disko and the minimal NixOS ISO. You too can feel like a cool hacker this way. And yes, there are ways to automate this process or do it better. I don't care.
-
-I am a mathematician and therefore cannot program. Plagiarize at your own peril.
