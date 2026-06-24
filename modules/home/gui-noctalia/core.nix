@@ -55,9 +55,9 @@ in
               animationDisabled = false;
               animationSpeed = 1;
               enableShadows = true;
-              shadowDirection = "bottom_right";
-              shadowOffsetX = 2;
-              shadowOffsetY = 3;
+              shadowDirection = "center";
+              shadowOffsetX = 0;
+              shadowOffsetY = 0;
               telemetryEnabled = false;
             };
 
