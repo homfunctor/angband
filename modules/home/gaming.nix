@@ -12,7 +12,6 @@ in {
       hashdeep
       faugus-launcher
       ludusavi
-      protonplus
       steamcmd
       umu-launcher
       wineWow64Packages.fonts
