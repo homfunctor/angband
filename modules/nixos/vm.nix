@@ -7,7 +7,7 @@
 }: let
   inherit (config.nixos.opts) adminUser;
 in
-  flake.lib.reqNTier config "personal" {
+  flake.lib.reqNTier config "work" {
     environment.systemPackages = with pkgs; [
       virt-manager
       virtio-win

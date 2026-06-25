@@ -18,14 +18,13 @@ in {
         inherit (noctalia.bar) widgets;
 
         barType = "simple";
-        compactMode = false;
         density = "comfortable";
         exclusive = true;
         floating = false;
+        marginHorizontal = 0.2;
+        marginVertical = 0.1;
         outerCorners = false;
         position = "top";
-        rightClickAction = "launcherPanel";
-        rightClickFollowMouse = true;
         showCapsule = true;
         showOutline = true;
         transparent = false;
