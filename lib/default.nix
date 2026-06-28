@@ -32,7 +32,7 @@ in
       (builtins.filter
         (p:
           (p != (dir + "/default.nix"))
-          && !(hasPrefix "_" p)
+          && !(hasPrefix "_" (builtins.baseNameOf p))
           && hasSuffix ".nix" p)
         (listFilesRecursive dir));
 
