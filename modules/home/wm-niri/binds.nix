@@ -52,14 +52,14 @@ in
         "Mod+D".action = consume-or-expel-window-left;
 
         # window focus and movement
-        "Mod+Ctrl+B".action = focus-column-left;
-        "Mod+Ctrl+F".action = focus-column-right;
-        "Mod+Ctrl+N".action = focus-window-down;
-        "Mod+Ctrl+P".action = focus-window-up;
-        "Mod+Alt+B".action = move-column-left;
-        "Mod+Alt+F".action = move-column-right;
-        "Mod+Alt+N".action = move-column-to-workspace-up;
-        "Mod+Alt+P".action = move-column-to-workspace-down;
+        "Mod+H".action = focus-column-left;
+        "Mod+L".action = focus-column-right;
+        "Mod+J".action = focus-window-down;
+        "Mod+K".action = focus-window-up;
+        "Mod+Shift+H".action = move-column-left;
+        "Mod+Shift+L".action = move-column-right;
+        "Mod+Shift+K".action = move-column-to-workspace-up;
+        "Mod+Shift+J".action = move-column-to-workspace-down;
 
         "Mod+Left".action = focus-column-left;
         "Mod+Right".action = focus-column-right;
