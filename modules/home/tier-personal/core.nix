@@ -17,9 +17,9 @@
     opts.tier.personal.enabled = true;
 
     packages = with pkgs; [
-      baobab
-      picard
-      soundconverter
+      # baobab
+      # picard
+      # soundconverter
     ];
   };
 

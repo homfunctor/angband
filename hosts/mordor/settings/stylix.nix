@@ -3,7 +3,7 @@
     stylix-cursor-nordzy
     stylix-fonts-iosevka
     stylix-icons-flatRemixBlackDark
-    stylix-theme-sdg
+    stylix-theme-warning
   ];
 
   nixos.opts.stylix.fontSizes.terminal = 14;

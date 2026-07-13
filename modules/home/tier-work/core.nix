@@ -9,7 +9,7 @@
     qt
     sioyek
     syncthing
-    xournal
+    # xournal
     yazi
   ];
 
