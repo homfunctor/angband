@@ -47,6 +47,7 @@ in
           cd = "z";
           erd = "erd -I --suppress-size";
           gita = "git add .";
+          gits = "git status";
           gitc = "git commit -m";
           gitlol = "gita && gitc \"ok\" && gitps";
           gitpl = "git pull";
