@@ -23,9 +23,9 @@ in
             fg:${colors.base00})$directory$read_only[]''
           + ''(bg:${colors.base06} fg:${colors.base00})''
           + ''
-            $git_branch$git_status[](bg:${colors.base07} ''
+            $git_branch$git_status[](bg:${colors.base02} ''
           + ''
-            fg:${colors.base04})$nix_shell[](bg:${colors.base08} ''
+            fg:${colors.base01})$nix_shell[](bg:${colors.base08} ''
           + ''
             fg:${colors.base00})$character
           '';
@@ -43,7 +43,7 @@ in
 
         git_branch = {
           format = "[ $symbol$branch ]($style)";
-          style = "fg:${colors.base08} bg:${colors.base03}";
+          style = "fg:${colors.base08} bg:${colors.base00}";
           symbol = " ";
         };
 
