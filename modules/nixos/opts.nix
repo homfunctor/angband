@@ -91,7 +91,7 @@ in {
       opacity = {
         desktop = mkFloatOpt 1.0 "desktop opacity";
         popups = mkFloatOpt 0.95 "popups opacity";
-        terminal = mkFloatOpt 0.80 "terminal opacity";
+        terminal = mkFloatOpt 0.85 "terminal opacity";
       };
     };
   };

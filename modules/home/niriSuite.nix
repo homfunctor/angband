@@ -14,9 +14,9 @@
 in
   lib.mkIf enabled {
     home.packages = with pkgs; [
-      eog
-      gnome-calculator
-      gnome-calendar
+      # eog
+      # gnome-calculator
+      # gnome-calendar
       gnome-disk-utility
       libwebp
       mission-center
@@ -32,11 +32,11 @@ in
       xwayland-satellite
     ];
 
-    programs.niri.settings = lib.mkIf niriBindsEnabled {
-      binds = with config.lib.niri.actions; {
-        "Mod+Ctrl+Shift+C".action.spawn = lib.getExe pkgs.gnome-calculator;
-      };
-    };
+    # programs.niri.settings = lib.mkIf niriBindsEnabled {
+    #   binds = with config.lib.niri.actions; {
+    #     "Mod+Ctrl+Shift+C".action.spawn = lib.getExe pkgs.gnome-calculator;
+    #   };
+    # };
 
     services = {
       network-manager-applet.enable = true;

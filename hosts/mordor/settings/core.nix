@@ -13,7 +13,7 @@
     sops-nix
     stylix
     unfree
-    vm
+    # vm
     wm-niri
   ];
 
