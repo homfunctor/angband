@@ -19,7 +19,7 @@ in
       base06 = "#DEDEDE";
       base07 = "#CDCDCD";
       base08 = "#6C9CA0";
-      base09 = "#575F6E";
+      base09 = "#57576E";
       base0A = "#404056";
       base0B = "#898781";
       base0C = "#4D4F4E";
