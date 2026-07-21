@@ -16,11 +16,11 @@ in
       base03 = "#7A7A7A";
       base04 = "#949494";
       base05 = "#ACACAC";
-      base06 = "#4E4E4E";
-      base07 = "#CDCDCD";
+      base06 = "#CDCDCD";
+      base07 = "#A08040";
       base08 = "#90909E";
       base09 = "#4D4D4D";
-      base0A = "#A08040";
+      base0A = "#6E4E6E";
       base0B = "#898781";
       base0C = "#D4D4FE";
       base0D = "#838C88";
