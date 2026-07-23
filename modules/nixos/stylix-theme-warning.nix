@@ -18,12 +18,12 @@ in
       base05 = "#B0B0B0";
       base06 = "#C0D0EA";
       base07 = "#A08040";
-      base08 = "#9898C8";
+      base08 = "#989498";
       base09 = "#505067";
       base0A = "#C9C5C9";
       base0B = "#858381";
       base0C = "#868F9F";
-      base0D = "#606080";
+      base0D = "#6E6E6E";
       base0E = "#B8954F";
       base0F = "#474A50";
       author = "homfunctor";
