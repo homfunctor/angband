@@ -26,8 +26,8 @@ in
         mOnSurfaceVariant = base07;
         mOnTertiary = base00;
         mOutline = base00;
-        mPrimary = base0E;
-        mSecondary = base0E;
+        mPrimary = base0A;
+        mSecondary = base0A;
         mShadow = base00;
         mSurface = base01;
         mSurfaceVariant = base00;
