@@ -4,8 +4,8 @@
     enable = true;
 
     keybindings = {
-      "ctrl+d" = "scroll_page_down";
-      "ctrl+u" = "scroll_page_up";
+      "ctrl+v" = "scroll_page_down";
+      "alt+v" = "scroll_page_up";
     };
 
     settings = {
