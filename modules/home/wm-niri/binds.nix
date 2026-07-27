@@ -43,9 +43,9 @@ in
 
         # window management
         "Mod+Q".action = close-window;
-        "Mod+Ctrl+F".action = maximize-column;
-        "Mod+Ctrl+Shift+F".action = fullscreen-window;
         "Mod+S".action = switch-preset-column-width;
+        "Mod+Shift+S".action = maximize-column;
+        "Mod+Ctrl+S".action = fullscreen-window;
         "Mod+T".action = toggle-window-floating;
 
         "Mod+C".action = consume-or-expel-window-right;
