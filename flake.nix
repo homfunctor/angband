@@ -19,7 +19,8 @@
       url = "github:nix-community/home-manager";
     };
 
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=703c1307f503b7a0926608c9bfcc06714514f253";
 
     # niri
     niri-flake = {
