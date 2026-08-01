@@ -19,9 +19,9 @@ in
 
       layout.border = with config.lib.stylix.colors.withHashtag; {
         enable = true;
-        active.color = base07;
-        inactive.color = base02;
-        urgent.color = base08;
+        active.color = base06;
+        inactive.color = base03;
+        urgent.color = base07;
       };
     };
   }
