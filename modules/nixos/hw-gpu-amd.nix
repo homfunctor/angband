@@ -22,7 +22,7 @@ flake.lib.reqNTier config "personal" {
       vulkan-extension-layer
       vulkan-loader
       vulkan-tools
-      vulkan-validation-layers
+      # vulkan-validation-layers
     ];
   };
 

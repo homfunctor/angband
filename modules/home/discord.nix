@@ -14,7 +14,7 @@
     };
 
     discord = {
-      equicord.enable = true;
+      # equicord.enable = true;
       vencord.enable = false;
     };
   };

@@ -20,22 +20,17 @@ in
     programs.niri.settings = {
       binds = with config.lib.niri.actions; {
         # applications
-        "Mod+E".action.spawn =
+        "Mod+N".action.spawn =
           [apps.directory.exe]
           ++ (splitArg apps.directory.args);
-        "Mod+Shift+E".action.spawn =
-          [apps.terminal.exe]
-          ++ (splitArg (getExe pkgs.yazi))
-          ++ ["${homeDirectory}/angband"];
 
         "Mod+W".action.spawn = apps.terminal.exe;
         "Mod+Shift+W".action.spawn = [
           apps.terminal.exe
           "${homeDirectory}/angband"
         ];
-        "Mod+Ctrl+Shift+W".action.spawn = [
+        "Mod+Ctrl+W".action.spawn = [
           apps.terminal.exe
-          (getExe pkgs.yazi)
           "${homeDirectory}/Work"
         ];
 
@@ -48,27 +43,24 @@ in
         "Mod+Ctrl+S".action = fullscreen-window;
         "Mod+T".action = toggle-window-floating;
 
-        "Mod+C".action = consume-or-expel-window-right;
-        "Mod+D".action = consume-or-expel-window-left;
+        "Mod+C".action = consume-or-expel-window-left;
+        "Mod+D".action = consume-or-expel-window-right;
 
         # window focus and movement
-        "Mod+B".action = focus-column-left;
+        "Mod+A".action = focus-column-left;
         "Mod+F".action = focus-column-right;
-        "Mod+N".action = focus-window-down;
-        "Mod+P".action = focus-window-up;
-        "Mod+Shift+B".action = move-column-left;
+
+        "Mod+Ctrl+A".action = focus-window-down;
+        "Mod+Ctrl+F".action = focus-window-up;
+
+        "Mod+Shift+A".action = move-column-left;
         "Mod+Shift+F".action = move-column-right;
-        "Mod+Shift+N".action = move-column-to-workspace-up;
-        "Mod+Shift+P".action = move-column-to-workspace-down;
 
         "Mod+Left".action = focus-column-left;
         "Mod+Right".action = focus-column-right;
-        "Mod+Down".action = focus-window-down;
-        "Mod+Up".action = focus-window-up;
+
         "Mod+Shift+Left".action = move-column-left;
         "Mod+Shift+Right".action = move-column-right;
-        "Mod+Shift+Down".action = move-column-to-workspace-up;
-        "Mod+Shift+Up".action = move-column-to-workspace-down;
 
         # screenshots
         "Print".action.screenshot.show-pointer = false;

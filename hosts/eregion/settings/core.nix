@@ -25,9 +25,6 @@
       users.enable = true;
     };
 
-    wm.niri = {
-      appBinds.enable = true;
-      pkg = pkgs.niri-stable;
-    };
+    wm.niri.appBinds.enable = true;
   };
 }

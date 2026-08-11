@@ -10,8 +10,8 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    proton-vpn
-    qbittorrent
-    wireguard-tools
+    # proton-vpn
+    # qbittorrent
+    # wireguard-tools
   ];
 }

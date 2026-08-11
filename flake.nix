@@ -20,7 +20,7 @@
     };
 
     # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs.url = "github:nixos/nixpkgs?ref=703c1307f503b7a0926608c9bfcc06714514f253";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=c9df19510ada23dcdf2cf715caa1ea4509deb125";
 
     # niri
     niri-flake = {
@@ -89,7 +89,8 @@
 
     stylix = {
       inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:nix-community/stylix";
+      url = "github:nix-community/stylix?ref=14814ef555d8148ab82eba5054e654cd9eae3a1f";
+      # url = "github:nix-community/stylix";
     };
 
     treefmt-nix = {
