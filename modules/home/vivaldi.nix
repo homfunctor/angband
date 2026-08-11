@@ -6,5 +6,9 @@
   ...
 }:
 flake.lib.reqHTier config "work" {
-  home.packages = [pkgs.vivaldi];
+  home.packages = with pkgs; [
+    # ffmpeg-full
+    vivaldi
+    vivaldi-ffmpeg-codecs
+  ];
 }

@@ -4,13 +4,12 @@
   flake,
   lib,
   osConfig,
-  pkgs,
   ...
 }: let
   inherit (config.home) homeDirectory;
   inherit (config.home.opts) apps tier;
   inherit (flake.lib) splitArg;
-  inherit (lib) getExe mkIf;
+  inherit (lib) mkIf;
 
   enabled =
     tier.work.enabled

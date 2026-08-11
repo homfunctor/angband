@@ -5,6 +5,7 @@
     inputs.blueprint {
       inherit inputs;
       systems = ["x86_64-linux"];
+      nixpkgs.config.allowUnfree = true;
     };
 
   inputs = {
@@ -20,7 +21,8 @@
     };
 
     # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs.url = "github:nixos/nixpkgs?ref=c9df19510ada23dcdf2cf715caa1ea4509deb125";
+    # nixpkgs.url = "github:nixos/nixpkgs?ref=c9df19510ada23dcdf2cf715caa1ea4509deb125";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=ec84054698e3875e23d6057a10283eb9dfa41f1b";
 
     # niri
     niri-flake = {

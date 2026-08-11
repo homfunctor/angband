@@ -3,6 +3,7 @@
   config,
   flake,
   inputs,
+  pkgs,
   ...
 }: {
   imports = with flake.modules.nixos; [
@@ -18,7 +19,7 @@
 
     programs.niri = {
       enable = true;
-      package = config.nixos.opts.wm.niri.pkg;
+      package = pkgs.niri;
     };
 
     services.displayManager.defaultSession = "niri";

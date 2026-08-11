@@ -36,19 +36,21 @@ in
         })
       ];
 
-      browser = mkMerge [
-        (mkIf (!quirk.vivaldi.enable) rec {
-          desktop = "firefox";
-          exe = getExe pkg;
-          pkg = config.programs.firefox.package;
-        })
-
-        (mkIf quirk.vivaldi.enable rec {
+      browser =
+        #mkMerge [
+        # (mkIf (!quirk.vivaldi.enable) rec {
+        #   desktop = "firefox";
+        #   exe = getExe pkg;
+        #   pkg = config.programs.firefox.package;
+        # })
+        #        (mkIf quirk.vivaldi.enable rec {
+        rec {
           desktop = "vivaldi-stable";
           exe = getExe pkg;
           pkg = pkgs.vivaldi;
-        })
-      ];
+        };
+      # )
+      #];
 
       directory = {
         args = "";

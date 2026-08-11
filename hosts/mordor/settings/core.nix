@@ -1,8 +1,4 @@
-{
-  flake,
-  pkgs,
-  ...
-}: {
+{flake, ...}: {
   imports = with flake.modules.nixos; [
     tier-personal
 
@@ -12,7 +8,6 @@
     scx
     sops-nix
     stylix
-    unfree
     # vm
     wm-niri
   ];

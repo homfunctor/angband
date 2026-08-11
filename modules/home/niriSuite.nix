@@ -9,8 +9,6 @@
   enabled =
     config.home.opts.tier.work.enabled
     && osConfig.nixos.opts.wm.niri.enabled;
-
-  niriBindsEnabled = osConfig.nixos.opts.wm.niri.appBinds.enable;
 in
   lib.mkIf enabled {
     home.packages = with pkgs; [

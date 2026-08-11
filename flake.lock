@@ -91,11 +91,11 @@
     },
     "crane": {
       "locked": {
-        "lastModified": 1784564969,
-        "narHash": "sha256-TkTWNhJV/8Wk3czlbz4bwHZkFCaCHPsOy+oJe4PUiXg=",
+        "lastModified": 1785782307,
+        "narHash": "sha256-MPaRdVkf6zZP5fCPxYCi8Dr4pZzgmXzg8T9nVEbp3Mw=",
         "owner": "ipetkov",
         "repo": "crane",
-        "rev": "7930f6c291de6f83c257839d434592aa085f290a",
+        "rev": "2c71e194474d13de031d729b729c968ddbe3507f",
         "type": "github"
       },
       "original": {
@@ -348,11 +348,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786356609,
-        "narHash": "sha256-ou8fYz5w9yhXC8YbvvExybFIa19MyW5G/8dEPqa90hM=",
+        "lastModified": 1786487128,
+        "narHash": "sha256-ad60hrRVhH/bo3Jl1YLzO+QcS3mUNZr9LNJdzhMO2P4=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "c30c7955cec30d664a9baced6bc0112e263d4647",
+        "rev": "f404edbfa4117810c96b97048299242fc50e5362",
         "type": "github"
       },
       "original": {
@@ -373,11 +373,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786360846,
-        "narHash": "sha256-GSXfdsJdYKsYjYh/WGiGTGPHmh3Y9KxB4YTiKlGDGIY=",
+        "lastModified": 1786473774,
+        "narHash": "sha256-BDedo9F6NJOw+Ii+luFZh0MVIheKqiYgiVzMWc6WB24=",
         "owner": "nix-community",
         "repo": "lanzaboote",
-        "rev": "adffb628d1fab1116c6177c8031fa6b69fc6b271",
+        "rev": "4a773989235545c56f408d168cb63bc41d468832",
         "type": "github"
       },
       "original": {
@@ -389,11 +389,11 @@
     "lix": {
       "flake": false,
       "locked": {
-        "lastModified": 1786403725,
-        "narHash": "sha256-W6kNN/266x+2Myob6nZsZW1wGQoi7m0xcziIhu6Dk3c=",
-        "rev": "ee252770f6623414a8553c3e47723eb3a7ef876c",
+        "lastModified": 1786443272,
+        "narHash": "sha256-XkxQ7u/0elaAjsBWTwl2WmdfszEhdCx5gDmNxFlCle8=",
+        "rev": "61b687e923347f681bc3f8f7f6a8c60978f93353",
         "type": "tarball",
-        "url": "https://git.lix.systems/api/v1/repos/lix-project/lix/archive/ee252770f6623414a8553c3e47723eb3a7ef876c.tar.gz?rev=ee252770f6623414a8553c3e47723eb3a7ef876c"
+        "url": "https://git.lix.systems/api/v1/repos/lix-project/lix/archive/61b687e923347f681bc3f8f7f6a8c60978f93353.tar.gz?rev=61b687e923347f681bc3f8f7f6a8c60978f93353"
       },
       "original": {
         "type": "tarball",
@@ -552,11 +552,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1785232496,
-        "narHash": "sha256-65EQYIRRpTdpH8lUiB6Mvo5uBkG60aBIzAJuALfx+O0=",
+        "lastModified": 1786437054,
+        "narHash": "sha256-I++HzBBAgQ17UaLVU6aSm1/7LDo6c9xr8rAbpByWywE=",
         "owner": "nixos",
         "repo": "nixos-hardware",
-        "rev": "2e790b0a6be8ec2b76174ac0931b8ff11919ec98",
+        "rev": "6ed13b1d888d5cb07dbb0723eb1df86bbacd0b9c",
         "type": "github"
       },
       "original": {
@@ -642,16 +642,16 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1782967432,
-        "narHash": "sha256-BaP0tZRrr1FISmI4aJZsv6wOY/0erIOED750O4Uzp20=",
+        "lastModified": 1782950083,
+        "narHash": "sha256-xvIrCoOQo7tw1UlOm1K9EEZCC80d9yN+46s8xNZA2sw=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "c9df19510ada23dcdf2cf715caa1ea4509deb125",
+        "rev": "ec84054698e3875e23d6057a10283eb9dfa41f1b",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "c9df19510ada23dcdf2cf715caa1ea4509deb125",
+        "ref": "ec84054698e3875e23d6057a10283eb9dfa41f1b",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -1100,11 +1100,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1786418972,
-        "narHash": "sha256-gMRbn3dRIitYdvn/JGpXWvDwU3RnjJmSqYvgWb/9A/A=",
+        "lastModified": 1786483924,
+        "narHash": "sha256-sdNH1V9j9TeujT/ASvFBqpnLn3gX+RAY5oW48Ymy75w=",
         "ref": "refs/heads/main",
-        "rev": "866b508a23b9b91ee6b2f0d27710a23409dbd6d7",
-        "revCount": 117,
+        "rev": "fc0d8ce94f8c8bad7ec47b26dc89952bab7d08d6",
+        "revCount": 119,
         "shallow": false,
         "type": "git",
         "url": "ssh://git@github.com/homfunctor/utumno"
