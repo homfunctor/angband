@@ -7,8 +7,9 @@
 }:
 flake.lib.reqHTier config "work" {
   home.packages = with pkgs; [
-    # ffmpeg-full
-    vivaldi
-    vivaldi-ffmpeg-codecs
+    (vivaldi.override {
+      proprietaryCodecs = true;
+      enableWidevine = true;
+    })
   ];
 }
