@@ -10,9 +10,6 @@
       packages = with pkgs; [
         dconf
         gcr
-        gnome-keyring
-        gnome-settings-daemon
-        libsecret
       ];
     };
 

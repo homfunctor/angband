@@ -1,5 +1,9 @@
 # imported by hosts/<host>/users/<user>/settings/core.nix
-{flake, ...}: {
+{
+  flake,
+  pkgs,
+  ...
+}: {
   imports = with flake.modules.home; [
     eza
     #    firefox
@@ -14,4 +18,7 @@
   ];
 
   home.opts.tier.work.enabled = true;
+  home.packages = [pkgs.gcr];
+
+  services.gnome-keyring.enable = true;
 }
