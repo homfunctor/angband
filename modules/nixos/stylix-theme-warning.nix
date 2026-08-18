@@ -21,7 +21,7 @@ in
       base08 = "#A7A9C5";
       base09 = "#878684";
       base0A = "#AEAEB8";
-      base0B = "#6A6A76";
+      base0B = "#6A6A75";
       base0C = "#747487";
       base0D = "#898995";
       base0E = "#A6A6B1";
