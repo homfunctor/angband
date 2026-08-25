@@ -6,14 +6,14 @@
 }: {
   imports = with flake.modules.home; [
     eza
-    #    firefox
+    firefox
     imageEditing
     kitty
-    # libreOffice
+    libreOffice
     qt
     sioyek
     syncthing
-    # xournal
+    xournal
     yazi
   ];
 

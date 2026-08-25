@@ -25,7 +25,7 @@ in
           + ''
             $git_branch$git_status[](bg:${colors.base02} ''
           + ''
-            fg:${colors.base01})$nix_shell[](bg:${colors.base08} ''
+            fg:${colors.base01})$ssh_symbol$hostname$nix_shell[](bg:${colors.base08} ''
           + ''
             fg:${colors.base00})$character
           '';
@@ -33,6 +33,14 @@ in
         directory = {
           format = "[ $path ]($style)";
           style = "fg:${colors.base00} bg:${colors.base05}";
+        };
+
+        hostname = {
+          disabled = false;
+          ssh_only = true;
+          ssh_symbol = "󱕙 ";
+          format = "[ ssh@$hostname ]($style)";
+          style = "fg:${colors.base01} bg:${colors.base08}";
         };
       };
     };
