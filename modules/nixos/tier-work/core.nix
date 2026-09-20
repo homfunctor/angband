@@ -9,7 +9,7 @@
       enable = true;
       packages = with pkgs; [
         dconf
-        gcr
+        gcr_4
       ];
     };
 

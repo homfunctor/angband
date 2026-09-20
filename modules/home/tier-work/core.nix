@@ -18,7 +18,7 @@
   ];
 
   home.opts.tier.work.enabled = true;
-  home.packages = [pkgs.gcr];
+  home.packages = [pkgs.gcr_4];
 
   services.gnome-keyring.enable = true;
 }

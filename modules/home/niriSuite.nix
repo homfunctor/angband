@@ -26,6 +26,7 @@ in
       systemctl-tui
       vlc # good stuff, nostalgic
       wayland-utils
+      webp-pixbuf-loader
       wl-clipboard-rs
       xwayland-satellite
     ];

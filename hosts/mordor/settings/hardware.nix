@@ -11,7 +11,7 @@
     mainMonitor = builtins.elemAt monitors 1;
     monitors = [
       "DP-1"
-      "HDMI-A-1"
+      "DP-2"
       "DP-3"
     ];
     numWSPerD = 2;
