@@ -13,7 +13,7 @@
       systemd.enable = true;
     };
 
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_testing;
     kernelParams = [
       "plymouth.use-simpledrm"
       "quiet"

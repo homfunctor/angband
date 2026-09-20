@@ -12,6 +12,7 @@ flake.lib.reqNTier config "personal" {
     kernelParams = [
       "amdgpu.gpu_recovery=1"
       "amdgpu.ppfeaturemask=0xffff7fff"
+      "amdgpu.dcfeaturemask=0x400"
     ];
   };
   environment.systemPackages = [pkgs.lact];
